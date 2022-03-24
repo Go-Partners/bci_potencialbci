@@ -1,0 +1,128 @@
+<style>
+
+
+</style>
+
+<header id="header" class="transparent-header full-header sticky-header" data-sticky-class="not-dark">
+	<div id="header-wrap" class="not-dark">
+		<div class="container clearfix">
+			<div id="primary-menu-trigger">
+				<i class="icon-reorder"></i>
+			</div>
+			<div class="col-xs-12 col-lg-3 col-md-3 col-sm-3"  data-intro="Para volver a página de inicio debes presionar logo Comp@rte Bci">
+				<div id="">
+					<a href="?sw=com_mp_personal" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="img/bci_mp_footer-logo-bci.png"  alt="Bci"></a>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6  hidden-xs">
+				<ul class="nav navbar-nav pull-left">
+					<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"  onclick="ActualizaEstadosNotificaciones();">
+							<span id="BloqueNotificaciones">
+								<span class="blanco"> <i class="icon-bell icons"></i></span>
+								{NUM_NOTIFICACIONES_SINVER_GLOBO}</span></a>
+								<ul class="dropdown-menu" style="min-width: 700px">
+									<div class="panel panel-info ">
+										<div class="panel-heading show_hideSeguidores" >
+											<h3 class="panel-title">Nuevas Notificaciones</h3>
+										</div>
+										<div class="panel-body slidingDivSeguidores" >
+											{ROW_COMP_MP_MIS_NOTIFICACIONES_SIN_VER}
+										</div>
+									</div>
+									<center><a href="?sw=com_mp_personal&amp;rut_enviado={MIRUT}&amp;vp=2" class="btn btn-info" data-original-title="" title="">
+										<span class="blanco">Ver todas las notificaciones</span></a></center>
+									</ul>
+								</li>
+							</ul> 
+							<form action="?sw=com_mp_personal" method="POST">
+								<div class="input-group input-group-lg add-on">
+									<input name="q" type="text" class="form-control" placeholder="Busca lo que quieras aprender..." data-intro="Busca lo que quieras; publicaciones por temas, personas o grupos de interés">
+									<input name="vp" type="hidden" value="0">
+									<input name="soloexpertos" type="hidden" value="0">
+									<div class="input-group-btn">
+										<button class="btn btn-info" type="submit">
+											<i class="glyphicon glyphicon-search"></i>
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+
+
+						<div class="col-xs-3 col-lg-3 col-sm-3 col-md-3 hidden-xs" data-intro="Para publicar debes presionar este botón">
+							<small>
+								<div class="">
+									<a href="?sw=com_mp_personal_createpost" class="button button-rounded button-reveal button-large button-dirtyblue"><i class="fas fa-edit"></i><span>Publica Aquí</span></a>
+									<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+										<div class="modal-dialog modal-lg">
+											<div class="">
+												<div class="modal-content">
+													<div class="modal-body"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div> </small>
+							</div>
+						</div>
+					</div>
+				</header>
+				
+<div class="col-xs-7 visible-xs">
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<ul class="nav navbar-nav pull-left">
+							<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar" style="background-color: #007CC6;
+							max-width: 330px;
+							padding-left: 10px;
+							padding-right: 10px;
+							border-radius: 5px;">
+							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"  onclick="ActualizaEstadosNotificaciones();">
+								<span id="BloqueNotificaciones">
+									<span class="blanco"> <i class="icon-bell icons"></i></span>
+									{NUM_NOTIFICACIONES_SINVER_GLOBO}</span></a>
+									<ul class="dropdown-menu" style="min-width: 300px">
+										<div class="panel panel-info ">
+											<div class="panel-heading show_hideSeguidores" >
+												<h3 class="panel-title">Nuevas Notificaciones</h3>
+											</div>
+											<div class="panel-body slidingDivSeguidores" >
+												{ROW_COMP_MP_MIS_NOTIFICACIONES_SIN_VER}
+											</div>
+										</div>
+										<center><a href="?sw=com_mp_personal&amp;rut_enviado={MIRUT}&amp;vp=2" class="btn btn-info" data-original-title="" title="">
+											<span class="blanco">Ver todas las notificaciones</span></a></center>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xs-5 visible-xs" data-intro="Para publicar debes presionar este botón">
+							<small>
+								<div class="" style="margin-top: 5px;">
+<a href="?sw=com_mp_personal_createpost" class="button button-rounded button-reveal button-large button-dirtyblue"><i class="fas fa-edit"></i><span>Publica Aquí</span></a>
+									<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+										<div class="modal-dialog modal-lg">
+											<div class="">
+												<div class="modal-content">
+													<div class="modal-body"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div> </small>
+							</div>
+							<div class="col-xs-12 visible-xs">
+                            <form action="" method="POST">
+                                <div class="input-group input-group-lg add-on">
+                                    <input name="q" type="text" class="form-control" placeholder="Busca lo que quieras aprender..." data-intro="Busca lo que quieras; publicaciones por temas, personas o grupos de interés">
+                                    <input name="vp" type="hidden" value="0">
+                                    <input name="soloexpertos" type="hidden" value="0">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-info" type="submit">
+                                            <i class="glyphicon glyphicon-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>

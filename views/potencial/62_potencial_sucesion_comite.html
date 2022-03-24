@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+{HEAD}
+
+
+<style>
+
+.alert {
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 0;
+    border: 0;
+    border: 1px solid;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    text-align: center;
+}
+
+
+.badge-temporalidad {
+    display: inline-block;
+    background-color: #e6eaeb;
+    padding: 5px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    border-radius: 5px;
+    font-size: 10px;
+    width: 112px;
+    text-align: left;
+}
+
+</style>
+
+ <script src='buscador/jquery-3.1.1.min.js' type='text/javascript'></script>
+<link href='buscador/jquery-ui.min.css' rel='stylesheet' type='text/css'>
+<script src='buscador/jquery-ui.min.js' type='text/javascript'></script>
+	
+	
+<body role="document" {FUNCION_ONLOAD}>
+    <div id="k-head" class="container">
+        <div class="row">
+            {MENU_SUPERIOR} 
+            <br><br>
+        </div>
+    </div>
+    <div id="k-body">
+
+        <body role="document" {FUNCION_ONLOAD}>
+
+            <body>
+                <section id="" class="clear">
+                    <div id="anchor1">
+                        <div> </div>
+                </section>
+                <div id="logx"></div>
+				<br><br>
+
+			<div class="container">
+				<a href="?sw=potencial_sucesion" class="btn btn-link pull-left" style="display: block;">
+					<span style='color: #31708f;'><i class="fas fa-arrow-alt-circle-left"></i> Volver</span></a>
+			</div>
+
+   
+	 
+	<!--.  <table> 
+        <tr>
+            <td>Single selection</td>
+            <td><input type='text' id='autocomplete' ></td>
+        </tr>
+
+        <tr>
+            <td>Selected User id</td>
+            <td><input type='text' id='selectuser_id' /></td>
+        </tr>
+
+        <tr>
+            <td>Multiple Selection</td>
+            <td><input type='text' id='multi_autocomplete' ></td>
+        </tr>
+
+        <tr>
+            <td>Selected User ids</td>
+            <td><input type='text' id='selectuser_ids' /></td>
+        </tr>
+
+    </table>
+	--> 
+	
+                <span class="visible-xs"></span><span class="visible-sm"></span><span class="visible-md"></span><span class="visible-lg"></span>
+                <div id="k-head" class="">
+                    <div id="k-body">
+                        <div class="paddingFull" style="
+                            padding-left: 20px;
+                            padding-right: 20px;
+                        ">
+                            <div class="container" align="justify" style="background-color: unset;">
+                            
+
+<div class="lms_tituloSeccionHistoriasHome_TitleWinter" style="margin-top: 0px;">
+		<center>
+			<img src="https://www.paneldeliderazgobci.cl/front/img/widget-link.png"> Comit&eacute;: {NOMBRE_COMITE}
+			<br><small><small>SOCIO DE NEGOCIO: {LIDER_COMITE}</small></small>
+			{COMITE_CERRADO}
+			<br>
+			
+			<small>
+				{PORCENTAJE_AREA_PONDERADO}
+				|
+				{CUADRANTE_236}
+				| 
+				{CUADRANTE_19487}
+				| 
+				{FEMENINO_PONDERADO}
+				| 
+				{MASCULINO_PONDERADO}
+				| 				
+
+				</small>
+		</center>
+</div>    
+
+                                </div>
+                                <BR>
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">Cargos a suceder</div>
+                                    <div class="panel-body" style="border: 1px solid #efefef;">
+                                        {COLABORADORES_COMITE_POTENCIAL_TITULO} {MIS_COLABORADORES_COMITES_POTENCIAL}
+                                    </div>
+                                </div>
+                                
+                                <br>
+                                		{POTENCIAL_CIERRE_POTENCIAL_SN}
+                                <br>
+                                 
+
+    
+                                
+
+</div>                            
+                                
+
+                                <BR>
+                                <BR>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <br>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $(".slidingDiv_bloque1").hide();
+                            $(".show_hide_bloque1").show();
+                            $('.show_hide_bloque1').click(function() {
+                                $(".slidingDiv_bloque1").slideToggle();
+                            });
+                        });
+                    </script>
+					
+					
+    <script type='text/javascript' >
+    $( function() {
+  
+        $( "#autocomplete" ).autocomplete({
+            source: function( request, response ) {
+                
+                $.ajax({
+                    url: "?sw=BuscaPersonas2020_v2",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: request.term
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $('#autocomplete').val(ui.item.label); // display the selected text
+                $('#selectuser_id').val(ui.item.value); // save selected id to input
+                return false;
+            }
+        });
+
+        // Multiple select
+        $( "#multi_autocomplete" ).autocomplete({
+            source: function( request, response ) {
+                
+                var searchText = extractLast(request.term);
+                $.ajax({
+                    url: "fetchData.php",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: searchText
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function( event, ui ) {
+                var terms = split( $('#multi_autocomplete').val() );
+                
+                terms.pop();
+                
+                terms.push( ui.item.label );
+                
+                terms.push( "" );
+                $('#multi_autocomplete').val(terms.join( ", " ));
+
+                // Id
+                var terms = split( $('#selectuser_ids').val() );
+                
+                terms.pop();
+                
+                terms.push( ui.item.value );
+                
+                terms.push( "" );
+                $('#selectuser_ids').val(terms.join( ", " ));
+
+                return false;
+            }
+           
+        });
+    });
+
+    function split( val ) {
+      return val.split( /,\s*/ );
+    }
+    function extractLast( term ) {
+      return split( term ).pop();
+    }
+
+    </script>
+	
+	
+                </div>
+                </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+   
+   {FOOTER}
+    <BR> {BLOQUEFOOTERCONTENIDO}
+    <BR> {MENU_INFERIOR}
+    <BR>
+    </body>
+
+</html>

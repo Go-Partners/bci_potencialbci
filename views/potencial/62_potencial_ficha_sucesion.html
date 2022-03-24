@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+{HEAD}
+<script src='buscador/jquery-3.1.1.min.js' type='text/javascript'></script>
+<link href='buscador/jquery-ui.min.css' rel='stylesheet' type='text/css'>
+<script src='buscador/jquery-ui.min.js' type='text/javascript'></script>
+
+<style>
+	.badge-info {
+    background-color: #5bc0de;
+    color: #fff;
+}
+
+.txt_2020 {
+	color: #50748a !important;
+    background-color: #f6f7fc;
+    padding: 5px;
+    font-weight: 600;font-size: 12px;
+}
+}
+</style>
+
+<body role="document" {FUNCION_ONLOAD}>
+    <div id="k-head" class="container">
+        <div class="row">
+        </div>
+    </div>
+    <div id="k-body">
+        <body role="document" {FUNCION_ONLOAD}>
+            <body>
+                <div id="k-head" class="">
+                    <div id="k-body">
+			<div class="container">
+				<a href="?sw=potencial_sucesion_comite&id_comite={ID_COMITE_ENC}" class="btn btn-link pull-left" style="display: block;">
+					<span style='color: #31708f;'><i class="fas fa-arrow-alt-circle-left"></i> Volver</span>
+				</a>
+					<br><br>
+					<div class="lms_tituloSeccionHistoriasHome_TitleWinter" style="margin-top: 0px;">
+								<center>
+									<img src="https://www.paneldeliderazgobci.cl/front/img/widget-link.png"> Matriz de Sucesi&oacute;n para {POSICION}
+									<br><small>Lider: {NOMBRE_LIDER_SUCESION}</small>
+									<br>
+										{APROBAR_CARGO_LIDER}
+								</center>
+					</div>                    	
+			</div>                    	
+				<div class="container">
+						<div class="col-lg-12 col-xs-12">
+							<div id="accordion">
+							  <div class="card" style="max-width: 100%;">
+							    <div class="card-header" id="headingOne" style="color: #ffffff;background-color: #50748a;border-color: #bce8f1;min-height: 40px;">
+							      <h5 class="mb-0">
+							        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							          <span style="color:#fff">
+							          	Inmediato <span class="badge badge-gray">Hoy</span>
+							          </span>
+							        </button>
+							      </h5>
+							    </div>
+							    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+							      <div class="card-body" style="padding: 10px;">
+												<div class="row">
+													<div class="col-md-8">
+														<div class="txt_2020">Colaboradores</div>
+														<br>
+														{INMEDIATO}
+													</div>
+													<div class="col-md-4" style="{display_none_edit}">
+														
+														
+													
+														
+														
+														<div class="txt_2020">Seleccionar nuevo colaborador</div>
+														<br>
+															<form method="POST" action="" name="form3" id="form3">
+																<div class="badge-gray_blue" style="font-size: 10px;">
+																	Escribe el Nombre del Colaborador y selecci&oacute;nalo de la Lista</div>
+						
+																 <input type='text' id='autocomplete' class="form form-control">
+																 <input type='hidden' id='selectuser_id' name="rut_save" />
+
+																 <div class="badge-gray_blue" style="font-size: 10px;" >Escribe tu fundamento</div>
+																 <input type="text" name="fundamento" name="fundamento" class="form form-control"  required>
+																 
+																  <input type="hidden" name="tipo_sucesion" value="Inmediato" />
+										  	          <br>
+									  	          <input type="hidden" name="tipo_feed" id="tipo_feed" value="{TIPO_FEED}" />
+																<input type="submit" class="btn btn-success" value="Seleccionar">
+															</form>	
+															
+														<br><br>
+														<div class="txt_2020">Ingresar Sucesor Externo</div>
+														<br>
+															<form method="POST" action="" name="formext6" id="formext6">
+																<div class="badge-gray_blue" style="font-size: 10px;">
+																	Nombre</div>
+																 <input type='text' name='nombre_externo'  class="form form-control">
+																<div class="badge-gray_blue" style="font-size: 10px;">
+																	Empresa</div>
+																 <input type='text' name='empresa_externo'  class="form form-control">
+																	<div class="badge-gray_blue" style="font-size: 10px;">
+																	Observaciones</div>
+																 <input type="text" name="observaciones" name="observaciones" class="form form-control"  required>
+																  <input type="hidden" name="tipo_sucesion" value="Inmediato" />
+										  	          <br><br>
+									  	          <input type="hidden" name="tipo_feed" id="tipo_feed" value="externo" />
+																<input type="submit" class="btn btn-success" value="Ingresar">
+															</form>																
+																												
+													</div>
+													</div>
+												</div>
+							      </div>
+							    </div>
+							  </div>
+							  
+							<br>
+				
+ 							<div class="card" style="max-width: 100%;">
+							    <div class="card-header" id="headingTwo" style="color: #ffffff;background-color: #50748a;border-color: #bce8f1;min-height: 40px;">
+							      <h5 class="mb-0">
+							        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+							          <span style="color:#fff">
+							          	Mediano <span class="badge badge-gray">1 a 2 a&ntilde;os</span>
+							          </span>
+							        </button>
+							      </h5>
+							    </div>
+							    
+							    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+							      <div class="card-body" style="padding: 10px;">
+
+												<div class="col-md-8">
+														<div class="txt_2020">Colaboradores</div>
+														<br>
+														{MEDIANO}
+													</div>
+													<div class="col-md-4"  style="{display_none_edit}">
+														<div class="txt_2020">Seleccionar nuevo colaborador</div>
+														<br>
+															<form method="POST" action="" name="form4" id="form4">
+																<div class="badge-gray_blue" style="font-size: 10px;">
+																	Escribe el Nombre y selecci&oacute;nalo de la Lista</div>
+																	
+																
+												
+																 <input type='text' id='autocomplete_2'  class="form form-control">
+																 <input type='hidden' id='selectuser_id_2' name="rut_save" />
+																 <div class="badge-gray_blue" style="font-size: 10px;" >Escribe tu fundamento</div>
+																 <input type="text" name="fundamento" name="fundamento" class="form form-control"  required>
+																 
+																  <input type="hidden" name="tipo_sucesion" value="Mediano" />
+										  	          <br><br>
+									  	          <input type="hidden" name="tipo_feed" id="tipo_feed" value="{TIPO_FEED}" />
+																<input type="submit" class="btn btn-success" value="Seleccionar">
+															</form>		
+															
+														<br><br>
+														<div class="txt_2020">Ingresar Sucesor Externo</div>
+														<br>
+															<form method="POST" action="" name="formext4" id="formext4">
+																<div class="badge-gray_blue" style="font-size: 10px;">
+																	Nombre</div>
+																 <input type='text' name='nombre_externo'  class="form form-control">
+																<div class="badge-gray_blue" style="font-size: 10px;">
+																	Empresa</div>
+																 <input type='text' name='empresa_externo'  class="form form-control">
+																	<div class="badge-gray_blue" style="font-size: 10px;">
+																	Observaciones</div>
+																 <input type="text" name="observaciones" name="observaciones" class="form form-control"  required>
+																  <input type="hidden" name="tipo_sucesion" value="Mediano" />
+										  	          <br><br>
+									  	          <input type="hidden" name="tipo_feed" id="tipo_feed" value="externo" />
+																<input type="submit" class="btn btn-success" value="Ingresar">
+															</form>																
+																											
+													</div>															
+															
+
+							      </div>
+							    </div>
+							</div>  
+							    		
+							<br>			
+
+							  <div class="card" style="max-width: 100%;">
+							    <div class="card-header" id="headingFive" style="color: #ffffff;background-color: #50748a;border-color: #bce8f1;min-height: 40px;">
+							      <h5 class="mb-0">
+							        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+							          <span style="color:#fff">
+							          	Largo <span class="badge badge-gray">3 a 5 a&ntilde;os</span>
+							          </span>
+							        </button>
+							      </h5>
+							    </div>
+							    <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordion">
+							      <div class="card-body" style="padding: 10px;">
+				  			
+													<div class="col-md-8">
+														<div class="txt_2020">Colaboradores</div>
+														<br>
+														{LARGO}
+													</div>
+													
+													<div class="col-md-4"  style="{display_none_edit}">
+														<div class="txt_2020">Seleccionar nuevo colaborador</div>
+														<br>
+															<form method="POST" action="" id="form5" name="form5">
+																<div class="badge-gray_blue" style="font-size: 10px;">
+																	Escribe el Nombre del Colaborador y selecci&oacute;nalo de la Lista</div>
+																	
+																  <input type='text' id='autocomplete_3'  class="form form-control">
+																 <input type='hidden' id='selectuser_id_3' name="rut_save" />
+																 <div class="badge-gray_blue" style="font-size: 10px;" >Escribe tu fundamento</div>
+																 <input type="text" name="fundamento" name="fundamento" class="form form-control"  required>
+																 
+																  <input type="hidden" name="tipo_sucesion" value="Largo" />
+										  	          <br><br>
+									  	          <input type="hidden" name="tipo_feed" id="tipo_feed" value="{TIPO_FEED}" />
+																<input type="submit" class="btn btn-success" value="Seleccionar">
+															</form>														
+													
+													
+													
+														<br><br>
+														<div class="txt_2020">Ingresar Sucesor Externo</div>
+														<br>
+															<form method="POST" action="" name="formext5" id="formext5">
+																<div class="badge-gray_blue" style="font-size: 10px;">
+																	Nombre</div>
+																 <input type='text' name='nombre_externo'  class="form form-control">
+																<div class="badge-gray_blue" style="font-size: 10px;">
+																	Empresa</div>
+																 <input type='text' name='empresa_externo'  class="form form-control">
+																	<div class="badge-gray_blue" style="font-size: 10px;">
+																	Observaciones</div>
+																 <input type="text" name="observaciones" name="observaciones" class="form form-control"  required>
+																  <input type="hidden" name="tipo_sucesion" value="Largo" />
+										  	          <br><br>
+									  	          <input type="hidden" name="tipo_feed" id="tipo_feed" value="externo" />
+																<input type="submit" class="btn btn-success" value="Seleccionar">
+															</form>																											
+															</div>		
+				  			
+				  			
+							      </div>
+							    </div>
+							  </div>
+									
+						<br>					
+				<!--					
+								<div class="card" style="max-width: 100%;">
+							    <div class="card-header" id="headingSix" style="color: #ffffff;background-color: #50748a;border-color: #bce8f1;min-height: 40px;">
+							      <h5 class="mb-0">
+							        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+							          <span style="color:#fff">
+							          	Bit&aacute;cora
+							          </span>
+							        </button>
+							      </h5>
+							    </div>
+							    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+							      <div class="card-body" style="padding: 10px;">
+				  							
+				  							 {MI_BITACORA}
+				  				
+							      </div>
+							    </div>
+							  </div>
+							  					  
+							</div>		
+						</div>
+				-->
+						<br>
+
+        </div>
+     </div>   
+                                
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="container">
+                            <div class="row clearfix bottommargin-lg common-height">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+
+
+
+
+                </div>
+                </div>
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    </div>
+  
+ <script type='text/javascript' >
+    $( function() {
+  
+        $( "#autocomplete" ).autocomplete({
+            source: function( request, response ) {
+                
+                $.ajax({
+                    url: "?sw=BuscaPersonas2020_v2",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: request.term
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $('#autocomplete').val(ui.item.label); // display the selected text
+                $('#selectuser_id').val(ui.item.value); // save selected id to input
+                return false;
+            }
+        });
+
+
+
+ $( "#autocomplete_2" ).autocomplete({
+            source: function( request, response ) {
+                
+                $.ajax({
+                    url: "?sw=BuscaPersonas2020_v2",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: request.term
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $('#autocomplete_2').val(ui.item.label); // display the selected text
+                $('#selectuser_id_2').val(ui.item.value); // save selected id to input
+                return false;
+            }
+        });
+		
+		
+		
+		 $( "#autocomplete_3" ).autocomplete({
+            source: function( request, response ) {
+                
+                $.ajax({
+                    url: "?sw=BuscaPersonas2020_v2",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: request.term
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $('#autocomplete_3').val(ui.item.label); // display the selected text
+                $('#selectuser_id_3').val(ui.item.value); // save selected id to input
+                return false;
+            }
+        });
+		
+		
+        // Multiple select
+        $( "#multi_autocomplete" ).autocomplete({
+            source: function( request, response ) {
+                
+                var searchText = extractLast(request.term);
+                $.ajax({
+                    url: "fetchData.php",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: searchText
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function( event, ui ) {
+                var terms = split( $('#multi_autocomplete').val() );
+                
+                terms.pop();
+                
+                terms.push( ui.item.label );
+                
+                terms.push( "" );
+                $('#multi_autocomplete').val(terms.join( ", " ));
+
+                // Id
+                var terms = split( $('#selectuser_ids').val() );
+                
+                terms.pop();
+                
+                terms.push( ui.item.value );
+                
+                terms.push( "" );
+                $('#selectuser_ids').val(terms.join( ", " ));
+
+                return false;
+            }
+           
+        });
+    });
+
+    function split( val ) {
+      return val.split( /,\s*/ );
+    }
+    function extractLast( term ) {
+      return split( term ).pop();
+    }
+
+    </script>
+</body>
+</html>

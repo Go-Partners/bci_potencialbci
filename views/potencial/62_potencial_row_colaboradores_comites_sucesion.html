@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-sm-3 txt_azul_box">
+    
+    	<div class="row">
+    		<div class="col col-lg-3">
+    			{BOTON_VER_FICHA_A_inicial}
+    				<img src="{AVATAR}" style="    width: 44px;  border-radius: 50%;">
+    			{BOTON_VER_FICHA_B_final}
+    															<br><center>{MAPEADO}</center></div>
+    		<div class="col col-lg-9"> 
+    			{BOTON_VER_FICHA_A_inicial}
+    				<span class="mt-comment-author" style="    padding-left: 0;">{COLABORADOR}</span>
+    			{BOTON_VER_FICHA_B_final}
+    		<br>
+            <span class="mt-comment-authorSM"  style="    padding-left: 0;">{CARGO_COL}</span><br>
+            <span class="mt-comment-authorSM"  style="    padding-left: 0;">L&iacute;der: {NOMBRE_LIDER}</span>
+        </div>
+    	</div>
+      
+    </div>
+    
+    <div class="col-sm-2 txt_azul_box_v3">{META}</div>
+    <div class="col-sm-2 txt_azul_box_v3">{COMPETENCIA}</div>
+    <div class="col-sm-1 txt_azul_box_v3">{BOX_ACTUAL}</div>
+    <div class="col-sm-1 txt_azul_box_v3">{BOX_ANTERIOR}</div>
+    <div class="col-sm-1 txt_azul_box_v3">{BOX_PROPUESTA}</div>
+    <div class="col-sm-1 txt_azul_box_v3">{BOX_PROPUESTA_LIDER}</div>
+    <div class="col-sm-1 txt_azul_box_v3"> {BOTON_VER_FICHA}</div>
+</div>
+
+<div class="modal fade" id="{RUT_COL}" tabindex="-1" role="dialog" aria-labelledby="{RUT_COL}" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+<div class="txt_azul_box_noborden"><br><br><center>Nuevo Cuadrante Propuesto para<br><br>
+<img src="{AVATAR}" style="width: 44px;  border-radius: 50%;"> <br><strong> {COLABORADOR}</strong>
+                                <br>    <br>
+
+            <div class="col-sm-6">
+                <CENTER>CUADRANTE ACTUAL<BR>
+                <strong>{BOX_ACTUAL}</strong></CENTER>
+            </div>
+
+            <div class="col-sm-6">
+                <CENTER>CUADRANTE PROPUESTA <BR>
+                <strong>{BOX_PROPUESTA}</strong></CENTER>
+            </div>
+
+                                 </center>
+                                 </div>
+            </div>
+            <div class="modal-body">
+
+<form action="?sw=potencial_comite&id_comite={ID_COMITE}&saveform=sf" method="post" id="{ID}" name="{ID}">
+    <span class="txt_azul_box_noborden">Nuevo Cuadrante Propuesto</span><br>
+        <select class="form form-control" id="nuevo_cuadrante" name="nuevo_cuadrante" required>
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="10">5+</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+<br>
+    <span class="txt_azul_box_noborden">Fundamentos para el cambio de Cuadrante</span><br>
+    <center><textarea name="comentario" id="comentario" cols="1" rows="5" class="form form-control" required></textarea>
+    <input type="hidden" name="id" id="id" value="{ID}"/>
+    <input type="hidden" name="rut_col" id="rut_col" value="{RUT_COL}"/>
+    <input type="hidden" name="perfil" id="perfil" value="{PERFIL}"/>
+    <br><center><input type="submit" value="Guardar" class="btn btn-info" /></center>
+</form>
+
+            </div>
+
+        </div>
+    </div>
+</div>

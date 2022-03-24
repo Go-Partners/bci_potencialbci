@@ -1,0 +1,142 @@
+<div class="row">
+    <div class="col-sm-5 txt_azul_box">  
+    				{BOTON_VER_FICHA_A_inicial}
+    							<span class="mt-comment-author" style="    padding-left: 0;">
+    								 {CARGO_COL} {CARGO_SUCEDER_LIDER_CERRADO}</span>
+    				{BOTON_VER_FICHA_B_final}
+    				<br>
+    				{Porcentaje_Cargo}
+    				<br>{Sucesores_Cuadrantes_236}				
+    				<br>{Sucesores_Cuadrantes_19487}
+    				<br>{Sucesores_Mujeres}
+    				<br>{Sucesores_Hombre}
+		</div>
+    <div class="col-sm-5 txt_azul_box_v3">	
+    	
+
+    	{TITULO_INMEDIATO}
+    	{INMEDIATO}	
+
+    	<br>
+
+    	{TITULO_MEDIANO}
+    	{MEDIANO}	
+
+    	<br>
+
+    	{TITULO_LARGO}
+    	{LARGO}	
+
+    	</div>
+    <div class="col-sm-2 txt_azul_box_v3"> 	{BOTON_MODAL}		</div>
+    
+    <div class="col-sm-12 "> 	<hr>	</div>
+    
+</div>
+															
+<div class="modal fade" id="exampleModal_{RUT}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Seleccionar nuevo colaborador</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+						<form method="POST" action="" name="form_busqueda">
+							<div class="badge-gray_blue">Escribe el Nombre del Colaborador y selecci&oacute;nalo de la Lista</div><br><br>
+							<!--<input type='h' name="autocomplete" id='autocomplete' class="form form-control">
+  	          <input type='hidden' name="selectuser_id" id='selectuser_id' />
+			  -->
+			  <input type='text' id='autocomplete_{RUT}' name="rut" >
+			  <input type='hidden' id='selectuser_id_{RUT}' />
+  	          <br><br>
+  	          <input type="hidden" name="tipo_feed" id="tipo_feed" value="{TIPO_FEED}" />
+  	          
+  	         <input type="text" name="fundamento" name="fundamento">
+							<input type="submit" class="btn btn-success" value="Seleccionar">
+						</form>
+		      </div>
+		      <div class="modal-footer">
+		      </div>
+		    </div>
+		  </div>
+</div>
+ 
+ <script type='text/javascript' >
+    $( function() {
+  
+        $( "#autocomplete_{RUT}" ).autocomplete({
+            source: function( request, response ) {
+                
+                $.ajax({
+                    url: "?sw=BuscaPersonas2020_v2",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: request.term
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $('#autocomplete_{RUT}').val(ui.item.label); // display the selected text
+                $('#selectuser_id_{RUT}').val(ui.item.value); // save selected id to input
+                return false;
+            }
+        });
+
+        // Multiple select
+        $( "#multi_autocomplete" ).autocomplete({
+            source: function( request, response ) {
+                
+                var searchText = extractLast(request.term);
+                $.ajax({
+                    url: "fetchData.php",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: searchText
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function( event, ui ) {
+                var terms = split( $('#multi_autocomplete').val() );
+                
+                terms.pop();
+                
+                terms.push( ui.item.label );
+                
+                terms.push( "" );
+                $('#multi_autocomplete').val(terms.join( ", " ));
+
+                // Id
+                var terms = split( $('#selectuser_ids').val() );
+                
+                terms.pop();
+                
+                terms.push( ui.item.value );
+                
+                terms.push( "" );
+                $('#selectuser_ids').val(terms.join( ", " ));
+
+                return false;
+            }
+           
+        });
+    });
+
+    function split( val ) {
+      return val.split( /,\s*/ );
+    }
+    function extractLast( term ) {
+      return split( term ).pop();
+    }
+
+    </script>

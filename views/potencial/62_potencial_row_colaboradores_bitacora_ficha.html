@@ -1,0 +1,64 @@
+<div class='row'>
+    <div class='col-sm-12 txt_azul_box' style="padding-top: 00px;font-weight: 400;padding-right: 30px;font-size: 15px !important;">
+    
+    <div class="badge badge-gray" style="TEXT-ALIGN: left;    PADDING-LEFT: 0PX;">
+    	{COMITE} | Tipo: {TIPO_COMITE} | Fecha: {FECHA} | Autor:  {NOMBRE_AUTOR}
+  	</div>
+     <br> <br>
+       {COMENTARIO}
+        <br> 
+       <span class="mt-comment-author" style='padding-left: 0;font-weight: 600;    font-style: italic; font-size: 12px;'>
+       	<br><br>{BOX}  </span>
+       
+      <span class="pull-right"> {EDITAR_BITACORA}
+      {BORRAR_BITACORA}</span>
+       <br>
+      <hr STYLE="
+				    margin-top: 5px;
+				    margin-bottom: 5px;
+				    border: 0;
+				    border-top: 2px solid #d8ecf6;
+      
+      "></div>
+</div>
+
+
+<div class="modal fade" id="{ID_ENC}" tabindex="-1" role="dialog" aria-labelledby="{ID_ENC}" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+<div class="txt_azul_box_noborden"><br><br><center>Editando Bitacora<br><br>
+
+
+<form action="?sw=potencial_ficha&rut_col={RUT_COL_ENC}&saveform=sf&id_comite={ID_COMITE_ENC}" method="post" id="{RUT_COL_ENC}" name="{RUT_COL_ENC}">
+    <span class="txt_azul_box_noborden">Nuevo Cuadrante Propuesto</span><br>
+        <select class="form form-control" id="nuevo_cuadrante" name="nuevo_cuadrante" required>
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="10">5+</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+<br>
+    <span class="txt_azul_box_noborden">Fundamentos para el cambio de Cuadrante</span><br>
+    <center><textarea name="comentario" id="comentario" cols="1" rows="5" class="form form-control" required>{COMENTARIO}</textarea>
+    <input type="hidden" name="editBit" id="id" value="{ID_ENC}"/>
+    <input type="hidden" name="rut_col" id="rut_col" value="{RUT_COL_ENC}"/>
+    <input type="hidden" name="perfil" id="perfil" value="{PERFIL}"/>
+    <br><center><input type="submit" value="Guardar" class="btn btn-info" /></center>
+</form>
+
+            </div>
+
+        </div>
+    </div>
+</div>		
+      
+      
+</div>

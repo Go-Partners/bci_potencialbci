@@ -1,0 +1,177 @@
+<script>
+function ColocaDependenciaDadoFondoGerencia2(){
+	gerencia = $("#gerencia_est2").val();
+	fondo = $("#fondo_est2").val();
+	
+		var campos = {
+			"gerencia" : gerencia, 
+			"fondo" : fondo
+		};
+		$.ajax({
+			data : campos,
+			url : '?sw=filtro_dependencia_dado_gerencia_fondo',
+			type : 'post',
+			success : function(response) {
+				$("#dependencia_est2").html(response);
+			}
+		});
+		
+
+}function ColocaDependenciaDadoGerencia2(valor){
+
+		gerencia = $("#gerencia_est2").val();
+		var campos = {
+			"gerencia" : gerencia 
+		};
+		$.ajax({
+			data : campos,
+			url : '?sw=filtro_dependencia_dado_gerencia',
+			type : 'post',
+			success : function(response) {
+				$("#dependencia_est2").html(response);
+			}
+		});
+				
+
+
+
+}function ColocaFondoDadoGerencia2(valor){
+	
+	
+	
+		gerencia = $("#gerencia_est2").val();
+		var campos = {
+			"gerencia" : gerencia 
+		};
+		$.ajax({
+			data : campos,
+			url : '?sw=filtro_fondo_dado_gerencia',
+			type : 'post',
+			success : function(response) {
+				$("#fondo_est2").html(response);
+			}
+		});
+														
+														
+														
+}
+</script>
+<br><br>
+
+<style>
+	.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    max-width: 300px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 41px -4px rgba(157, 153, 153, 0.5);
+    padding: 10px;
+}
+
+	.card-title {
+		font-size: 17px;
+    color: #50748a !important;
+    FONT-WEIGHT:400 !important;
+	
+	}
+	
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    max-width: none;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 41px -4px rgba(157, 153, 153, 0.5);
+    padding: 10px;
+}	
+</style>
+
+<div class="container" align="justify" style="background-color: unset;">
+
+<br>  <br>
+
+<div class="panel panel-info">
+        <div class="panel-heading"><img src="https://www.paneldeliderazgobci.cl/front/img/widget-link.png"> 
+        	Vista de Colaboradores por Tipo de Cuadrante</div>
+        <div class="panel-body" style="padding-left: 20px;padding-right: 20px;">
+				<br>
+				<div class="row">
+					<center>
+								<form name='filtro_esta_csv_2' action='?sw=potencial' method='post'>
+											<div class="row">
+													<div class='col-lg-3'>Gerencia<br>
+																		<select name='gerencia_est2' id="gerencia_est2" class='form form-control' onchange="ColocaFondoDadoGerencia2(this.value);ColocaDependenciaDadoGerencia2(this.value);">
+																			<option value=''></option>
+																				{OPTIONS_GERENCIAS}
+																		</select>
+													</div>
+														
+													<div class='col-lg-2'>Fondo<br>
+																	<select name='fondo_est2' id="fondo_est2" class='form form-control' onchange="ColocaDependenciaDadoFondoGerencia2();">
+																					<option value=''></option>
+																				{OPTIONS_FONDO}	
+																	</select>
+													</div>
+													<div class='col-lg-2'>Dependencia<br>
+													
+																	<select name='dependencia_est2' id="dependencia_est2" class='form form-control'>
+																				<option value=''></option>
+																				{OPTIONS_DEPENDENCIA}
+																	</select>
+
+													
+													</div>
+													<div class='col-lg-2'>Tipo de Cuadrante<br>
+														<select name='TipoCuadrante' id='TipoCuadrante' class='form form-control' required>
+															<option value=''></option>
+															<option value='2-3-6'>2-3-6</option>
+															<option value='5-5+'>5-5+</option>
+															<option value='1-4-7-8-9'>1-4-7-8-9</option>
+														</select>
+													</div>
+													<div class='col-lg-2'>Tipo Descarga<br>
+														<select name='TipoDescarga' id='TipoDescarga' class='form form-control' required>
+															<option value=''></option>
+															<option value='Web'>Web</option>
+															<option value='Excel'>Excel</option>
+														</select>
+													</div>													
+													<div class='col-lg-1'><br><input type='submit' class='btn btn-success' value='Ver'></div>
+													<input type='hidden' name='filtro_estadisticas' value='SN'>
+								</form>
+								<br><br>					
+					</center>		<br>			
+				</div>
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-xs-12">
+										{LISTA_COLABORADORES_POR_CUADRANTE_FILTROS_2021}
+								</div>
+							</div>
+				<br>
+		</div>
+</div>
+<br>
+

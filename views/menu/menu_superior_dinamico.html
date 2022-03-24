@@ -1,0 +1,27 @@
+<script language="Javascript">
+	function abrirPagina2(pagina) {
+		window.open(pagina, 'window', 'width=650, height=600');
+	}
+</script>
+
+<div class="col-sm-12 col-md-12 col-xs-12 col-lg-2  hidden-xs">
+	<img class="site-logo" src="img/logo_empresa/{ARCHIVO}" alt="Go Partners" />
+</div>
+
+<div class="col-lg-10 col-xs-12  col-md-12 col-sm-12 pull right">
+	<nav class="site-navigation" role="navigation">
+		<h3 class="menu-toggle">Menú</h3>
+		<div class="menu-main-menu-container">
+			<ul id="menu-main-menu" class="nav-menu pull-right">
+				<!--botones dinámicos-->
+
+				{PESTANAS_DINAMICAS}
+
+				<!--<li><a href="?sw=help" onclick="abrirPagina(this.href);return false" title="" ><i class="fa fa-bullhorn fa-1x"></i>&nbsp;Ayuda</a></li>-->
+				<li>
+					<a href="../../{LINK_SALIR}" title=""><i class="fa fa-sign-out"></i>&nbsp;Salir</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>

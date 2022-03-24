@@ -1,0 +1,303 @@
+<script>
+function ColocaDependenciaDadoFondoGerencia(){
+	gerencia = $("#gerencia").val();
+	fondo = $("#fondo").val();
+	
+		var campos = {
+			"gerencia" : gerencia, 
+			"fondo" : fondo
+		};
+		$.ajax({
+			data : campos,
+			url : '?sw=filtro_dependencia_dado_gerencia_fondo',
+			type : 'post',
+			success : function(response) {
+				$("#dependencia").html(response);
+			}
+		});
+		
+
+}function ColocaDependenciaDadoGerencia(valor){
+
+		gerencia = $("#gerencia").val();
+		var campos = {
+			"gerencia" : gerencia 
+		};
+		$.ajax({
+			data : campos,
+			url : '?sw=filtro_dependencia_dado_gerencia',
+			type : 'post',
+			success : function(response) {
+				$("#dependencia").html(response);
+			}
+		});
+				
+
+
+
+}function ColocaFondoDadoGerencia(valor){
+	
+	
+	
+		gerencia = $("#gerencia").val();
+		var campos = {
+			"gerencia" : gerencia 
+		};
+		$.ajax({
+			data : campos,
+			url : '?sw=filtro_fondo_dado_gerencia',
+			type : 'post',
+			success : function(response) {
+				$("#fondo").html(response);
+			}
+		});
+														
+														
+														
+}
+</script>
+<br><br>
+
+<style>
+	.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    max-width: 300px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 41px -4px rgba(157, 153, 153, 0.5);
+    padding: 10px;
+}
+
+	.card-title {
+		font-size: 17px;
+    color: #50748a !important;
+    FONT-WEIGHT:400 !important;
+	
+	}
+	
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    max-width: none;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 41px -4px rgba(157, 153, 153, 0.5);
+    padding: 10px;
+}	
+</style>
+
+<div class="container" align="justify" style="background-color: unset;">
+
+<br>  <br>
+
+<div class="panel panel-info">
+        <div class="panel-heading"><img src="https://www.paneldeliderazgobci.cl/front/img/widget-link.png"> 
+        	Estad&iacute;sticas</div>
+        <div class="panel-body" style="padding-left: 20px;padding-right: 20px;">
+				<br>
+				<div class="row">
+					<center>
+								<form name='filtro_esta_csv' action='?sw=potencial' method='post'>
+											<div class="row">
+													<div class='col-lg-3'>Gerencia<br>
+																		<select name='gerencia_est' id="gerencia_est" class='form form-control' onchange="ColocaFondoDadoGerencia(this.value);ColocaDependenciaDadoGerencia(this.value);">
+																			<option value=''></option>
+																				{OPTIONS_GERENCIAS}
+																		</select>
+													</div>
+														
+													<div class='col-lg-3'>Fondo<br>
+																	<select name='fondo_est' id="fondo_est" class='form form-control' onchange="ColocaDependenciaDadoFondoGerencia();">
+																					<option value=''></option>
+																				{OPTIONS_FONDO}	
+																	</select>
+													</div>
+													<div class='col-lg-3'>Dependencia<br>
+													
+																	<select name='dependencia_est' id="dependencia_est" class='form form-control'>
+																				<option value=''></option>
+																				{OPTIONS_DEPENDENCIA}
+																	</select>
+
+													
+													</div>
+													<div class='col-lg-3'><br><input type='submit' class='btn btn-success' value='Filtrar Estad&iacute;stica'></div>
+													<input type='hidden' name='filtro_estadisticas' value='SN'>
+								</form>
+								<br><br>					
+					</center>		<br>			
+				</div>
+							<div class="row">
+								<div class="col-lg-4 col-md-4 col-xs-12">
+									<div class="card" style="width: 100%;">
+									  	<div class="card-body">
+									    <center>
+									    	<h5 class="card-title">N&uacute;mero de Comit&eacute;s</h5>
+									    <img alt="Puntos Bci" class="lazy" src="https://bci-cdn.azureedge.net/uploads/27c944b4-c2a8-476f-9ef5-195bb06f5403/original/colored-dots.svg" style="display: block; overflow: hidden;">
+									   <CENTER><h5 class="card-title" STYLE="FONT-WEIGHT: 600 !important;">{NUMERO_COMITES}</h5></CENTER>
+									  </div>
+									</div>
+								</div>
+
+								<div class="col-lg-4 col-md-4 col-xs-12">
+									<div class="card" style="width: 100%;">
+									  	<div class="card-body">
+									    <center>
+									    	<h5 class="card-title">N&uacute;mero de Comit&eacute;s Abiertos</h5>
+									    <img alt="Puntos Bci" class="lazy" src="https://bci-cdn.azureedge.net/uploads/27c944b4-c2a8-476f-9ef5-195bb06f5403/original/colored-dots.svg" style="display: block; overflow: hidden;">
+									   <CENTER><h5 class="card-title" STYLE="FONT-WEIGHT: 600 !important;">{NUMERO_COMITES_ABIERTOS}</h5></CENTER>
+									  </div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-xs-12">
+									<div class="card" style="width: 100%;">
+									  	<div class="card-body">
+									    <center>
+									    	<h5 class="card-title">N&uacute;mero de Comit&eacute;s Cerrados</h5>
+									    <img alt="Puntos Bci" class="lazy" src="https://bci-cdn.azureedge.net/uploads/27c944b4-c2a8-476f-9ef5-195bb06f5403/original/colored-dots.svg" style="display: block; overflow: hidden;">
+									   <CENTER><h5 class="card-title" STYLE="FONT-WEIGHT: 600 !important;">{NUMERO_COMITES_CERRADOS}</h5></CENTER>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<BR>
+							<div class="row">
+											<div class="col-lg-3 col-md-3 col-xs-12">
+												<div class="card" style="width: 100%;">
+												  	<div class="card-body">
+												    <center>
+												    	<h5 class="card-title">Colaboradores Mapeados</h5>
+												    <img alt="Puntos Bci" class="lazy" src="https://bci-cdn.azureedge.net/uploads/27c944b4-c2a8-476f-9ef5-195bb06f5403/original/colored-dots.svg" style="display: block; overflow: hidden;">
+												   <CENTER><h5 class="card-title" STYLE="FONT-WEIGHT: 600 !important;">{NUMERO_COLABORADORES}</h5></CENTER>
+												  </div>
+												</div>
+											</div>
+
+											<div class="col-lg-3 col-md-3 col-xs-12">
+												<div class="card" style="width: 100%;">
+												  	<div class="card-body">
+												    <center>
+												    	<h5 class="card-title">Mapeados en 2 3 6</h5>
+												    <img alt="Puntos Bci" class="lazy" src="https://bci-cdn.azureedge.net/uploads/27c944b4-c2a8-476f-9ef5-195bb06f5403/original/colored-dots.svg" style="display: block; overflow: hidden;">
+												   <CENTER><h5 class="card-title" STYLE="FONT-WEIGHT: 600 !important;">{NUMERO_2_3_6}</h5></CENTER>
+												  </div>
+												</div>
+											</div>
+
+											<div class="col-lg-3 col-md-3 col-xs-12">
+												<div class="card" style="width: 100%;">
+												  	<div class="card-body">
+												    <center>
+												    	<h5 class="card-title">Mapeados 5 5+</h5>
+												    <img alt="Puntos Bci" class="lazy" src="https://bci-cdn.azureedge.net/uploads/27c944b4-c2a8-476f-9ef5-195bb06f5403/original/colored-dots.svg" style="display: block; overflow: hidden;">
+												   <CENTER><h5 class="card-title" STYLE="FONT-WEIGHT: 600 !important;">{NUMERO_COLABORADORES_5_5+}</h5></CENTER>
+												  </div>
+												</div>
+											</div>
+
+											<div class="col-lg-3 col-md-3 col-xs-12">
+												<div class="card" style="width: 100%;">
+												  	<div class="card-body">
+												    <center>
+												    	<h5 class="card-title">Mapeados 1 4 7 8 9 </h5>
+												    <img alt="Puntos Bci" class="lazy" src="https://bci-cdn.azureedge.net/uploads/27c944b4-c2a8-476f-9ef5-195bb06f5403/original/colored-dots.svg" style="display: block; overflow: hidden;">
+												   <CENTER><h5 class="card-title" STYLE="FONT-WEIGHT: 600 !important;">{NUMERO_COLABORADORES_1_4_7_8_9}</h5></CENTER>
+												  </div>
+												</div>
+											</div>                                
+
+							</div>
+				<br>
+		</div>
+</div>
+<br>
+<div class="panel panel-info">
+        <div class="panel-heading"><img src="https://www.paneldeliderazgobci.cl/front/img/widget-link.png"> 
+        	Filtros y B&uacute;squeda</div>
+        <div class="panel-body">
+				<br>
+					<div class="">                                
+					                                
+					                
+
+
+											<center>
+													
+								<form name='descarga_csv' action='?sw=potencial_descarga_reporte' method='post'>
+											<div class="row">
+													<div class='col-lg-3'>Gerencia<br>
+																		<select name='gerencia' id="gerencia" class='form form-control' onchange="ColocaFondoDadoGerencia(this.value);ColocaDependenciaDadoGerencia(this.value);">
+																			<option value=''></option>
+																				{OPTIONS_GERENCIAS}
+																		</select>
+													</div>
+														
+													<div class='col-lg-3'>Fondo<br>
+																	<select name='fondo' id="fondo" class='form form-control' onchange="ColocaDependenciaDadoFondoGerencia();">
+																					<option value=''></option>
+																				{OPTIONS_FONDO}	
+																	</select>
+													</div>
+													<div class='col-lg-3'>Dependencia<br>
+													
+																	<select name='dependencia' id="dependencia" class='form form-control'>
+																				<option value=''></option>
+																				{OPTIONS_DEPENDENCIA}
+																	</select>
+
+													
+													</div>
+													<div class='col-lg-3'><br><input type='submit' class='btn btn-success' value='Descargar Reporte'></div>
+													<input type='hidden' name='descarga_tipo' value='SN'>
+								</form>
+												
+												</center><br><br>
+								</div>											
+								<br>
+									<div class="row">
+
+											<div class='col-lg-3'>
+												<a href='?sw=potencial_accdes_cuadrante_api_csv&v=1' class='btn btn-info' style='color: #fff;font-size: 12px;'>Descargar Acciones de Desarrollo (Api)</a>
+											</div>
+											<div class='col-lg-3'>
+												<a href='?sw=potencial_accdes_cuadrante_api_csv&v=2' class='btn btn-info' style='color: #fff;font-size: 12px;'>Descargar Ultimo Cuadrante (Api)</a>
+											</div>
+
+
+										<div class='col-lg-3'>Ingresar RUT para ver Ficha <br>							
+
+												<form name='potencial_ficha' action='?sw=potencial_ficha' method='post'>
+												<input type='text' name='rut_col_ficha' class='form form-control' name='rut_col'>
+										</div>
+										<div class='col-lg-3'><br>
+															<input type='submit' class='btn btn-success' value='Ver Ficha'>
+										</div>
+												</form>							
+									</div>				
+									
+					</div>				
+				<br>
+			</div>	

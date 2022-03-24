@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{HEAD}
+<script src='buscador/jquery-3.1.1.min.js' type='text/javascript'></script>
+<link href='buscador/jquery-ui.min.css' rel='stylesheet' type='text/css'>
+<script src='buscador/jquery-ui.min.js' type='text/javascript'></script>
+<style>
+	.badge-info {
+    background-color: #5bc0de;
+    color: #fff;
+}
+
+.txt_2020 {
+	color: #50748a !important;
+    background-color: #f6f7fc;
+    padding: 5px;
+    font-weight: 600;font-size: 12px;
+}
+
+</style>
+
+<body role="document" {FUNCION_ONLOAD}>
+    <div id="k-head" class="container">
+        <div class="row">
+        </div>
+    </div>
+    <div id="k-body">
+        <body role="document" {FUNCION_ONLOAD}>
+            <body>
+                <div id="k-head" class="">
+                    <div id="k-body">
+
+			<div class="container">
+			
+			{VOLVER_POTENCIAL_FICHA_}
+					
+					<br><br>
+					
+					<div class="lms_tituloSeccionHistoriasHome_TitleWinter" style="margin-top: 0px;">
+							
+								<center>
+									<img src="https://www.paneldeliderazgobci.cl/front/img/widget-link.png"> Ficha Personal
+								</center>
+							
+					</div>                    	
+
+			</div>                    	
+				<div class="container">
+					<div class="col-lg-4 col-xs-12">
+
+															<div class="" style="padding-left: 50px; padding-right: 50px;">
+                                <br>
+                                <center>
+                                    <div class="media-center width-80 ">
+                                        <img src="{FOTO_PERSONA_COL}" alt="people" class="img-circle " style="width:96px;">
+                                    </div>
+                                    
+                                    <div class="txt_2020_Name">{NOMBRE_COL}</div>
+                                    
+                                    <div class="txt_up" style="display: block;"><br>
+                                    	
+                                        <span class="homecargo" style="color: #31708f;    background-color: none;    border-color: #bce8f1;    font-size: 13px;    font-weight: 700;">
+                                        	 {POSICION_COL}
+                                        </span>
+<br>
+                                        <span class="homecargo" style="color: #31708f;    background-color: none;    border-color: #bce8f1;    font-size: 11px;    font-weight: 700;">
+                                        	 {CARGO_COL}
+                                        </span>
+
+                                        
+                                    </div>
+                                    <div class="txt_up" style="display: block;"><br>
+                                    				{NOMBRE_LIDER}
+                                    				| {DATA_BCI_D20}
+                                    </div>
+                                        	
+                                        	<!--<div class="tituloSeccionV2020">
+                                        		<center>
+                                        			<br>
+                                        				<div class="txt_seccion_v2020_badge">	<i class="fas fa-star"></i> Posición Clave </div>
+                                        				
+                                        				<div class="txt_seccion_v2020_badge"> <i class="fas fa-sitemap"></i> Sucesor </div>
+                                        			<br>
+                                        		</center>
+                                        	</div>-->
+                                        	
+                                </center>
+                            </div>						
+														
+														<br>		
+														
+														<div class="col col-lg-6">
+															<div class="alert alert-success"><center>Antiguedad en Bci: {ANTIGUEDAD_EN_BCI}</center></div>
+														</div>
+														<div class="col col-lg-6">
+															<div class="alert alert-success"><center>Antiguedad en Cargo: {ANTIGUEDAD_EN_POSICION}</center></div>
+														</div>
+														
+														<br>
+																		{DISCLAIMER_BAJO_26} 
+																		{POSICION_CLAVE} 
+														<br>
+														<br>						
+						
+						
+						
+						</div>
+					<div class="col-lg-8 col-xs-12">
+						<br>
+						
+								<div class="panel panel-info">
+										        <div class="panel-heading">Cuadrantes</div>
+										        <div class="panel-body">
+															<div class="row">
+
+
+				<div class="col col-lg-3">
+																		<div class="txt_2020">Anterior<br> <small>&nbsp;</small></div><br>
+																		
+																		<table width="100%" cellspacing="0" border="1" cellpadding="1px" bordercolor="#F2F5F8">
+																	        <tbody>
+																	        	<tr>
+																	            <td valign="top" align="left" style="background-color: #d9edf7; width:33%;border: 1px solid #c9d2d8;    height: 60px;     padding: 8px;    padding-top: 15px;">
+																	            	{AN1}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #dff0d8 ; width:33%;border: 1px solid #c9d2d8;      padding: 8px;    padding-top: 15px;">
+																	            	{AN2}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #dff0d8 ; width:33%; border: 1px solid #c9d2d8;     padding: 8px;    padding-top: 15px;">
+																	            	{AN3}
+																	            </td>
+																	        	</tr>
+																	        	<tr>
+																	            <td valign="top" align="left" style="background-color: #faf2cc; padding: 8px;border: 1px solid #c9d2d8;    height: 60px;    padding-top: 15px; ">
+																	            	{AN4}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #d9edf7; border: 1px solid #c9d2d8;     padding: 8px;    padding-top: 15px;">
+																	              {AN5} {AN10} 
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #dff0d8 ; border: 1px solid #c9d2d8;     padding: 8px;    padding-top: 15px;">
+																	            	{AN6}
+																	            </td>
+																	        	</tr>
+																	        	<tr>
+																	            <td valign="top" align="left" style="background-color: #ebccd1;  border: 1px solid #c9d2d8;     height: 60px;   padding: 8px;    padding-top: 15px;">
+																	            	{AN7}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #faf2cc;  border: 1px solid #c9d2d8;    padding: 8px;    padding-top: 15px;">
+																	            	{AN8}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #d9edf7;  border: 1px solid #c9d2d8;    padding: 8px;    padding-top: 15px;">
+																	            	{AN9}
+																	            </td>
+																	        	</tr>
+
+																	    </tbody>
+																	  </table>
+																		
+																	</div>
+
+																	<div class="col col-lg-3">
+																		<div class="txt_2020">Actual<br> <small>Fecha: {CUADRANTE_ACTUAL_FECHA}</small></div><br>
+																		
+																		<table width="100%" cellspacing="0" border="1" cellpadding="1px" bordercolor="#F2F5F8">
+																	        <tbody>
+																	        	<tr>
+																	            <td valign="top" align="left" style="background-color: #d9edf7; width:33%;border: 1px solid #c9d2d8;    height: 60px;     padding: 8px;    padding-top: 15px;">
+																	            	{AC1}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #dff0d8 ; width:33%;border: 1px solid #c9d2d8;      padding: 8px;    padding-top: 15px;">
+																	            	{AC2}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #dff0d8 ; width:33%; border: 1px solid #c9d2d8;     padding: 8px;    padding-top: 15px;">
+																	            	{AC3}
+																	            </td>
+																	        	</tr>
+																	        	<tr>
+																	            <td valign="top" align="left" style="background-color: #faf2cc; padding: 8px;border: 1px solid #c9d2d8;    height: 60px;    padding-top: 15px; ">
+																	            	{AC4}  
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #d9edf7; border: 1px solid #c9d2d8;     padding: 8px;    padding-top: 15px;">
+																	              {AC5} {AC10}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #dff0d8 ; border: 1px solid #c9d2d8;     padding: 8px;    padding-top: 15px;">
+																	            	{AC6}
+																	            </td>
+																	        	</tr>
+																	        	<tr>
+																	            <td valign="top" align="left" style="background-color: #ebccd1;  border: 1px solid #c9d2d8;     height: 60px;   padding: 8px;    padding-top: 15px;">
+																	            	{AC7}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #faf2cc;  border: 1px solid #c9d2d8;    padding: 8px;    padding-top: 15px;">
+																	            	{AC8}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #d9edf7;  border: 1px solid #c9d2d8;    padding: 8px;    padding-top: 15px;">
+																	            	{AC9}
+																	            </td>
+																	        	</tr>
+
+																	    </tbody>
+																	  </table>
+														
+														<hr>
+										<div class="modal fade" id="{RUT_COL_ENC}" tabindex="-1" role="dialog" aria-labelledby="{RUT_COL_ENC}" aria-hidden="true">
+										    <div class="modal-dialog" role="document">
+										        <div class="modal-content">
+										            <div class="modal-header">
+										<div class="txt_azul_box_noborden"><br><br><center>Nuevo Cuadrante Propuesto para<br><br>
+										 <img src="{FOTO_PERSONA}" alt="people" class="img-circle " style="width:96px;">
+										 <br><strong> {NOMBRE}</strong>
+										                                <br>    <br>
+
+										            <div class="col-sm-6">
+										                <CENTER>CUADRANTE ACTUAL<BR>
+										                <strong>{CUADRANTE_ACTUAL_MODAL}</strong></CENTER>
+										            </div>
+
+										            <div class="col-sm-6">
+										                <CENTER>CUADRANTE PROPUESTA <BR>
+										                <strong>{CUADRANTE_PROPUESTO_MODAL}</strong></CENTER>
+										            </div>
+
+										                                 </center>
+										                                 </div>
+										            </div>
+										            <div class="modal-body">
+
+										<form action="?sw=potencial_ficha&rut_col={RUT_COL_ENC}&saveform=sf&id_comite={ID_COMITE_ENC}" method="post" id="{RUT_COL_ENC}" name="{RUT_COL_ENC}">
+										    <span class="txt_azul_box_noborden">Nuevo Cuadrante Propuesto</span><br>
+										        <select class="form form-control" id="nuevo_cuadrante" name="nuevo_cuadrante" required>
+										            <option value=""></option>
+										            <option value="1">1</option>
+										            <option value="2">2</option>
+										            <option value="3">3</option>
+										            <option value="4">4</option>
+										            <option value="5">5</option>
+										            <option value="10">5+</option>
+										            <option value="6">6</option>
+										            <option value="7">7</option>
+										            <option value="8">8</option>
+										            <option value="9">9</option>
+										        </select>
+
+										<br>
+
+										    <span class="txt_azul_box_noborden">Fundamentos para el cambio de Cuadrante</span><br>
+										    <center><textarea name="comentario" id="comentario" cols="1" rows="5" class="form form-control" required></textarea>
+										    <input type="hidden" name="id" id="id" value="{ID}"/>
+										    <input type="hidden" name="rut_col" id="rut_col" value="{RUT_COL_ENC}"/>
+										    <input type="hidden" name="perfil" id="perfil" value="{PERFIL}"/>
+										    <br><center><input type="submit" value="Guardar" class="btn btn-info" /></center>
+										    
+										</form>
+
+										            </div>
+
+										        </div>
+										    </div>
+										</div>				
+
+
+										<div class="modal fade" id="AD_{RUT_COL_ENC}" tabindex="-1" role="dialog" aria-labelledby="AD_{RUT_COL_ENC}" aria-hidden="true">
+										    <div class="modal-dialog" role="document">
+										        <div class="modal-content">
+										            <div class="modal-header">
+										<div class="" style="color: #50748a;font-weight: 700;text-align: left;">Nuevo Acción de Desarrollo para {NOMBRE}</div>
+										            </div>
+										            <div class="modal-body">
+Las acciones de desarrollo deben ser coordinadas entre quien las propone y el líder del colaborador, en conjunto con el Socio de Negocio y validando con el área especialista.
+<br>
+El líder debe registrar si la acción fue realizada o suspendida.
+<br><br>
+																			<form name="agregar_plan_desarrollo_{RUT_SUCESORES} id="agregar_plan_desarrollo_{RUT_SUCESORES}" action="?sw=potencial_ficha&rut_col={RUT_SUCESORES_ENC}&id_comite={ID_COMITE_ENC}" method="POST">
+																				<select name="plan_acciones_desarrollo" class="form form-control" required>
+																					<option value=""></option>
+																					
+																				    <option disabled="disabled">---Experiencia en el Puesto de Trabajo---</option>
+																						<option value="Ampliar responsabilidades">Ampliar responsabilidades</option>
+																						<option value="Exposición como sucesor">Exposición como sucesor</option>
+																						<option value="Consolidarse en el cargo">Consolidarse en el cargo</option>
+																						<option value="Asignar proyecto especial">Asignar proyecto especial</option>
+																					<option value=""></option>
+
+																				    <option disabled="disabled">---Apoyo del Lider---</option>
+																						<option value="Coaching del líder">Coaching del líder</option>
+																						<option value="Conversacion desarrollo">Conversacion desarrollo</option>
+																						<option value="Plan de trabajo">Plan de trabajo</option>
+																					<option value=""></option>
+
+																				    <option disabled="disabled">---Apoyo de otros---</option>
+																						<option value="Mentee">Mentee</option>
+																						<option value="Coaching">Coaching</option>
+																						<option value="Entrevista Desarrollo Korn Ferry">Entrevista Desarrollo Korn Ferry</option>
+																					<option value=""></option>
+
+																				    <option disabled="disabled">---Estudios---</option>
+																						<option value="Academia Líder">Academia Líder</option>
+																						<option value="Jóvenes profesionales">Jóvenes profesionales</option>
+																						<option value="Beca perfeccionamiento">Beca perfeccionamiento</option>
+																						<option value="Estudio extranjero">Estudio extranjero</option>
+																						<option value="Pasantía interna">Pasantía interna</option>
+																						<option value="Pasantía extranjero">Pasantía extranjero</option>
+																						<option value="Inglés">Inglés</option>
+																						<option value=""></option>
+																					
+																				</select>
+																				<br>		
+														       			<div class="badge-gray_blue" style="font-size: 10px;" >
+																					Escribe tu fundamento</div>
+																				 	<input type="text" name="fundamento" name="fundamento" class="form form-control" required>				
+																					<input type="hidden" name="rut_col_enc" value="{RUT_SUCESORES_ENC}" >
+																					<br>
+																					<center>
+																							<input type="submit" value="Agregar Acción de Desarrollo" class="btn btn-info">
+																					</center>	
+																				<br>
+																			</form>
+
+										            </div>
+
+										        </div>
+										    </div>
+										</div>			
+
+																		
+																	</div>
+													
+																	<div class="col col-lg-3">
+																		<div class="txt_2020">Propuesta según<br> Modelo</div><br>
+																		<table width="100%" cellspacing="0" border="1" cellpadding="1px" bordercolor="#F2F5F8">
+																	        <tbody>
+																	        	<tr>
+																	            <td valign="top" align="left" style="background-color: #d9edf7; width:33%;border: 1px solid #c9d2d8;    height: 60px;     padding: 8px;    padding-top: 15px;">
+																	            	{PRP1}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #dff0d8 ; width:33%;border: 1px solid #c9d2d8;      padding: 8px;    padding-top: 15px;">
+																	            	{PRP2}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #dff0d8 ; width:33%; border: 1px solid #c9d2d8;     padding: 8px;    padding-top: 15px;">
+																	            	{PRP3}
+																	            </td>
+																	        	</tr>
+																	        	<tr>
+																	            <td valign="top" align="left" style="background-color: #faf2cc; padding: 8px;border: 1px solid #c9d2d8;    height: 60px;    padding-top: 15px; ">
+																	            	{PRP4}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #d9edf7; border: 1px solid #c9d2d8;     padding: 8px;    padding-top: 15px;">
+																	              {PRP5}
+																	              {PRP10}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #dff0d8 ; border: 1px solid #c9d2d8;     padding: 8px;    padding-top: 15px;">
+																	            	{PRP6}
+																	            </td>
+																	        	</tr>
+																	        	<tr>
+																	            <td valign="top" align="left" style="background-color: #ebccd1;  border: 1px solid #c9d2d8;     height: 60px;   padding: 8px;    padding-top: 15px;">
+																	            	{PRP7}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #faf2cc;  border: 1px solid #c9d2d8;    padding: 8px;    padding-top: 15px;">
+																	            	{PRP8}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #d9edf7;  border: 1px solid #c9d2d8;    padding: 8px;    padding-top: 15px;">
+																	            	{PRP9}
+																	            </td>
+																	        	</tr>
+
+																	    </tbody>
+																	  </table>
+																		
+																	
+																		
+																	</div>							
+
+
+																	<div class="col col-lg-3">
+																		<div class="txt_2020">Propuesta <br>L&iacute;der</div><br>
+																		<table width="100%" cellspacing="0" border="1" cellpadding="1px" bordercolor="#F2F5F8">
+																	        <tbody>
+																	        	<tr>
+																	            <td valign="top" align="left" style="background-color: #d9edf7; width:33%;border: 1px solid #c9d2d8;    height: 60px;     padding: 8px;    padding-top: 15px;">
+																	            	{PRPLI1}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #dff0d8 ; width:33%;border: 1px solid #c9d2d8;      padding: 8px;    padding-top: 15px;">
+																	            	{PRPLI2}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #dff0d8 ; width:33%; border: 1px solid #c9d2d8;     padding: 8px;    padding-top: 15px;">
+																	            	{PRPLI3}
+																	            </td>
+																	        	</tr>
+																	        	<tr>
+																	            <td valign="top" align="left" style="background-color: #faf2cc; padding: 8px;border: 1px solid #c9d2d8;    height: 60px;    padding-top: 15px; ">
+																	            	{PRPLI4}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #d9edf7; border: 1px solid #c9d2d8;     padding: 8px;    padding-top: 15px;">
+																	              {PRPLI5}
+																	              {PRPLI10}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #dff0d8 ; border: 1px solid #c9d2d8;     padding: 8px;    padding-top: 15px;">
+																	            	{PRPLI6}
+																	            </td>
+																	        	</tr>
+																	        	<tr>
+																	            <td valign="top" align="left" style="background-color: #ebccd1;  border: 1px solid #c9d2d8;     height: 60px;   padding: 8px;    padding-top: 15px;">
+																	            	{PRPLI7}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #faf2cc;  border: 1px solid #c9d2d8;    padding: 8px;    padding-top: 15px;">
+																	            	{PRPLI8}
+																	            </td>
+																	            <td valign="top" align="left" style="background-color: #d9edf7;  border: 1px solid #c9d2d8;    padding: 8px;    padding-top: 15px;">
+																	            	{PRPLI9}
+																	            </td>
+																	        	</tr>
+
+																	    </tbody>
+																	  </table>
+																		
+																	
+																		
+																	</div>	
+
+											
+																	<div class="col col-lg-12">
+																		<br>
+																		<center>{BOTON_VER_EDITAR_BOX} {BOTON_VER_ACC_DES} {BOTON_SOLICITAR_FEEDBACK}
+																			
+																			<i class="far fa-question-circle" style="    color: #999;" title="Podrás solicitar feedback a otro líder y así tener más información para hacer esta propuesta. Con esta acción, le llegará un mail al líder seleccionado solicitando feedback de este colaborador"></i>
+
+																		
+																			
+																			</center>
+																	</div>
+															</div>
+										       </div>
+										       
+										</div>
+						
+						
+						
+						</div>
+	
+	
+						<br><br>
+	<style>
+		.card {
+
+    margin-bottom: 10px;
+}
+	</style>
+	
+						<div class="col-lg-12 col-xs-12">
+							{alerta_acciones_desarrollo_ficha}
+							<div id="accordion">
+
+							  <div class="card" style="max-width: 100%;">
+							    <div class="card-header" id="headingFive" style="color: #ffffff;background-color: #50748a;border-color: #bce8f1;min-height: 40px;">
+							      <h5 class="mb-0">
+							        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseAcDes" aria-expanded="true" aria-controls="collapseAcDes">
+							          <span style="color:#fff">
+							          	Acciones de Desarrollo <i class="fas fa-chevron-down" style="display: inline;"></i>
+			
+							          </span>
+							        </button>
+							      </h5>
+							    </div>
+							    <div id="collapseAcDes" class="collapse" aria-labelledby="headingAcDes" data-parent="#accordion">
+							      <div class="card-body" style="padding: 10px;">
+				  				<div class="row">
+																<div class="col-md-5"><div class="txt_2020"> Acción de Desarrollo</div></div>
+																<div class="col-md-3"><div class="txt_2020"> Fundamento </div></div>
+																<div class="col-md-2"><div class="txt_2020"> Estado </div></div>
+																<div class="col-md-1"><div class="txt_2020"> Fecha </div></div>
+																<div class="col-md-1"><div class=""> </div></div>
+															</div>
+												<div class='col-md-12'><div class=''><br> </div></div>										
+															<div class="row">
+																		{POTENCIAL_FICHA_ACCIONES_DESARROLLO}
+															</div>		
+																	
+
+							      </div>
+							    </div>
+							  </div>
+
+								
+							  <div class="card" style="max-width: 100%;">
+							    <div class="card-header" id="headingOne" style="color: #ffffff;background-color: #50748a;border-color: #bce8f1;min-height: 40px;">
+							      <h5 class="mb-0">
+							        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							          <span style="color:#fff">
+							          	Metas, Desempeño, Clima  <i class="fas fa-chevron-down" style="display: inline;"></i>
+							          </span>
+							        </button>
+							      </h5>
+							    </div>
+							    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+							      <div class="card-body" style="padding: 10px;">
+												<div class="row">
+													<div class="col-md-4"><div class="txt_2020">Metas</div><br>
+														<div class="alert alert-info">2020: <strong>{METAS_2020}</strong></div>	
+														<div class="alert alert-info">2019: <strong>{METAS_2019}</strong></div>	
+														<div class="alert alert-info">2018: <strong>{METAS_2018}</strong></div>	
+														
+													</div>
+													<div class="col-md-4"><div class="txt_2020">Desempeño</div><br>
+														<div class="alert alert-info">2020: <strong>{DESEMPENO_2020}</strong></div>	
+														<div class="alert alert-info">2019: <strong>{DESEMPENO_2019}</strong></div>	
+														<div class="alert alert-info">2018: <strong>{DESEMPENO_2018}</strong></div>	
+													</div>
+													<div class="col-md-4"><div class="txt_2020">Clima</div><br>
+														<div class="alert alert-info">Clima 2021: <strong>{CLIMA_2021}</strong></div>	
+														<div class="alert alert-info">Engagement 2021: <strong>{ENGAGEMENT_2021}</strong></div>	
+														<div class="alert alert-info">Liderazgo 2021: <strong>{LIDERAZGO_2021}</strong></div>
+													</div>
+												</div>
+							      </div>
+							    </div>
+							  </div>
+							  
+		
+		
+ 							<div class="card" style="max-width: 100%;">
+							    <div class="card-header" id="headingTwo2020" style="color: #ffffff;background-color: #50748a;border-color: #bce8f1;min-height: 40px;">
+							      <h5 class="mb-0">
+							        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo2020" aria-expanded="true" aria-controls="collapseTwo2020">
+							          <span style="color:#fff">
+							          	Evaluación de Desempeño 2020   <i class="fas fa-chevron-down" style="display: inline;"></i>
+										        	<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" 
+										        	title="1,00 a 2,56 - Bajo Lo Esperado
+															2.60 a 3.59 - De acuerdo a lo esperado
+															3,60 a 5,00 - Sobre lo esperado">
+										 					<span style="color:#fff"><i class="far fa-question-circle"></i></span> 
+															</button>
+							          </span>
+							        </button>
+							      </h5>
+							    </div>
+							    
+							    <div id="collapseTwo2020" class="collapse" aria-labelledby="headingTwo2020" data-parent="#accordion">
+							      <div class="card-body" style="padding: 10px;">
+
+															<div class="row">
+																<div class="col-md-6"><div class="txt_2020"> Competencia</div></div>
+																<div class="col-md-3"><div class="txt_2020"> <center>Evaluación de Líder</center> </div></div>
+																<!--<div class="col-md-2"><div class="txt_2020"> <center>Evaluación de mis Reportes</center> </div></div>-->
+																<div class="col-md-3"><div class="txt_2020"> <center>Promedio Banco (por Perfil)</center> </div></div>
+															</div>
+																						
+															<div class="row">
+																<div class="col-md-6"><div class="Txt_2020_title"><i class="fas fa-caret-right"></i> Logra Objetivos Ambiciosos</div></div>
+																<div class="col-md-3"><div class="Txt_2020_title"> <center><span class="badge badge-info">{TC_L_2020}</span></center></div> </div>
+																<!--<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{TC_R}</span></center></div> </div>-->
+																<div class="col-md-3"><div class="Txt_2020_title"> <center><span class="badge badge-info">{TC_B_2020}</span></center></div> </div>
+															</div>		
+																	
+															<div class="row">
+																<div class="col-md-6"><div class="Txt_2020_title"><i class="fas fa-caret-right"></i> Se apasiona por el cliente</div>	</div>
+																<div class="col-md-3"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AP_L_2020}</span></center></div> </div>
+																<!--<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AP_R}</span></center></div> </div>-->
+																<div class="col-md-3"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AP_B_2020}</span></center></div> </div>
+															</div>		
+															
+															<div class="row">
+																<div class="col-md-6"><div class="Txt_2020_title"><i class="fas fa-caret-right"></i> Obtiene lo mejor de las personas</div></div>
+																<div class="col-md-3"><div class="Txt_2020_title"> <center><span class="badge badge-info">{OB_L_2020}</span></center></div> </div>
+																<!--<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{OB_R}</span></center></div> </div>-->
+																<div class="col-md-3"><div class="Txt_2020_title"> <center><span class="badge badge-info">{OB_B_2020}</span></center></div> </div>
+															</div>		
+															
+															<div class="row">
+																<div class="col-md-6"><div class="Txt_2020_title"><i class="fas fa-caret-right"></i> Actúa como dueño</div></div>
+																<div class="col-md-3"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AC_L_2020}</span></center></div> </div>
+																<!--<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AC_R}</span></center></div> </div>-->
+																<div class="col-md-3"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AC_B_2020}</span></center></div> </div>
+															</div>
+
+							      </div>
+							    </div>
+							</div>  
+							    				
+							
+							
+ 							<div class="card" style="max-width: 100%;">
+							    <div class="card-header" id="headingTwo" style="color: #ffffff;background-color: #50748a;border-color: #bce8f1;min-height: 40px;">
+							      <h5 class="mb-0">
+							        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+							          <span style="color:#fff">
+							          	Evaluación de Desempeño 2019   <i class="fas fa-chevron-down" style="display: inline;"></i>
+										        	<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" 
+										        	title="1,00 a 2,56 - Bajo Lo Esperado
+															2.60 a 3.59 - De acuerdo a lo esperado
+															3,60 a 5,00 - Sobre lo esperado">
+										 					<span style="color:#fff"><i class="far fa-question-circle"></i></span> 
+															</button>
+							          </span>
+							        </button>
+							      </h5>
+							    </div>
+							    
+							    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+							      <div class="card-body" style="padding: 10px;">
+
+															<div class="row">
+																<div class="col-md-6"><div class="txt_2020"> Competencia</div></div>
+																<div class="col-md-2"><div class="txt_2020"> <center>Evaluación de Líder</center> </div></div>
+																<div class="col-md-2"><div class="txt_2020"> <center>Evaluación de mis Reportes</center> </div></div>
+																<div class="col-md-2"><div class="txt_2020"> <center>Promedio Banco (por Perfil)</center> </div></div>
+															</div>
+																						
+															<div class="row">
+																<div class="col-md-6"><div class="Txt_2020_title"><i class="fas fa-caret-right"></i> Logra Objetivos Ambiciosos</div></div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{TC_L}</span></center></div> </div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{TC_R}</span></center></div> </div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{TC_B}</span></center></div> </div>
+															</div>		
+																	
+															<div class="row">
+																<div class="col-md-6"><div class="Txt_2020_title"><i class="fas fa-caret-right"></i> Se apasiona por el cliente</div>	</div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AP_L}</span></center></div> </div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AP_R}</span></center></div> </div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AP_B}</span></center></div> </div>
+															</div>		
+															
+															<div class="row">
+																<div class="col-md-6"><div class="Txt_2020_title"><i class="fas fa-caret-right"></i> Obtiene lo mejor de las personas</div></div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{OB_L}</span></center></div> </div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{OB_R}</span></center></div> </div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{OB_B}</span></center></div> </div>
+															</div>		
+															
+															<div class="row">
+																<div class="col-md-6"><div class="Txt_2020_title"><i class="fas fa-caret-right"></i> Actúa como dueño</div></div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AC_L}</span></center></div> </div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AC_R}</span></center></div> </div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AC_B}</span></center></div> </div>
+															</div>
+
+							      </div>
+							    </div>
+							</div>  
+							    		
+							
+							  <div class="card" style="max-width: 100%; display:none;">
+							    <div class="card-header" id="headingMetLide" style="color: #ffffff;background-color: #50748a;border-color: #bce8f1;min-height: 40px;">
+							      <h5 class="mb-0">
+							        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseMetLide" aria-expanded="true" aria-controls="collapseMetLide">
+							          <span style="color:#fff">
+							          	M&eacute;tricas de Panel de Liderazgo  <i class="fas fa-chevron-down" style="display: inline;"></i>
+							          </span>
+							        </button>
+							      </h5>
+							    </div>
+							    <div id="collapseMetLide" class="collapse" aria-labelledby="headingMetLide" data-parent="#accordion">
+							      <div class="card-body" style="padding: 10px;">
+				  				<div class="row">
+																<div class="col-md-6"><div class="txt_2020"> Año</div></div>
+																<div class="col-md-6"><div class="txt_2020"> <center>Resultado</center> </div></div>
+															</div>
+																						
+															<div class="row">
+																<div class="col-md-6"><div class="Txt_2020_title"><i class="fas fa-caret-right"></i> {YEAR_RESULTADO_METRICAS_LIDERAZGO}</div></div>
+																<div class="col-md-6"><div class="Txt_2020_title"> <center><span class="badge badge-info">{RESULTADO_METRICAS_LIDERAZGO}</span></center></div> </div>
+															</div>		
+																	
+															
+							      </div>
+							    </div>
+							  </div>
+
+							 	{METAS_TRIMESTRALES_FICHA_COLABORADOR} 
+							 		
+								{SNES_FICHA_COLABORADOR}	
+									
+								{LISTA_ES_SUCESOR}
+							  <div class="card" style="max-width: 100%;">
+							    <div class="card-header" id="headingFive" style="color: #ffffff;background-color: #50748a;border-color: #bce8f1;min-height: 40px;">
+							      <h5 class="mb-0">
+							        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+							          <span style="color:#fff">
+							          	Reconocimientos StarMeUp  <i class="fas fa-chevron-down" style="display: inline;"></i>
+							          </span>
+							        </button>
+							      </h5>
+							    </div>
+							    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+							      <div class="card-body" style="padding: 10px;">
+				  				<div class="row">
+																<div class="col-md-6"><div class="txt_2020"> Reconocimiento</div></div>
+																<div class="col-md-2"><div class="txt_2020"> <center>Recibidos</center> </div></div>
+																<div class="col-md-2"><div class="txt_2020"> <center>Entregados</center> </div></div>
+															</div>
+																						
+															<div class="row">
+																<div class="col-md-6"><div class="Txt_2020_title"><i class="fas fa-caret-right"></i> Logra Objetivos Ambiciosos</div></div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{TC_RE}</span></center></div> </div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{TC_EN}</span></center></div> </div>
+															</div>		
+																	
+															<div class="row">
+																<div class="col-md-6"><div class="Txt_2020_title"><i class="fas fa-caret-right"></i> Se apasiona por el cliente</div>	</div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AP_RE}</span></center></div> </div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AP_EN}</span></center></div> </div>
+															</div>		
+															
+															<div class="row">
+																<div class="col-md-6"><div class="Txt_2020_title"><i class="fas fa-caret-right"></i> Obtiene lo mejor de las personas</div></div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{OB_RE}</span></center></div> </div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{OB_EN}</span></center></div> </div>
+															</div>		
+															
+															<div class="row">
+																<div class="col-md-6"><div class="Txt_2020_title"><i class="fas fa-caret-right"></i> Actúa como dueño</div></div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AC_RE}</span></center></div> </div>
+																<div class="col-md-2"><div class="Txt_2020_title"> <center><span class="badge badge-info">{AC_EN}</span></center></div> </div>
+															</div>
+							      </div>
+							    </div>
+							  </div>
+									
+												
+									
+								<div class="card" style="max-width: 100%;">
+							    <div class="card-header" id="headingSix" style="color: #ffffff;background-color: #50748a;border-color: #bce8f1;min-height: 40px;">
+							      <h5 class="mb-0">
+							        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+							          <span style="color:#fff">
+							          	Comentarios  <i class="fas fa-chevron-down" style="display: inline;"></i>
+							          </span>
+							        </button>
+							      </h5>
+							    </div>
+							    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+							      <div class="card-body" style="padding: 10px;">
+				  							
+				  							 {MI_BITACORA}
+				  				
+							      </div>
+							    </div>
+							  </div>
+							  					  
+							</div>		
+						</div>
+	
+						<br>
+
+        </div>
+     </div>   
+                                
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="container">
+                            <div class="row clearfix bottommargin-lg common-height">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $(".slidingDiv_bloque1").hide();
+                            $(".show_hide_bloque1").show();
+                            $('.show_hide_bloque1').click(function() {
+                                $(".slidingDiv_bloque1").slideToggle();
+                            });
+                        });
+                    </script>
+                </div>
+                </div>
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+	
+    
+
+    <BR>
+  <script type='text/javascript' >
+    $( function() {
+  
+        $( "#autocomplete" ).autocomplete({
+            source: function( request, response ) {
+                
+                $.ajax({
+                    url: "?sw=BuscaPersonas2020_v2",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: request.term
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $('#autocomplete').val(ui.item.label); // display the selected text
+                $('#selectuser_id').val(ui.item.value); // save selected id to input
+                return false;
+            }
+        });
+
+
+
+ $( "#autocomplete_2" ).autocomplete({
+            source: function( request, response ) {
+                
+                $.ajax({
+                    url: "?sw=BuscaPersonas2020_v2",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: request.term
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $('#autocomplete_2').val(ui.item.label); // display the selected text
+                $('#selectuser_id_2').val(ui.item.value); // save selected id to input
+                return false;
+            }
+        });
+		
+		
+		
+		 $( "#autocomplete_3" ).autocomplete({
+            source: function( request, response ) {
+                
+                $.ajax({
+                    url: "?sw=BuscaPersonas2020_v2",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: request.term
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $('#autocomplete_3').val(ui.item.label); // display the selected text
+                $('#selectuser_id_3').val(ui.item.value); // save selected id to input
+                return false;
+            }
+        });
+		
+		
+        // Multiple select
+        $( "#multi_autocomplete" ).autocomplete({
+            source: function( request, response ) {
+                
+                var searchText = extractLast(request.term);
+                $.ajax({
+                    url: "fetchData.php",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: searchText
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function( event, ui ) {
+                var terms = split( $('#multi_autocomplete').val() );
+                
+                terms.pop();
+                
+                terms.push( ui.item.label );
+                
+                terms.push( "" );
+                $('#multi_autocomplete').val(terms.join( ", " ));
+
+                // Id
+                var terms = split( $('#selectuser_ids').val() );
+                
+                terms.pop();
+                
+                terms.push( ui.item.value );
+                
+                terms.push( "" );
+                $('#selectuser_ids').val(terms.join( ", " ));
+
+                return false;
+            }
+           
+        });
+    });
+
+    function split( val ) {
+      return val.split( /,\s*/ );
+    }
+    function extractLast( term ) {
+      return split( term ).pop();
+    }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+    	<div class="row" style="    background-color: #f7f7f7;border-radius: 15px;    margin-bottom: 15px;margin-left: 5px;margin-right: 5px;">
+    		<div class="col col-lg-2">
+    				{BOTON_VER_FICHA_A_inicial}
+    					<img src="{AVATAR_RUT_SUCESORES}" style="    width: 44px;  border-radius: 50%;">
+    				{BOTON_VER_FICHA_B_final}
+    		</div>
+    		<div class="col col-lg-7"> 
+    			{BOTON_VER_FICHA_A_inicial}
+    				<span class="mt-comment-author" style="    padding-left: 0;">{COLABORADOR_SUCESORES}</span>
+    					{BOTON_VER_FICHA_B_final}
+    				<br>
+    		
+            <span class="mt-comment-authorSM"  style="    padding-left: 0;">{CARGO_SUCESORES}</span><br>
+            {POSICION_CLAVE}
+            
+            <span class="mt-comment-authorSM"  style="    padding-left: 0;">{CARGO_CUDRANTE_SUCESORES}</span><br>
+            <span class="mt-comment-authorSM"  style="    padding-left: 0;">{CARGO_VECES_SUCESOR}</span><br>
+						{NO_ES_SUCESOR_ESTADO_BADGE}
+           
+          <br>
+          
+					
+					  <a class="btn btn-link" data-toggle="collapse" href="#collapseExample3_{RUT_SUCESORES}"  style="    padding-left: 0px; {sucesion_display_none}" role="button" aria-expanded="false" aria-controls="collapseExample3_{RUT_SUCESORES}">
+					   <span class="txt_2020" style="    padding-left: 0px;    font-weight: 400;">Ver Bit&aacute;cora de Sucesi&oacute;n <i class="fas fa-angle-down"></i></span>
+					  </a>
+					
+					<div class="collapse" id="collapseExample3_{RUT_SUCESORES}">
+					  <div class=" mt-comment-authorSM" style="    padding-left: 0px;">
+							{BITACORA_DE_DESARROLLO}					  
+						</div>
+					</div>
+
+			
+					  <a class="btn btn-link" data-toggle="collapse" href="#collapseExample4_{RUT_SUCESORES}"  style="    padding-left: 0px; {sucesion_display_none}" role="button" aria-expanded="false" aria-controls="collapseExample3_{RUT_SUCESORES}">
+					   <span class="txt_2020"  style="    padding-left: 0px;    font-weight: 400;">Ver Acciones de Desarrollo <i class="fas fa-angle-down"></i></span>
+					  </a>
+				
+					<div class="collapse" id="collapseExample4_{RUT_SUCESORES}">
+					  <div class=" mt-comment-authorSM">
+							{ACCIONES_DE_DESARROLLO}					  
+						</div>
+					</div>
+
+
+       
+<p>
+  <a class="btn btn-link" data-toggle="collapse" href="#collapseExample_{RUT_SUCESORES}" role="button" aria-expanded="false" aria-controls="collapseExample_{RUT_SUCESORES}" style="padding-left: 0px;{STYLO_AGREGAR_ACCIONES_DESARROLLO} {display_none_edit} {sucesion_display_none}">
+    <span style="color: #337ab7;font-size: 12px;"><i class="far fa-file-alt"></i> Agregar Acciones de Desarrollo </span>
+  </a>
+</p>
+<div class="collapse" id="collapseExample_{RUT_SUCESORES}" style="{STYLO_AGREGAR_ACCIONES_DESARROLLO}">
+  <div class="card card-body" style="    width: 100%;border: 0px;background-color: #f7f7f7;">
+
+			<form name="agregar_plan_desarrollo_{RUT_SUCESORES} id="agregar_plan_desarrollo_{RUT_SUCESORES}" action="?sw=potencial_ficha_sucesion&id_posicion_enc={ID_POSICION_ENC}&id_comite={ID_COMITE_ENC}" method="POST">
+				<select name="plan_acciones_desarrollo" class="form form-control" required>
+					<option value=""></option>
+
+ <option disabled="disabled">---Experiencia en el Puesto de Trabajo---</option>
+																						<option value="Ampliar responsabilidades">Ampliar responsabilidades</option>
+																						<option value="Exposición como sucesor">Exposición como sucesor</option>
+																						<option value="Consolidarse en el cargo">Consolidarse en el cargo</option>
+																						<option value="Asignar proyecto especial">Asignar proyecto especial</option>
+																						<option value=""></option>
+
+																				    <option disabled="disabled">---Apoyo del Lider---</option>
+																						<option value="Coaching del líder">Coaching del líder</option>
+																						<option value="Conversacion desarrollo">Conversacion desarrollo</option>
+																						<option value="Plan de trabajo">Plan de trabajo</option>
+																						<option value=""></option>
+
+																				    <option disabled="disabled">---Apoyo de otros---</option>
+																						<option value="Mentee">Mentee</option>
+																						<option value="Coaching">Coaching</option>
+																						<option value="Entrevista Desarrollo Korn Ferry">Entrevista Desarrollo Korn Ferry</option>
+																						<option value=""></option>
+
+																				    <option disabled="disabled">---Estudios---</option>
+																						<option value="Academia Líder">Academia Líder</option>
+																						<option value="Jóvenes profesionales">Jóvenes profesionales</option>
+																						<option value="Beca perfeccionamiento">Beca perfeccionamiento</option>
+																						<option value="Estudio extranjero">Estudio extranjero</option>
+																						<option value="Pasantía interna">Pasantía interna</option>
+																						<option value="Pasantía extranjero">Pasantía extranjero</option>
+																						<option value="Inglés">Inglés</option>
+																						<option value=""></option>
+
+					
+
+				</select>
+				<br>		
+										       			<div class="badge-gray_blue" style="font-size: 10px;" >
+																	Escribe tu fundamento</div>
+																 <input type="text" name="fundamento" name="fundamento" class="form form-control" required>				
+																 
+				<input type="hidden" name="rut_col_enc" value="{RUT_SUCESORES_ENC}" >
+				<input type="submit" value="Agregar Acción de Desarrollo" class="btn btn-link" style="    font-size: 11px;text-align: center;padding-left: 0px; ">
+				<br>
+			</form>
+
+  </div>
+</div>  
+ 
+
+           
+        </div>
+        	<div class="col col-lg-3">
+        			<button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal_{RUT_SUCESORES}" style="font-size: 12px; {display_none_edit}">
+  							<span style="color: #337ab7;    text-align: left;">		Editar Temporalidad <br>Agregar Comentario</span>
+							</button>
+							
+        			<button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal_del{RUT_SUCESORES}" style="font-size: 12px; {display_none_edit}">
+  						<span style="color: #337ab7;">	No es Sucesor <i class="far fa-trash-alt"></i> </span>
+							</button>							
+						
+							<br>
+						
+						
+							
+        </div>
+    	</div>
+
+
+  	
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal_{RUT_SUCESORES}" tabindex="-1" role="dialog" aria-labelledby="exampleModal_{RUT_SUCESORES}" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <span class="mt-comment-author" style="    padding-left: 0;">Editar a {COLABORADOR_SUCESORES}</span>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <br><span aria-hidden="true" style="padding-top: 20px;">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       		<form action="" method="post">
+       			<div class="badge-gray_blue" style="font-size: 10px;" >
+																	Temporalidad</div>
+       			<select name="tipo_sucesion_ficha" class="form form-control"  required>
+       				<option value="{ACTUAL_TEMPORALIDAD}">{ACTUAL_TEMPORALIDAD}</option>
+       				<option value="Inmediato">Inmediato</option>
+       				<option value="Mediano">Mediano</option>
+       				<option value="Largo">Largo</option>
+       			</select>
+       			<br>
+       			<div class="badge-gray_blue" style="font-size: 10px;" >
+																	Comentario</div>
+																 
+																 <input type="text" name="fundamento" name="fundamento" class="form form-control" required>
+       			
+       			<input type="hidden" value="{ID_SUCESORES}" name="id_sucesor">
+       			<center><input type="submit" class="btn btn-info" value="Actualizar"></center>
+       		</form>
+       			
+      </div>
+      <div class="modal-footer">
+       
+      </div>
+    </div>
+  </div>
+</div>
+    	
+    	
+    	
+<div class="modal fade" id="exampleModal_del{RUT_SUCESORES}" tabindex="-1" role="dialog" aria-labelledby="exampleModal_{RUT_SUCESORES}" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <span class="mt-comment-author" style="    padding-left: 0;">Dejar como No Sucesor a {COLABORADOR_SUCESORES}</span>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <br><span aria-hidden="true" style="padding-top: 20px;">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       		<form action="?sw=potencial_ficha_sucesion&id_posicion_enc={ID_POSICION_ENC}&id_comite={ID_COMITE_ENC}&del={ID_COL}&perfil_del={PERFIL_ENC}" method="post">
+
+       			
+       			<div class="badge-gray_blue" style="font-size: 10px;" >
+																	Escribe tu fundamento</div>
+																 
+																 <input type="text" name="fundamento" name="fundamento" class="form form-control"  required>
+       			
+       			<input type="hidden" value="{ID_SUCESORES}" name="id_sucesor">
+       			<center><input type="submit" class="btn btn-info" value="No es sucesor"></center>
+       		</form>
+       			
+      </div>
+      <div class="modal-footer">
+       
+      </div>
+    </div>
+  </div>
+</div>    	

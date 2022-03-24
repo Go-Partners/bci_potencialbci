@@ -1,0 +1,67 @@
+<style type="text/css" id="tribe_customizer_css">
+  .tribe-events-list .tribe-events-loop .tribe-event-featured, .tribe-events-list #tribe-events-day.tribe-events-loop .tribe-event-featured, .type-tribe_events.tribe-events-photo-event.tribe-event-featured .tribe-events-photo-event-wrap, .type-tribe_events.tribe-events-photo-event.tribe-event-featured .tribe-events-photo-event-wrap:hover {
+    background-color: #0ea0d7;
+  }
+  #tribe-events-content table.tribe-events-calendar .type-tribe_events.tribe-event-featured {
+    background-color: #0ea0d7;
+  }
+  .tribe-events-list-widget .tribe-event-featured, .tribe-events-venue-widget .tribe-event-featured, .tribe-mini-calendar-list-wrapper .tribe-event-featured, .tribe-events-adv-list-widget .tribe-event-featured .tribe-mini-calendar-event {
+    background-color: #0ea0d7;
+  }
+  .tribe-grid-body .tribe-event-featured.tribe-events-week-hourly-single {
+    background-color: rgba(14,160,215, .7 );
+    border-color: #0ea0d7;
+  }
+  .tribe-grid-body .tribe-event-featured.tribe-events-week-hourly-single:hover {
+    background-color: #0ea0d7;
+  }
+</style>
+<script>
+	var owl = $('.owl-carousel');
+	owl.owlCarousel({
+		items : 1,
+		loop : true,
+		margin : 10,
+		autoplay : true,
+		autoplayTimeout : 5000,
+		autoplayHoverPause : true
+	});
+	$('.play').on('click', function() {
+		owl.trigger('play.owl.autoplay', [5000])
+	})
+	$('.stop').on('click', function() {
+		owl.trigger('stop.owl.autoplay')
+	})
+</script>
+
+<script type="text/javascript" src="script/canvas/jquery.js"></script>
+<script type="text/javascript" src="script/canvas/plugins.js"></script>
+<script type="text/javascript" src="script/canvas/star-rating.js"></script>
+<script type="text/javascript" src="script/canvas/functions.js"></script>
+<script type="text/javascript">
+	$("#input-2").rating({
+		starCaptions : {
+			0 : "0",
+			1 : "1",
+			2 : "2",
+			3 : "3",
+			4 : "4",
+			5 : "5"
+			6 : "6"
+			7 : "7"
+		
+	},
+	starCaptionClasses : {
+		0 : "text-danger",
+		1 : "text-danger",
+		2 : "text-warning",
+		3 : "text-warning",
+		4 : "text-info",
+		5 : "text-info"
+		6 : "text-primary"
+		7 : "text-primary"
+		
+	},
+}); 
+</script>
+</body> </html>

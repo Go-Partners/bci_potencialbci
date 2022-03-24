@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+{HEAD}
+
+
+<style>
+
+.alert {
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 0;
+    border: 0;
+    border: 1px solid;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    text-align: center;
+}
+
+</style>
+<body role="document" {FUNCION_ONLOAD}>
+    <div id="k-head" class="container">
+        <div class="row">
+            {MENU_SUPERIOR} {MENU_SECUNDARIO}
+        </div>
+    </div>
+    <div id="k-body">
+
+        <body role="document" {FUNCION_ONLOAD}>
+
+            <body>
+                <section id="" class="clear">
+                    <div id="anchor1">
+                        <div> </div>
+                </section>
+                <div id="logx"></div>
+				<br><br>
+
+			<div class="container">
+				<a href="?sw=potencial" class="btn btn-link pull-left" style="display: block;">
+					<span style='color: #31708f;'><i class="fas fa-arrow-alt-circle-left"></i> Volver</span></a>
+			</div>
+
+                <span class="visible-xs"></span><span class="visible-sm"></span><span class="visible-md"></span><span class="visible-lg"></span>
+                <div id="k-head" class="">
+                    <div id="k-body">
+                        <div class="paddingFull" style="
+                            padding-left: 20px;
+                            padding-right: 20px;
+                        ">
+                            <div class="container" align="justify" style="background-color: unset;">
+                            
+
+<div class="lms_tituloSeccionHistoriasHome_TitleWinter" style="margin-top: 0px;">
+		<center>
+			<img src="https://www.paneldeliderazgobci.cl/front/img/widget-link.png"> Comit&eacute;: {NOMBRE_COMITE}
+			<br><small><small>SOCIO DE NEGOCIO: {LIDER_COMITE}</small></small>
+			{COMITE_CERRADO}
+		</center>
+</div>    
+
+                                </div>
+                                <BR>
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">Colaboradores a ser Mapeados</div>
+                                    <div class="panel-body" style="border: 1px solid #efefef;">
+                                        {COLABORADORES_COMITE_POTENCIAL_TITULO} {MIS_COLABORADORES_COMITES_POTENCIAL}
+                                    </div>
+                                </div>
+                                
+                                <br>
+                                		{POTENCIAL_CIERRE_POTENCIAL_SN}
+                                <br>
+                                 
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">Cuadrantes</div>
+                                    <div class="panel-body">
+                                    	
+                                    	<a href="?sw=potencial_comite&id_comite={ID_COMITE_ENC}" 											class="btn btn-link" 		style="float: right;">											<span class="mt-comment-authorSM" style="     font-size: 14px;   padding-left: 0;">Sin Filtro</span></a>
+                                    	<a href="?sw=potencial_comite&id_comite={ID_COMITE_ENC}&boxfiltro=MANTIENE" 	class="btn btn-link" 		style="float: right;">	<span class="mt-comment-authorSM" style="       font-size: 14px; padding-left: 0;">Filtro Mantienen</span></a>
+                                    	<a href="?sw=potencial_comite&id_comite={ID_COMITE_ENC}&boxfiltro=BAJA" 			class="btn btn-link" 		style="float: right;">			<span class="mt-comment-authorSM" style="      font-size: 14px;  padding-left: 0;">Filtro Bajan</span></a>
+                                    	<a href="?sw=potencial_comite&id_comite={ID_COMITE_ENC}&boxfiltro=SUBE" 			class="btn btn-link" 		style="float: right;">			<span class="mt-comment-authorSM" style="      font-size: 14px;  padding-left: 0;">Filtro Suben</span></a>
+                                    	
+                                    	
+<hr>                                    	
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+<script>
+
+     	google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+			
+			chart.draw(data,{fontName:'Open Sans'});
+			
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['CUADRANTE', 'ACTUAL', 'NORMAL'],
+          ['7',  {CHART_PORC_7},        2],
+          ['1',  {CHART_PORC_1},        3],
+          ['8',  {CHART_PORC_8},        8],
+          ['4',  {CHART_PORC_4},        10],
+          ['9',  {CHART_PORC_9},        17],
+          ['5',  {CHART_PORC_5},        30],
+          ['5+', {CHART_PORC_10},       17],
+          ['6',  {CHART_PORC_6},        8],
+          ['2',  {CHART_PORC_2},        3],
+          ['3',  {CHART_PORC_3},        2],
+
+
+        ]);
+
+         var options = {
+         	
+          title : 'Curva Distribucion Cuadrantes',
+          vAxis: {title: 'Porcentaje', fontName: 'Open Sans', },
+          hAxis: {title: 'Cuadrante'},
+          seriesType: 'bars',
+          series: {1: {type: 'line'}},
+          colors: ['#5b768a', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+          legend: { 
+          			position: 'bottom', 
+        				alignment: 'center' ,
+        				orientation: 'vertical',
+    					}
+        }
+       
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+</script>
+
+                                        {POTENCIAL_BOX9_CURVA_DISTRIBUCION}
+                                        {POTENCIAL_BOX9_COMITE_LIDER_PROPUESTA}
+                                    </div>
+                                </div>
+                                
+			<br>
+    
+						<!--	<div class="row">
+								<div class="col-lg-3">
+							    <div class="mt-comment-authorSM" style="padding-left: 0;">
+							    	Suben de cuadrante en relaci&oacute;n al propuesto por el modelo con la propuesta l&iacute;der
+							    	<BR><BR>{LIDER_SUBEN}
+							    </div>
+							  </div>
+							 	<div class="col-lg-3">
+							    <div class="mt-comment-authorSM" style="padding-left: 0;">
+							    	Se Mantienen de cuadrante en relaci&oacute;n al propuesto por el modelo con la propuesta l&iacute;der
+							    	<BR><BR>{LIDER_SEMANTIENEN}
+							    </div>
+							  </div>
+								<div class="col-lg-3">    
+							   <div class="mt-comment-authorSM" style="padding-left: 0;">
+							    	Bajan de cuadrante en relaci&oacute;n al propuesto por el modelo con la propuesta l&iacute;der
+							    	<BR><BR>{LIDER_BAJAN}
+							    </div>        
+							  </div>
+							  <div class="col-lg-3">
+							     <div class="mt-comment-authorSM" style="padding-left: 0;">
+							    	No clasificables
+							    	<BR><BR>{LIDER_VACIO}
+							    </div>      
+							  </div>
+							</div> -->                                  
+        
+       <br>
+                                
+{BITACORA_CAMBIOS_COMENTARIOS_POTENCIAL_TITULO} {BITACORA_CAMBIOS_COMENTARIOS_POTENCIAL}    
+
+</div>                            
+                                
+
+                                <BR>
+                                <BR>
+                                <center>
+                                    {BOTON_SUBIR_NOMINA_COMITE_POTENCIAL}
+                                </center>
+                                <BR>
+                                <BR>
+                                <BR>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <br>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $(".slidingDiv_bloque1").hide();
+                            $(".show_hide_bloque1").show();
+                            $('.show_hide_bloque1').click(function() {
+                                $(".slidingDiv_bloque1").slideToggle();
+                            });
+                        });
+                    </script>
+                </div>
+                </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+   {FOOTER}
+    <BR> {BLOQUEFOOTERCONTENIDO}
+    <BR> {MENU_INFERIOR}
+    <BR>
+    </body>
+
+</html>

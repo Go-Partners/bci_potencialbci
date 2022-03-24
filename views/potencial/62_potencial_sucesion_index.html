@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+{HEAD}
+<link rel="stylesheet" href="https://gopartners.cl/rod/pofo/css/animate.css" />
+<link rel="stylesheet" href="https://gopartners.cl/rod/pofo/css/themify-icons.css">
+<link rel="stylesheet" href="https://gopartners.cl/rod/pofo/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="https://gopartners.cl/rod/pofo/revolution/css/settings.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://gopartners.cl/rod/pofo/revolution/css/layers.css">
+<link rel="stylesheet" type="text/css" href="https://gopartners.cl/rod/pofo/revolution/css/navigation.css">
+
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<style>
+	table.dataTable thead th, table.dataTable thead td {
+    padding: 10px 18px;
+    border-bottom: 1px solid #f9f9f9;
+}
+</style>
+
+<body role="document" {FUNCION_ONLOAD}>
+    <div id="k-head" class="container">
+        <div class="row">
+            {MENU_SUPERIOR} {MENU_SUPERIOR} 
+            <br><br>
+        </div>  
+    </div>
+    <div id="k-body">
+        <body role="document" {FUNCION_ONLOAD}>
+            <body>
+                <div id="k-head" class="">
+                    <div id="k-body">
+                    	
+												<div class="lms_tituloSeccionHistoriasHome_TitleWinter" style="margin-top: 55px;">
+														<center>
+															<img src="https://www.paneldeliderazgobci.cl/front/img/widget-link.png"> Sucesi&oacute;n Bci
+														</center>
+												</div>                    	
+                        <div class="paddingFull ">
+                            <div class="" style="padding-left: 50px; padding-right: 50px;">
+                                <br>
+                                <center>
+                                    <div class="media-center width-80 ">
+                                        <img src="{FOTO_PERSONA}" alt="people" class="img-circle width-80">
+                                    </div>
+                                    <div class="txt_up" style="display: block;">{NOMBRE}<br>
+                                        <span class="homecargo" style="color: #31708f;    background-color: none;    border-color: #bce8f1;    font-size: 13px;    font-weight: 700;"> 
+                                        	{CARGO}
+                                        </span>
+                                    </div>
+                                </center>
+                            </div>
+                            <br>
+                            <div class="container" align="justify" style="background-color: unset;">
+                               <!-- <div class="alert alert-success">
+                                    <center>{TEXTO_INTRODUCTORIO_SEGUN_PERFIL}</center>
+                                </div>-->
+                                
+															<center>
+																	<a href="https://drive.google.com/file/d/1luF-0Ni8dlRo4EPHLSn41btxuPLQNkhW/view" class="btn btn-info" target="_blank" style="
+ 																						padding: 5px;font-size: 14px;padding-left: 20px;padding-right: 20px;"><span style="    color: #fff !important;
+    																				text-decoration: underline;">Ver Instructivo</span>
+    															 </a>   <br><br>
+    														</center>  	
+                                
+                               {DESCARGA_REPORTERIA_SN_CSV_SUCESION}
+                                
+                                
+                                <div class="panel panel-info">
+                                    <div class="panel-heading"><img src="https://www.paneldeliderazgobci.cl/front/img/widget-link.png"> 
+                                    	Mis Comit&eacute;s Sucesi&oacute;n </div>
+                                    <div class="panel-body">
+                                        <table id="example" class="display" style="width:100%">
+																	        <thead>
+																	            <tr>
+																	                <th>
+																	                	{MIS_COMITES_POTENCIAL_TITULO}</th>
+																	            		</tr>
+																	        </thead>
+																	        <tbody>
+																	                	 {MIS_COMITES_POTENCIAL}
+																	                	 
+																	        </tbody>
+																	    </table>
+																	                	 
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="panel panel-info">
+                                    <div class="panel-heading"><img src="https://www.paneldeliderazgobci.cl/front/img/widget-link.png"> 
+                                    	Mis Comit&eacute;s de Sucesi&oacute;n Finalizados</div>
+                                    <div class="panel-body">
+                                        <table id="example2" class="display" style="width:100%">
+																	        <thead>
+																	            <tr>
+																	                <th>                                    	
+                                        {MIS_COMITES_POTENCIAL_TITULO2}
+                                        					</th>
+																	            </tr>
+																	        </thead>
+																	        <tbody>
+																	        	 {MIS_COMITES_POTENCIAL2}
+																	        </tbody>
+																	    </table>
+                                    </div>
+                                </div>
+                                <BR>
+                                <BR>
+                                <BR>
+                                <center>
+                                    {BOTON_CREAR_COMITE_POTENCIAL_SUCESION}
+                                </center>
+                                <BR>
+                                <BR>
+                                <BR>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="container">
+                            <div class="row clearfix bottommargin-lg common-height">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <script>
+                    	$(document).ready(function() {
+    											$('#example').DataTable(
+    														{
+  																"ordering": false,
+																	language: {
+            										"processing": "Procesando...",
+    "lengthMenu": "Mostrar _MENU_ registros",
+    "zeroRecords": "No se encontraron resultados",
+    "emptyTable": "Ningun dato disponible en esta tabla",
+    "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+    "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+    "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+    "search": "Buscar:",
+    "infoThousands": ",",
+    "loadingRecords": "Cargando...",
+    "paginate": {
+        "first": "Primero",
+        "last": "Último",
+        "next": "Siguiente",
+        "previous": "Anterior"
+    },
+    "aria": {
+        "sortAscending": ": Activar para ordenar la columna de manera ascendente",
+        "sortDescending": ": Activar para ordenar la columna de manera descendente"
+    },
+    "buttons": {
+        "copy": "Copiar",
+        "colvis": "Visibilidad",
+        "collection": "Colección",
+        "colvisRestore": "Restaurar visibilidad",
+        "copyKeys": "Presione ctrl o u2318 + C para copiar los datos de la tabla al portapapeles del sistema. <br \/> <br \/> Para cancelar, haga clic en este mensaje o presione escape.",
+        "copySuccess": {
+            "1": "Copiada 1 fila al portapapeles",
+            "_": "Copiadas %d fila al portapapeles"
+        },
+        "copyTitle": "Copiar al portapapeles",
+        "csv": "CSV",
+        "excel": "Excel",
+        "pageLength": {
+            "-1": "Mostrar todas las filas",
+            "1": "Mostrar 1 fila",
+            "_": "Mostrar %d filas"
+        },
+        "pdf": "PDF",
+        "print": "Imprimir"
+    },
+    "autoFill": {
+        "cancel": "Cancelar",
+        "fill": "Rellene todas las celdas con <i>%d<\/i>",
+        "fillHorizontal": "Rellenar celdas horizontalmente",
+        "fillVertical": "Rellenar celdas verticalmentemente"
+    },
+    "decimal": ",",
+    "searchBuilder": {
+        "add": "Añadir condición",
+        "button": {
+            "0": "Constructor de búsqueda",
+            "_": "Constructor de búsqueda (%d)"
+        },
+        "clearAll": "Borrar todo",
+        "condition": "Condición",
+        "conditions": {
+            "date": {
+                "after": "Despues",
+                "before": "Antes",
+                "between": "Entre",
+                "empty": "Vacío",
+                "equals": "Igual a",
+                "notBetween": "No entre",
+                "notEmpty": "No Vacio",
+                "not": "Diferente de"
+            },
+            "number": {
+                "between": "Entre",
+                "empty": "Vacio",
+                "equals": "Igual a",
+                "gt": "Mayor a",
+                "gte": "Mayor o igual a",
+                "lt": "Menor que",
+                "lte": "Menor o igual que",
+                "notBetween": "No entre",
+                "notEmpty": "No vacío",
+                "not": "Diferente de"
+            },
+            "string": {
+                "contains": "Contiene",
+                "empty": "Vacío",
+                "endsWith": "Termina en",
+                "equals": "Igual a",
+                "notEmpty": "No Vacio",
+                "startsWith": "Empieza con",
+                "not": "Diferente de"
+            },
+            "array": {
+                "not": "Diferente de",
+                "equals": "Igual",
+                "empty": "Vacío",
+                "contains": "Contiene",
+                "notEmpty": "No Vacío",
+                "without": "Sin"
+            }
+        },
+        "data": "Data",
+        "deleteTitle": "Eliminar regla de filtrado",
+        "leftTitle": "Criterios anulados",
+        "logicAnd": "Y",
+        "logicOr": "O",
+        "rightTitle": "Criterios de sangría",
+        "title": {
+            "0": "Constructor de búsqueda",
+            "_": "Constructor de búsqueda (%d)"
+        },
+        "value": "Valor"
+    },
+    "searchPanes": {
+        "clearMessage": "Borrar todo",
+        "collapse": {
+            "0": "Paneles de búsqueda",
+            "_": "Paneles de búsqueda (%d)"
+        },
+        "count": "{total}",
+        "countFiltered": "{shown} ({total})",
+        "emptyPanes": "Sin paneles de búsqueda",
+        "loadMessage": "Cargando paneles de búsqueda",
+        "title": "Filtros Activos - %d"
+    },
+    "select": {
+        "1": "%d fila seleccionada",
+        "_": "%d filas seleccionadas",
+        "cells": {
+            "1": "1 celda seleccionada",
+            "_": "$d celdas seleccionadas"
+        },
+        "columns": {
+            "1": "1 columna seleccionada",
+            "_": "%d columnas seleccionadas"
+        }
+    },
+    "thousands": ".",
+    "datetime": {
+        "previous": "Anterior",
+        "next": "Proximo",
+        "hours": "Horas",
+        "minutes": "Minutos",
+        "seconds": "Segundos",
+        "unknown": "-",
+        "amPm": [
+            "am",
+            "pm"
+        ]
+    },
+    "editor": {
+        "close": "Cerrar",
+        "create": {
+            "button": "Nuevo",
+            "title": "Crear Nuevo Registro",
+            "submit": "Crear"
+        },
+        "edit": {
+            "button": "Editar",
+            "title": "Editar Registro",
+            "submit": "Actualizar"
+        },
+        "remove": {
+            "button": "Eliminar",
+            "title": "Eliminar Registro",
+            "submit": "Eliminar",
+            "confirm": {
+                "_": "¿Está seguro que desea eliminar %d filas?",
+                "1": "¿Está seguro que desea eliminar 1 fila?"
+            }
+        },
+        "error": {
+            "system": "Ha ocurrido un error en el sistema (<a target=\"\\\" rel=\"\\ nofollow\" href=\"\\\">Más información&lt;\\\/a&gt;).<\/a>"
+        },
+        "multi": {
+            "title": "Múltiples Valores",
+            "info": "Los elementos seleccionados contienen diferentes valores para este registro. Para editar y establecer todos los elementos de este registro con el mismo valor, hacer click o tap aquí, de lo contrario conservarán sus valores individuales.",
+            "restore": "Deshacer Cambios",
+            "noMulti": "Este registro puede ser editado individualmente, pero no como parte de un grupo."
+        }
+    }
+        													}
+																}
+    											);
+												} );
+                    </script>
+   
+                     <script>
+                    	$(document).ready(function() {
+    											$('#example2').DataTable(
+    														{
+  																"ordering": false,
+																	language: {
+            										"processing": "Procesando...",
+    "lengthMenu": "Mostrar _MENU_ registros",
+    "zeroRecords": "No se encontraron resultados",
+    "emptyTable": "Ningun dato disponible en esta tabla",
+    "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+    "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+    "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+    "search": "Buscar:",
+    "infoThousands": ",",
+    "loadingRecords": "Cargando...",
+    "paginate": {
+        "first": "Primero",
+        "last": "Último",
+        "next": "Siguiente",
+        "previous": "Anterior"
+    },
+    "aria": {
+        "sortAscending": ": Activar para ordenar la columna de manera ascendente",
+        "sortDescending": ": Activar para ordenar la columna de manera descendente"
+    },
+    "buttons": {
+        "copy": "Copiar",
+        "colvis": "Visibilidad",
+        "collection": "Colección",
+        "colvisRestore": "Restaurar visibilidad",
+        "copyKeys": "Presione ctrl o u2318 + C para copiar los datos de la tabla al portapapeles del sistema. <br \/> <br \/> Para cancelar, haga clic en este mensaje o presione escape.",
+        "copySuccess": {
+            "1": "Copiada 1 fila al portapapeles",
+            "_": "Copiadas %d fila al portapapeles"
+        },
+        "copyTitle": "Copiar al portapapeles",
+        "csv": "CSV",
+        "excel": "Excel",
+        "pageLength": {
+            "-1": "Mostrar todas las filas",
+            "1": "Mostrar 1 fila",
+            "_": "Mostrar %d filas"
+        },
+        "pdf": "PDF",
+        "print": "Imprimir"
+    },
+    "autoFill": {
+        "cancel": "Cancelar",
+        "fill": "Rellene todas las celdas con <i>%d<\/i>",
+        "fillHorizontal": "Rellenar celdas horizontalmente",
+        "fillVertical": "Rellenar celdas verticalmentemente"
+    },
+    "decimal": ",",
+    "searchBuilder": {
+        "add": "Añadir condición",
+        "button": {
+            "0": "Constructor de búsqueda",
+            "_": "Constructor de búsqueda (%d)"
+        },
+        "clearAll": "Borrar todo",
+        "condition": "Condición",
+        "conditions": {
+            "date": {
+                "after": "Despues",
+                "before": "Antes",
+                "between": "Entre",
+                "empty": "Vacío",
+                "equals": "Igual a",
+                "notBetween": "No entre",
+                "notEmpty": "No Vacio",
+                "not": "Diferente de"
+            },
+            "number": {
+                "between": "Entre",
+                "empty": "Vacio",
+                "equals": "Igual a",
+                "gt": "Mayor a",
+                "gte": "Mayor o igual a",
+                "lt": "Menor que",
+                "lte": "Menor o igual que",
+                "notBetween": "No entre",
+                "notEmpty": "No vacío",
+                "not": "Diferente de"
+            },
+            "string": {
+                "contains": "Contiene",
+                "empty": "Vacío",
+                "endsWith": "Termina en",
+                "equals": "Igual a",
+                "notEmpty": "No Vacio",
+                "startsWith": "Empieza con",
+                "not": "Diferente de"
+            },
+            "array": {
+                "not": "Diferente de",
+                "equals": "Igual",
+                "empty": "Vacío",
+                "contains": "Contiene",
+                "notEmpty": "No Vacío",
+                "without": "Sin"
+            }
+        },
+        "data": "Data",
+        "deleteTitle": "Eliminar regla de filtrado",
+        "leftTitle": "Criterios anulados",
+        "logicAnd": "Y",
+        "logicOr": "O",
+        "rightTitle": "Criterios de sangría",
+        "title": {
+            "0": "Constructor de búsqueda",
+            "_": "Constructor de búsqueda (%d)"
+        },
+        "value": "Valor"
+    },
+    "searchPanes": {
+        "clearMessage": "Borrar todo",
+        "collapse": {
+            "0": "Paneles de búsqueda",
+            "_": "Paneles de búsqueda (%d)"
+        },
+        "count": "{total}",
+        "countFiltered": "{shown} ({total})",
+        "emptyPanes": "Sin paneles de búsqueda",
+        "loadMessage": "Cargando paneles de búsqueda",
+        "title": "Filtros Activos - %d"
+    },
+    "select": {
+        "1": "%d fila seleccionada",
+        "_": "%d filas seleccionadas",
+        "cells": {
+            "1": "1 celda seleccionada",
+            "_": "$d celdas seleccionadas"
+        },
+        "columns": {
+            "1": "1 columna seleccionada",
+            "_": "%d columnas seleccionadas"
+        }
+    },
+    "thousands": ".",
+    "datetime": {
+        "previous": "Anterior",
+        "next": "Proximo",
+        "hours": "Horas",
+        "minutes": "Minutos",
+        "seconds": "Segundos",
+        "unknown": "-",
+        "amPm": [
+            "am",
+            "pm"
+        ]
+    },
+    "editor": {
+        "close": "Cerrar",
+        "create": {
+            "button": "Nuevo",
+            "title": "Crear Nuevo Registro",
+            "submit": "Crear"
+        },
+        "edit": {
+            "button": "Editar",
+            "title": "Editar Registro",
+            "submit": "Actualizar"
+        },
+        "remove": {
+            "button": "Eliminar",
+            "title": "Eliminar Registro",
+            "submit": "Eliminar",
+            "confirm": {
+                "_": "¿Está seguro que desea eliminar %d filas?",
+                "1": "¿Está seguro que desea eliminar 1 fila?"
+            }
+        },
+        "error": {
+            "system": "Ha ocurrido un error en el sistema (<a target=\"\\\" rel=\"\\ nofollow\" href=\"\\\">Más información&lt;\\\/a&gt;).<\/a>"
+        },
+        "multi": {
+            "title": "Múltiples Valores",
+            "info": "Los elementos seleccionados contienen diferentes valores para este registro. Para editar y establecer todos los elementos de este registro con el mismo valor, hacer click o tap aquí, de lo contrario conservarán sus valores individuales.",
+            "restore": "Deshacer Cambios",
+            "noMulti": "Este registro puede ser editado individualmente, pero no como parte de un grupo."
+        }
+    }
+        													}
+																}
+    											);
+												} );
+                    </script>                                      
+                    
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $(".slidingDiv_bloque1").hide();
+                            $(".show_hide_bloque1").show();
+                            $('.show_hide_bloque1').click(function() {
+                                $(".slidingDiv_bloque1").slideToggle();
+                            });
+                        });
+                    </script>
+                </div>
+                </div>
+    </div>
+    <hr>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+<script type='text/javascript' >
+    $( function() {
+  
+        $( "#autocomplete" ).autocomplete({
+            source: function( request, response ) {
+                
+                $.ajax({
+                    url: "?sw=BuscaPersonas2020_v2",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: request.term
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $('#autocomplete').val(ui.item.label); // display the selected text
+                $('#selectuser_id').val(ui.item.value); // save selected id to input
+                return false;
+            }
+        });
+
+
+
+ $( "#autocomplete_2" ).autocomplete({
+            source: function( request, response ) {
+                
+                $.ajax({
+                    url: "?sw=BuscaPersonas2020_v2",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: request.term
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $('#autocomplete_2').val(ui.item.label); // display the selected text
+                $('#selectuser_id_2').val(ui.item.value); // save selected id to input
+                return false;
+            }
+        });
+		
+		
+		
+		 $( "#autocomplete_3" ).autocomplete({
+            source: function( request, response ) {
+                
+                $.ajax({
+                    url: "?sw=BuscaPersonas2020_v2",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: request.term
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $('#autocomplete_3').val(ui.item.label); // display the selected text
+                $('#selectuser_id_3').val(ui.item.value); // save selected id to input
+                return false;
+            }
+        });
+		
+		
+        // Multiple select
+        $( "#multi_autocomplete" ).autocomplete({
+            source: function( request, response ) {
+                
+                var searchText = extractLast(request.term);
+                $.ajax({
+                    url: "fetchData.php",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: searchText
+                    },
+                    success: function( data ) {
+                        response( data );
+                    }
+                });
+            },
+            select: function( event, ui ) {
+                var terms = split( $('#multi_autocomplete').val() );
+                
+                terms.pop();
+                
+                terms.push( ui.item.label );
+                
+                terms.push( "" );
+                $('#multi_autocomplete').val(terms.join( ", " ));
+
+                // Id
+                var terms = split( $('#selectuser_ids').val() );
+                
+                terms.pop();
+                
+                terms.push( ui.item.value );
+                
+                terms.push( "" );
+                $('#selectuser_ids').val(terms.join( ", " ));
+
+                return false;
+            }
+           
+        });
+    });
+
+    function split( val ) {
+      return val.split( /,\s*/ );
+    }
+    function extractLast( term ) {
+      return split( term ).pop();
+    }
+
+    </script>
+
+    
+    <hr> {FOOTER}
+    <BR> {BLOQUEFOOTERCONTENIDO}
+    <BR> {MENU_INFERIOR}
+    <BR>
+    </body>
+
+</html>
