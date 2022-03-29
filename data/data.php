@@ -1156,7 +1156,7 @@ function Check_Usr_PrimerNivel_BloqueadoGGPP($rut_col) {
         $database = new database($c_host, $c_user, $c_pass);
         $database->setDb($c_db);
         	
-				$SQL_SU="select rut from tbl_data_bci where rut='$rut_col' and d30='GERENCIA CORPORATIVA GESTION PERSONAS'";
+				$SQL_SU="select rut from tbl_data_bci_2021 where rut='$rut_col' and d31='GERENCIA CORPORATIVA GESTION PERSONAS'";
 			
         $database->setquery($SQL_SU);
         $database->query();
