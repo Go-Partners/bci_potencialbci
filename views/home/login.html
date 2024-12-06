@@ -1,90 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <title>Potencial Bci</title>
-<link 	href="https://cdn.gop.cl/scripts_go/datatables-1.10.25/datatables.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.gop.cl/scripts_go/datatables-1.10.25/datatables.min.js"></script>
-<link 	href="https://cdn.gop.cl/scripts_go/bootstrap_5.0.2/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.gop.cl/scripts_go/bootstrap_5.0.2/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <script src="https://cdn.gop.cl/scripts_go/bootstrap_5.0.2/bootstrap.bundle.min.js"></script>
-<link href="css/go_admin.css?v=1.0.2" rel="stylesheet" type="text/css" />
 <script src="https://cdn.gop.cl/scripts_go/jquery_3.6.0/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
 <head>
-	  <script src="js/log_vGoogleIdEncAdmin.js?v3"></script>	
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="247446893105-bjdtpkf3lhsahinus4qi2v8tsercg3m2.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-		<script src="https://www.google.com/recaptcha/api.js?render=6LequgweAAAAAEr1BAG3nBxnrx56yFZXE9RlctBN"></script>
+	<script src="https://accounts.google.com/gsi/client" async defer></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LequgweAAAAAEr1BAG3nBxnrx56yFZXE9RlctBN"></script>
 </head>
 <link rel="shortcut icon" href="img/favicongo.ico">
+<script src="assets/js/log_vGoogleIdEnc.js?v1.0.0"></script>
 
 <body role="document">
-    <div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; "></div>
+<div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; "></div>
+<div class="content-section-a" id="contact">
+	<div class="container">
+		<div class="row">
+			<div id="k-top-search" class="col-lg-12 clearfix">
 
-    <div class="content-section-a" id="contact">
-        <div class="container">
-            <div class="row">
-                <div id="k-top-search" class="col-lg-12 clearfix">
-    
-                </div>
-                <div class="k-breadcrumbs col-lg-12 clearfix">
-                    <br>
-                    <br>
-                </div>
-            </div>
-            <div class="row no-gutter fullwidth">
-                <div class="col-sm-2 col-md-2"></div>
-                <div class="col-sm-8 col-md-8">
-                    <div class="panel panel-default divcenter noradius noborder" style="
+			</div>
+			<div class="k-breadcrumbs col-lg-12 clearfix">
+				<br>
+				<br>
+			</div>
+		</div>
+		<div class="row no-gutter fullwidth">
+			<div class="col-sm-2 col-md-2"></div>
+			<div class="col-sm-8 col-md-8">
+				<div class="panel panel-default divcenter noradius noborder" style="
                         background-color: rgba(255,255,255,0.4);">
-                        <div class="panel-body" style="padding: 40px;">
-                            <div class="account-wall colorblue">
-                 
-                                <hr>
-                                    <center>Ingresa a Potencial Bci con tu Cuenta G-Suite<br><br>
-                                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                                    </center>
-																		<input type="hidden" id="token" name="token">
-																		
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2 col-md-2"></div>
-            </div>
-            <div class="row no-gutter fullwidth">
-                <div class="col-lg-12" style="height:20px"></div>
-            </div>
-            <div class="row no-gutter fullwidth">
-                <div class="col-lg-12" style="height:20px"></div>
-            </div>
-        </div>
-    </div>
-    <script>
-        function onSignIn(googleUser) {
-					      grecaptcha.execute('6LequgweAAAAAEr1BAG3nBxnrx56yFZXE9RlctBN', {action: 'homepage'}).then(function(token) {
-					         document.getElementById("token").value = token;
-					      });
-        	  var tokenGoogle=document.getElementById("token").value;
-						if(tokenGoogle==""){
-							exit;
-						}
-            var profile = googleUser.getBasicProfile();
-            var email = profile.getEmail();
-            var arreglo_email = email.split("@");
-            if (arreglo_email[1] == "gop.cl" || arreglo_email[1] == "bci.cl" || arreglo_email[1] == "externos.bci.cl") {
-                var id_token = googleUser.getAuthResponse().id_token;
-                if (profile.getEmail()) {
-                   			window.location.href = "?sw=checkUserBci&user_content_key=" + googleUser.getAuthResponse().id_token+ "&rgv3=" + tokenGoogle;
-                }
-            }
-        };
-       	// document.write(profile.getName());
-    </script>
+					<div class="panel-body" style="padding: 40px;">
+						<div class="account-wall colorblue d-flex flex-column align-items-center">
+							<center>
+								<div style='text-align:center'>
+									<img
+											src="https://bci-cdn.azureedge.net/uploads/18d2deed-7385-47ad-a4ad-c5bf4393a660/original/bci-logo-empresarios.png"
+											alt="img" style="    width: 100px;">
+								</div>
+								<br><br>
+								<div style="font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 500;">Potencial BCI
+								</div>
+							</center>
+							<br><br>
+							<div id="g_id_onload"
+								 data-client_id="247446893105-bjdtpkf3lhsahinus4qi2v8tsercg3m2.apps.googleusercontent.com"
+								 data-callback="handleCredentialResponse" data-shape="circle" 	 data-auto_select="true"
+								 data-auto_prompt="true">
+							</div>
+							<div class="g_id_signin" data-type="standard"></div>
+							<input type="hidden" id="token" name="token">
 
-
-    
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2 col-md-2"></div>
+		</div>
+		<div class="row no-gutter fullwidth">
+			<div class="col-lg-12" style="height:20px"></div>
+		</div>
+		<div class="row no-gutter fullwidth">
+			<div class="col-lg-12" style="height:20px"></div>
+		</div>
+	</div>
+</div>
 </body>
 
-</html>

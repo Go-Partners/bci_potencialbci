@@ -1,0 +1,255 @@
+{HEAD_DINAMICO}
+<style>
+    tbody, td, tfoot, th, thead, tr {
+        border-color: inherit;
+        border-style: solid;
+        border-width: 0;
+        border-bottom: 1px solid #ccc;
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+    th {
+        background-color: #f7f7f7;
+        padding-left: 5px;
+    }
+
+    .ui-menu-item {
+        color: #005dff !important;
+        font-size: 14px !important;
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+        text-decoration: underline !important;
+        font-weight: 500 !important;
+        background-color: #fff;
+        padding: 10px;
+    }
+
+</style>
+<body class="app-default" data-kt-app-header-fixed="true" data-kt-app-header-fixed-mobile="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-push-footer="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-secondary-enabled="true" data-kt-app-sidebar-stacked="true" id="kt_app_body">
+<script>var defaultThemeMode = "light";
+var themeMode;
+if (document.documentElement) {
+    if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+        themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
+    } else {
+        if (localStorage.getItem("data-bs-theme") !== null) {
+            themeMode = localStorage.getItem("data-bs-theme");
+        } else {
+            themeMode = defaultThemeMode;
+        }
+    }
+    if (themeMode === "system") {
+        themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-bs-theme", themeMode);
+}</script>
+<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+    <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+        <div class="flex-column flex-row-fluid" id="kt_app_wrapper">
+            <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                <div class="d-flex flex-column flex-column-fluid">
+                    <div class="app-content flex-column-fluid" id="kt_app_content">
+                        <div class="app-container container-fluid" id="kt_app_content_container">
+                            <div class="row gy-5 g-xl-10">
+                                <div class="col-12">
+                                    <img src="https://cdn3.bci.cl/uploads/e682d72b-13b1-49a3-93ce-20f6252e1d17/original/logo_bci_negro.svg?v3"
+                                         class="img-fluid" alt="Logo BCI" style="width: 76px;">
+                                </div>
+
+
+                                <div class="card">
+                                    <div class="card-body pt-5 pb-0 px-3">
+                                        <div class="d-flex flex-wrap flex-sm-nowrap mb-3">
+                                            <div class="me-7 mb-4">
+                                                <div class="symbol symbol-100px symbol-lg-160px position-relative">
+                                                    <img alt="image" src="{AVATAR_COLABORADOR}" class="img-fluid" style="width: 64px; height: 64px;">
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                                                    <div class="d-flex flex-column">
+                                                        <a class="text-gray-900 text-hover-primary fs-2 fw-bold me-1" href="#">{NOMBRE_COLABORADOR}</a>
+                                                        <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
+                                                            <a class="text-gray-600 text-hover-primary me-5 mb-2" href="#">
+                                                                <i class="bi bi-person-circle me-1"></i>{RUT_COMPLETO}
+                                                            </a>
+                                                            <a class="text-gray-600 text-hover-primary mb-2" href="#">{PERFIL}</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card card-xxl-stretch mb-5 mb-xl-10" style="{display_new_comite}">
+                                    <img src="https://cdn3.bci.cl/uploads/a2389696-6bd0-495a-8b50-cdc47afe57a7/original/formas.svg"
+                                         class="img-fluid  my-3 pdd" style="width: 64px;    margin-left: 30px;">
+
+                                    <div class="card-header">
+                                        <h3 class="m-0 text-gray-900">Crear Nuevo Comité de Sucesión</h3>
+                                    </div>
+
+                                    <div class="card-body pt-7 pb-0">
+
+                                        <form action="?sw=sucesion&prev=1" id="previsualizar" method="post" style="{DISPLAY_CREAR_COMITE}">
+                                            <div class="row">
+                                                <div class="col-sm-4" style="margin-bottom: 30px;">
+                                                    <label for="autocomplete" class="fw-bold">Escribe el Nombre del Líder y selecciónalo de la lista</label>
+                                                    <input id="autocomplete" class="form-control"  type="text">
+                                                    <input id="selectuser_id_hidden" name="rut_save" type="hidden"/>
+                                                </div>
+                                                <div class="col-sm-4" style="margin-bottom: 30px;">
+                                                    <label for="nombre_comite" class="fw-bold">Nombre Comité</label>
+                                                    <input class="form-control" id="nombre_comite" name="nombre_comite" required type="text">
+                                                </div>
+                                                <div class="col-sm-2" style="margin-bottom: 30px;">
+                                                    <label for="fecha_comite" class="fw-bold">Fecha de Realización</label>
+                                                    <input class="form-control" id="fecha_comite" name="fecha_comite" required type="date">
+                                                </div>
+                                                <div class="col-sm-2 text-end"  style="margin-bottom: 30px;">
+                                                    <input class="btn btn-info" type="submit" value="Continuar" style="margin-top: 20px;">
+                                                </div>
+                                            </div>
+                                            <input type="hidden" id="previsualizar" name="previsualizar" value="1" >
+                                        </form>
+
+
+                                        <form action="?sw=sucesion" id="crear_comite" method="post" style="{DISPLAY_PREVISUALIZAR}">
+                                            <div class="row">
+                                                <div class="col-sm-4" style="margin-bottom: 30px;">
+                                                    <label for="autocomplete" class="fw-bold">Escribe el Nombre del Líder y selecciónalo de la lista</label>
+                                                    <input id="autocomplete" class="form-control"  type="text" value="{NOMBRE_LIDER}">
+                                                    <input id="selectuser_id_hidden" name="rut_save" type="hidden" value="{RUT_SAVE}"/>
+                                                </div>
+                                                <div class="col-sm-4" style="margin-bottom: 30px;">
+                                                    <label for="nombre_comite" class="fw-bold">Nombre Comité</label>
+                                                    <input class="form-control" id="nombre_comite" name="nombre_comite" VALUE="{NOMBRE_COMITE}" required type="text">
+                                                </div>
+                                                <div class="col-sm-2" style="margin-bottom: 30px; ">
+                                                    <label for="fecha_comite" class="fw-bold">Fecha de Realización</label>
+                                                    <input class="form-control" id="fecha_comite" name="fecha_comite" value="{FECHA_REALIZACION}" required type="date">
+                                                </div>
+                                                <div class="col-sm-2 text-end"  style="margin-bottom: 30px;">
+                                                    <input class="btn btn-info" type="submit" value="Guardar Comité" style="margin-top: 20px;">
+                                                </div>
+                                                <div class="col-sm-12" style="margin-bottom: 30px;">
+                                                    {LISTA_CARGOS-2024}
+                                                </div>
+                                            </div>
+                                            <input type="hidden" id="nuevo_comite" name="nuevo_comite" value="1" >
+                                            <input type="hidden" id="id_nuevo_comite_edit" name="id_nuevo_comite_edit" value="{ID_NUEVO_COMITE_EDIT}" >
+                                        </form>
+
+                                    </div>
+                                </div>
+                                <!-- Mi Sucesión Section -->
+                                <div class="card card-xxl-stretch mb-5 mb-xl-10" style="{MI_SUCESION_DISPLAY_NONE}">
+                                    <img src="https://cdn3.bci.cl/uploads/a2389696-6bd0-495a-8b50-cdc47afe57a7/original/formas.svg"
+                                         class="img-fluid  my-3 pdd" style="width: 64px;    margin-left: 30px;">
+                                    <div class="card-header">
+                                        <h3 class="m-0 text-gray-900">Mi Sucesión</h3>
+                                    </div>
+                                    <div class="card-body pt-7 pb-0">
+                                        <table id="misucesion" class="display w-100">
+                                            <thead>
+                                            <tr>
+                                                <th>Cargo a Suceder</th>
+                                                <th> Comité</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                {MI_SUCESION}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- Mis Comités Section -->
+                                <div class="card card-xxl-stretch mb-5 mb-xl-10" style="{MIS_COMITES_SUCESION_DISPLAY_NONE}">
+                                    <img src="https://cdn3.bci.cl/uploads/a2389696-6bd0-495a-8b50-cdc47afe57a7/original/formas.svg"
+                                         class="img-fluid  my-3 pdd" style="width: 64px;    margin-left: 30px;">
+                                    <div class="card-header">
+                                        <h3 class="m-0 text-gray-900">Mis Comités de Sucesión</h3>
+                                    </div>
+                                    <div class="card-body pt-7 pb-0">
+                                        <table id="miscomites" class="display w-100">
+                                            <thead>
+                                            <tr>
+                                                <th>Nombre Comité</th>
+                                                <th>Líder</th>
+                                                <!--<th style="    min-width: 135px;">Periodo de la Tarea</th>-->
+                                                <th>Cargo Persona</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                {MIS_COMITES_SUCESION}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script>
+        $(document).ready(function () {
+            // Autocomplete initialization
+            $("#autocomplete").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: "?sw=BuscaPersonas2020_SucesorLider",
+                        type: 'post',
+                        dataType: "json",
+                        data: { search: request.term },
+                        success: function (data) {
+                            response(data);
+                        }
+                    });
+                },
+                select: function (event, ui) {
+                    $('#autocomplete').val(ui.item.label);
+                    $('#selectuser_id_hidden').val(ui.item.value);
+                    return false;
+                }
+            });
+            $('#miscomites').DataTable({
+                pageLength: 100,
+                order: [[2, "desc"]],
+                language: { url: "assets/es-ES.json" },
+                searching: true,
+                ordering: true,
+                lengthChange: false,
+                paging: false,
+                info: false
+            });
+
+            $('#misucesion').DataTable({
+                pageLength: 100,
+                order: [[2, "desc"]],
+                language: { url: "assets/es-ES.json" },
+                searching: true,
+                ordering: true,
+                lengthChange: false,
+                paging: false,
+                info: false
+            });
+            function split(val) {
+                return val.split(/,\s*/);
+            }
+
+            function extractLast(term) {
+                return split(term).pop();
+            }
+        });
+    </script>
+</body>
+</html>

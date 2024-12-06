@@ -1,0 +1,88 @@
+<div class="row" style="background-color: #f7f7f7; border-radius: 15px; margin-bottom: 15px; margin-left: 5px; margin-right: 5px; padding-top: 10px;">
+    <div class="col col-lg-1 text-center">
+        <img src="{AVATAR_RUT_SUCESORES}" style="width: 44px; border-radius: 50%;">
+            <!--<br><a href="?sw=ficha_landing_sucesion_2024&rut_enc={RUT_SUCESORES_ENC}" class="btn btn-link" target="_blank"><span style="    color: #337ab7;text-align: left;font-size: 12px;text-decoration: underline;"> Ficha</span></a>-->
+    </div>
+    <div class="col col-lg-8">
+        <span class="mt-comment-author" style="padding-left: 0;"> <strong>{COLABORADOR_SUCESORES}</strong> </span>
+        <br>
+        <div style="font-size: 12px;">
+            <i class="bi bi-arrow-right-short"></i> Sucesor Externo
+            <br>
+            <i class="bi bi-arrow-right-short"></i> Empresa: {CARGO_EXTERNO}<br>
+        </div>
+        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{ID_COL}" aria-expanded="false" aria-controls="collapse{ID_COL}" style="    padding: 0px;">
+            <span style="    color: #337ab7;text-align: left;font-size: 12px;text-decoration: underline;"> Ficha</span>
+        </button>
+        <div class="collapse" id="collapse{ID_COL}">
+            <div class="card card-body mb-2">
+                <ul>
+                    <li>Bit&aacute;cora Fundamentos:
+                    {BITACORA}</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="col col-lg-3">
+        <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal_{RUT_SUCESORES}"
+                style="font-size: 12px; height: 12px;     display: block; {display_none_edit}" type="button">
+            <span style="color: #337ab7; text-align: left;">Editar Temporalidad</span>
+        </button>
+        <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal_del{RUT_SUCESORES}"
+                style="font-size: 12px;display: block;  {display_none_edit}" type="button">
+            <i class="far fa-trash-alt"></i> <span style="color: #337ab7;"> Eliminar </span>
+        </button>
+        <br>
+    </div>
+</div>
+<div aria-hidden="true" aria-labelledby="exampleModal_{RUT_SUCESORES}" class="modal fade" id="exampleModal_{RUT_SUCESORES}" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="mt-comment-author" style="padding-left: 0;">Editar Temporalidad de {COLABORADOR_SUCESORES}</span>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    <div class="badge-gray_blue" style="font-size: 10px;">
+                        Temporalidad
+                    </div>
+                    <select class="form form-control" name="tipo_sucesion_ficha" required>
+                        <option value="{ID_ACTUAL_TEMPORALIDAD}">{ACTUAL_TEMPORALIDAD}</option>
+                        <option value="1">Inmediato</option>
+                        <option value="2">Mediano</option>
+                        <option value="3">Largo</option>
+                    </select>
+                    <br>
+                    <div class="badge-gray_blue" style="font-size: 10px;">
+                        Comentario
+                    </div>
+                    <input class="form form-control" name="fundamento" required type="text">
+                    <input name="id_sucesor" type="hidden" value="{ID_SUCESORES}">
+                    <center><input class="btn btn-info" type="submit" value="Actualizar"></center>
+                </form>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+<div aria-hidden="true" aria-labelledby="exampleModal_del{RUT_SUCESORES}" class="modal fade" id="exampleModal_del{RUT_SUCESORES}" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="mt-comment-author" style="padding-left: 0;">Dejar como No Sucesor a {COLABORADOR_SUCESORES}</span>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body">
+                <form action="?sw=sucesion_ficha_sucesion&id_posicion_enc={ID_POSICION_ENC}&id_comite={ID_COMITE_ENC}&del={ID_COL}&perfil_del={PERFIL_ENC}" method="post">
+                    <div class="badge-gray_blue" style="font-size: 10px;">Escribe tu fundamento</div>
+                    <input class="form form-control" name="fundamento" required type="text">
+                    <input name="id_sucesor" type="hidden" value="{ID_SUCESORES}">
+                    <center><input class="btn btn-info" type="submit" value="Eliminar como sucesor" style="    margin-top: 10px;"></center>
+                </form>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,171 @@
+{HEAD_DINAMICO}
+<body class="app-default" data-kt-app-header-fixed="true" data-kt-app-header-fixed-mobile="true"
+      data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-push-footer="true"
+      data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-secondary-enabled="true"
+      data-kt-app-sidebar-stacked="true" id="kt_app_body">
+<script>var defaultThemeMode = "light";
+var themeMode;
+if (document.documentElement) {
+    if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+        themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
+    } else {
+        if (localStorage.getItem("data-bs-theme") !== null) {
+            themeMode = localStorage.getItem("data-bs-theme");
+        } else {
+            themeMode = defaultThemeMode;
+        }
+    }
+    if (themeMode === "system") {
+        themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-bs-theme", themeMode);
+}</script>
+
+<style>
+    .PadSearchButton {
+        color: #005dff  !important;
+        font-size: 14px  !important;
+        margin-bottom: 20px !important;
+        margin-top: 10px !important;
+        text-decoration: underline  !important;
+        font-weigth: 600 !important;
+    }
+</style>
+
+<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+    <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+        <div class="flex-column flex-row-fluid" id="kt_app_wrapper">
+            <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                <div class="d-flex flex-column flex-column-fluid">
+                    <div class="app-content flex-column-fluid" id="kt_app_content">
+                        <div class="app-container container-fluid" id="kt_app_content_container">
+                            <div class="row gy-5 g-xl-10">
+                                <div class="col-12">
+                                    <img src="https://cdn3.bci.cl/uploads/e682d72b-13b1-49a3-93ce-20f6252e1d17/original/logo_bci_negro.svg?v3"
+                                         style="    width: 76px;">
+                                </div>
+                                <div class="card mb-5 mb-xl-10">
+                                    <div class="card-body pt-9 pb-0" style="    padding: 10px;">
+                                        <img src="https://cdn3.bci.cl/uploads/a2389696-6bd0-495a-8b50-cdc47afe57a7/original/formas.svg"
+                                             style=" width: 64px;display: block;margin-left: 30px;
+                                             margin-top: 30px;margin-bottom: 0px;">
+                                        <div class="card-header card-header-stretch">
+                                            <div class="card-title">
+                                                <h3 class="m-0 text-gray-900"> Ficha de Colaborador </h3>
+                                            </div>
+                                        </div>
+                                        <div class="paddingFull bg_color_gray_back_mp">
+                                            <br><br>
+                                            <div class="container">
+                                                <h3 class="section-title dark_title">Ingresa el nombre y apellido para ver Ficha de Colaborador</h3>
+                                                <span class="bch-form-msg">Debes elegir de la lista desplegable</span>
+                                                <br><br>
+                                                <div class="section-border dark_border"></div>
+                                                <form action="javascript:void(0)" class="form-signin" id="formlozgin" method="POST" name="formlozgin"
+                                                      style="{displayNone}">
+                                                    <div class="form-group">
+                                                        <div class="wk-input-text">
+                                                            <input autocomplete="off" class="form form-control" id="searchEquipo" name="universidad"
+                                                                   placeholder="&iquest;Qu&eacute; persona quieres buscar?" required type="text">
+                                                            <input class="rut_empresa" id="rut_empresa" name="rut_empresa" type="hidden"/>
+                                                            <div class="capaSearchUser collapse bch-buscador">
+                                                                <ul class="cotainerResultEquipo row pad_30_10">
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <br>
+                                                <br>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <br>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript">
+            function colocaValorAjax(valor) {
+                document.getElementById("searchEquipo").value = valor;
+                document.getElementById("rut_empresa").value = 1;
+                $(".capaSearchUser").addClass("collapse");
+            }
+
+            $(document).ready(function () {
+                let principal = $(".contProcess");
+                let inputsearch = $("#searchEquipo");
+                let clearInputSearch = $(".clearInputSearch");
+                let containerSearchUser = $(".containerSearchUser");
+                let capaSearchUser = $(".capaSearchUser");
+                let timeout;
+                inputsearch.on("keyup", function () {
+                    if (inputsearch.val().length > 2) {
+                        document.getElementById("rut_empresa").value = "";
+                        clearTimeout(timeout);
+                        $(".cotainerResultEquipo").html('');
+                        timeout = setTimeout(() => {
+                            $.ajax({
+                                url: "?sw=ficha_landing_personas_ajax_vigentes",
+                                type: 'post',
+                                dataType: "text",
+                                data: {
+                                    "text": $("#searchEquipo").val()
+                                },
+                                success: function (dataUser) {
+                                    $(".capaSearchUser").removeClass("collapse");
+                                    $(".cotainerResultEquipo").html(dataUser);
+                                    setTimeout(() => {
+                                        let labelAdd = "";
+                                        $(".cotainerResultEquipo").append(labelAdd);
+                                    }, 1000)
+                                }
+                            });
+                        }, 500)
+                    } else {
+                        $(".capaSearchUser").addClass("collapse");
+                    }
+                });
+
+                inputsearch.on("blur", function () {
+                    if ($(".cotainerResultEquipo > li.sin-resultado").length == 1)
+                        $(".capaSearchUser").addClass("collapse");
+                })
+
+                principal.on("click", ".addNewLead", function () {
+                    $(".formNewLead").removeClass("collapse");
+                    $("#newLead").attr("required", "required");
+                    $("#searchEquipo").removeAttr("required");
+                    $(".capaSearchUser").addClass("collapse");
+                    $("#searchEquipo").removeAttr("readonly");
+                });
+
+                $(".capaSearchUser").on("focusout", function () {
+                    $(this).addClass("collapse");
+                });
+
+                $(document).on("click", function (e) {
+                    var container = $(".capaSearchUser");
+                    if (!container.is(e.target) && container.has(e.target).length === 0) {
+                        container.addClass("collapse");
+                        if (document.getElementById("rut_empresa").value != 1) {
+                            document.getElementById("searchEquipo").value = "";
+                        }
+                    }
+                });
+            });
+        </script>
+
+
+
+        <script>var hostUrl = "assets/";</script>
+</body>
+<!--end::Body-->
+</html>

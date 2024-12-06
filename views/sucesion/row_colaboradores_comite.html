@@ -1,0 +1,141 @@
+<div class="row">
+    <div class="col-sm-6 txt_azul_box mt-3">
+
+            <i class="bi bi-arrow-right-short"></i> <strong>{POSICION_COL}</strong>
+            <br>
+            <br><i class="bi bi-person"></i> {NOMBRE_COL}
+            <br><i class="bi bi-arrow-right-short"></i>Cargo: {CARGO_COL}
+            <br><i class="bi bi-bookmark"></i> Nivel R: {NIVEL_R_COL}
+            <br><i class="bi bi-clipboard-data"></i>   Estado Tarea: {ESTADO_TAREA}
+
+            {CARGO_SUCEDER_LIDER_CERRADO}
+            {BOTON_VER_FICHA_A_inicial}
+            {BOTON_VER_FICHA_B_final}
+
+            <!--{Porcentaje_Cargo}--->
+       <!-- <br> {Sucesores_Cuadrantes_23} | {Sucesores_Cuadrantes_6} | {Sucesores_Cuadrantes_19487}
+        <br> {Sucesores_Mujeres} | {Sucesores_Hombre}-->
+    </div>
+    <div class="col-sm-3">
+        {TITULO_INMEDIATO}
+        {INMEDIATO}
+        <br>
+        {TITULO_MEDIANO}
+        {MEDIANO}
+        <br>
+        {TITULO_LARGO}
+        {LARGO}
+    </div>
+
+    <div class="col-sm-3 txt_azul_box_v3  mt-3 " style="text-align: end;"> {BOTON_MODAL}</div>
+    <div class="col-sm-12 ">
+        <hr>
+    </div>
+</div>
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModal_{RUT}" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Seleccionar nuevo colaborador</h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="POST" name="form_busqueda">
+                    <div class="badge-gray_blue">Escribe el Nombre del Colaborador y selecci&oacute;nalo de la Lista
+                    </div>
+                    <br><br>
+                    <!--<input type='h' name="autocomplete" id='autocomplete' class="form form-control">
+        <input type='hidden' name="selectuser_id" id='selectuser_id' />
+      -->
+                    <input id='autocomplete_{RUT}' name="rut" type='text'>
+                    <input id='selectuser_id_{RUT}' type='hidden'/>
+                    <br><br>
+                    <input id="tipo_feed" name="tipo_feed" type="hidden" value="{TIPO_FEED}"/>
+                    <input name="fundamento" name="fundamento" type="text">
+                    <input class="btn btn-success" type="submit" value="Seleccionar">
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<script type='text/javascript'>
+    $(function () {
+
+        $("#autocomplete_{RUT}").autocomplete({
+            source: function (request, response) {
+
+                $.ajax({
+                    url: "?sw=BuscaPersonas2020_v2",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: request.term
+                    },
+                    success: function (data) {
+                        response(data);
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $('#autocomplete_{RUT}').val(ui.item.label); // display the selected text
+                $('#selectuser_id_{RUT}').val(ui.item.value); // save selected id to input
+                return false;
+            }
+        });
+
+        // Multiple select
+        $("#multi_autocomplete").autocomplete({
+            source: function (request, response) {
+
+                var searchText = extractLast(request.term);
+                $.ajax({
+                    url: "fetchData.php",
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        search: searchText
+                    },
+                    success: function (data) {
+                        response(data);
+                    }
+                });
+            },
+            select: function (event, ui) {
+                var terms = split($('#multi_autocomplete').val());
+
+                terms.pop();
+
+                terms.push(ui.item.label);
+
+                terms.push("");
+                $('#multi_autocomplete').val(terms.join(", "));
+
+                // Id
+                var terms = split($('#selectuser_ids').val());
+
+                terms.pop();
+
+                terms.push(ui.item.value);
+
+                terms.push("");
+                $('#selectuser_ids').val(terms.join(", "));
+
+                return false;
+            }
+
+        });
+    });
+
+    function split(val) {
+        return val.split(/,\s*/);
+    }
+
+    function extractLast(term) {
+        return split(term).pop();
+    }
+</script>

@@ -1,0 +1,1553 @@
+{HEAD_DINAMICO}
+<body class="app-default" data-kt-app-header-fixed="true" data-kt-app-header-fixed-mobile="true"
+      data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-push-footer="true"
+      data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-secondary-enabled="true"
+      data-kt-app-sidebar-stacked="true" id="kt_app_body">
+<script>var defaultThemeMode = "light";
+var themeMode;
+if (document.documentElement) {
+    if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+        themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
+    } else {
+        if (localStorage.getItem("data-bs-theme") !== null) {
+            themeMode = localStorage.getItem("data-bs-theme");
+        } else {
+            themeMode = defaultThemeMode;
+        }
+    }
+    if (themeMode === "system") {
+        themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-bs-theme", themeMode);
+}</script>
+<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+    <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+        <div class="flex-column flex-row-fluid" id="kt_app_wrapper">
+            <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                <div class="d-flex flex-column flex-column-fluid">
+                    <div class="app-content flex-column-fluid" id="kt_app_content">
+                        <div class="app-container container-fluid" id="kt_app_content_container">
+                            <div class="row gy-5 g-xl-10">
+                                <div class="col-12">
+                                    <img src="https://cdn3.bci.cl/uploads/e682d72b-13b1-49a3-93ce-20f6252e1d17/original/logo_bci_negro.svg?v3"
+                                         style="    width: 76px;">
+                                </div>
+                                <div class="card mb-5 mb-xl-10">
+                                        <div>
+                                            <a href="?sw=potencial_landing" class="btn btn-link">Volver</a>
+                                        </div>
+                                        <br>
+                                    <div class="card-body pt-9 pb-0" style="    padding: 10px;">
+                                        <div class="d-flex flex-wrap flex-sm-nowrap mb-3">
+                                            <div class="me-7 mb-4">
+                                                <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
+                                                    <img alt="image" src="{AVATAR_COLABORADOR}">
+                                                    <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                                                    <div class="d-flex flex-column">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <a class="text-gray-900 text-hover-primary fs-2 fw-bold me-1"
+                                                               href="#">{NOMBRE_COLABORADOR}</a>
+                                                            {VIGENTE}
+                                                        </div>
+                                                        <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
+                                                            <a class="d-flex align-items-center text-gray-600 text-hover-primary me-5 mb-2"
+                                                               href="#">
+                                                                <i class="ki-outline ki-profile-circle fs-4 me-1"></i>
+                                                                {RUT_COMPLETO}
+                                                            </a>
+                                                            <a class="d-flex align-items-center text-gray-600 text-hover-primary mb-2"
+                                                               href="#">
+                                                                <i class="ki-outline ki-sms fs-4 me-1"></i>
+                                                                {EMAIL}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-wrap flex-stack">
+                                                    <div class="d-flex flex-column flex-grow-1 pe-8">
+                                                        <div class="d-flex flex-wrap">
+                                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="fs-6 fw-bold counted text-gray-600"
+                                                                         data-kt-initialized="1">{CARGO}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="fw-semibold fs-6 text-gray-400">Cargo
+                                                                </div>
+                                                            </div>
+                                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="fs-6 fw-bold counted text-gray-600"
+                                                                         data-kt-initialized="1">{POSICION}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="fw-semibold fs-6 text-gray-400">Posici&oacute;n
+                                                                </div>
+                                                            </div>
+                                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="fs-6 fw-bold counted text-gray-600"
+                                                                         data-kt-initialized="1">{ANTIGUEDAD_BCI_YEARS}
+                                                                    </div>
+                                                                    <i class="ki-outline ki-calendar-2 fs-2 text-primary me-2  ms-2"></i>
+                                                                    <div class="fs-6 fw-bold counted text-gray-400"
+                                                                         data-kt-initialized="1">{ANTIGUEDAD_BCI}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="fw-semibold fs-6 text-gray-400">Antiguedad
+                                                                    en Bci
+                                                                </div>
+                                                            </div>
+                                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3" >
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="fs-6 fw-bold counted text-gray-600"
+                                                                         data-kt-initialized="1">
+                                                                        {ANTIGUEDAD_CARGO_YEARS}
+                                                                    </div>
+                                                                    <i class="ki-outline ki-calendar-2 fs-2 text-primary me-2  ms-2"></i>
+                                                                    <div class="fs-6 fw-bold counted text-gray-400"
+                                                                         data-kt-initialized="1">{ANTIGUEDAD_CARGO}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="fw-semibold fs-6 text-gray-400">Antiguedad
+                                                                    en Cargo
+                                                                </div>
+                                                            </div>
+                                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3"  style="display:none!important">
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="fs-6 fw-bold counted text-gray-600"
+                                                                         data-kt-initialized="1">
+                                                                        {ANTIGUEDAD_POSICION_YEARS}
+                                                                    </div>
+                                                                    <i class="ki-outline ki-calendar-2 fs-2 text-primary me-2 ms-2"></i>
+                                                                    <div class="fs-6 fw-bold counted text-gray-400"
+                                                                         data-kt-initialized="1">{ANTIGUEDAD_POSICION}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="fw-semibold fs-6 text-gray-400">Antiguedad
+                                                                    en Posici&oacute;n
+                                                                </div>
+                                                            </div>
+                                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="fs-6 fw-bold counted text-gray-600"
+                                                                         data-kt-countup="true"
+                                                                         data-kt-initialized="1">{EDAD}
+                                                                    </div>
+                                                                    <i class="ki-outline ki-calendar-2 fs-2 text-primary me-2  ms-2"></i>
+                                                                    <div class="fs-6 fw-bold counted text-gray-400"
+                                                                         data-kt-countup="true"
+                                                                         data-kt-initialized="1">{FECHA_NACIMIENTO}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="fw-semibold fs-6 text-gray-400">Edad
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-wrap">
+                                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <div class="fw-semibold fs-7 text-gray-600">
+                                                                    <span class="fw-semibold fs-6 text-gray-400">Gerencia</span><br>
+                                                                    {GERENCIA}
+                                                                </div>
+                                                            </div>
+                                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <div class="fw-semibold fs-7 text-gray-600">
+                                                                    <span class="fw-semibold fs-6 text-gray-400">Fondo</span><br>
+                                                                    {FONDO}
+                                                                </div>
+                                                            </div>
+                                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <div class="fw-semibold fs-7 text-gray-600">
+                                                                    <span class="fw-semibold fs-6 text-gray-400">Dependencia</span><br>
+                                                                    {DEPENDENCIA}
+                                                                </div>
+                                                            </div>
+                                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <div class="fw-semibold fs-7 text-gray-600">
+                                                                    <span class="fw-semibold fs-6 text-gray-400">Socio de Negocio</span><br>
+                                                                    {NOMBRE_SSNN}
+                                                                </div>
+                                                            </div>
+                                                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <div class="fw-semibold fs-7 text-gray-600">
+                                                                    <span class="fw-semibold fs-6 text-gray-400">Jefe Directo</span><br>
+                                                                    {NOMBRE_LIDER}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center w-200px w-sm-300px flex-column mt-3">
+                                                    <div class=" justify-content-between w-100 mt-auto mb-2">
+                                                        <div class="badge badge-light-primary fs-7 fw-bold me-2">
+                                                            {LIDER_NO_LIDER}
+                                                        </div>
+                                                        <div class="badge badge-light-primary fs-7 fw-bold me-2">
+                                                            {NIVEL_R}
+                                                        </div>
+                                                        <div class="badge badge-light-primary fs-7 fw-bold me-2" style="display:none!important">
+                                                            {NIVEL_HAY}
+                                                        </div>
+                                                        {FACILITADOR_ACADEMIA}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-xxl-stretch mb-5 mb-xl-10">
+                                    <img src="https://cdn3.bci.cl/uploads/a2389696-6bd0-495a-8b50-cdc47afe57a7/original/formas.svg"
+                                         style=" width: 64px;display: block;margin-left: 30px;margin-top: 30px;margin-bottom: 0px;">
+                                    <div class="card-header card-header-stretch">
+                                        <div class="card-title">
+                                            <h3 class="m-0 text-gray-900"> Gestión del desempeño </h3>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pt-7 pb-0 px-0">
+                                        <div class="tab-content">
+                                            <div class="fs-6 fw-semibold text-gray-400" style="    padding-left: 35px;">
+                                                Desempeño
+                                            </div>
+                                            <div class="tab-pane fade active show"
+                                                 id="kt_security_summary_tab_pane_hours" role="tabpanel">
+                                                <div class="row p-0 mb-5 px-9">
+                                                    <div class="col">
+                                                        <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                            <span class="fs-5 fw-semibold  text-gray-500 d-block">Desempeño {YEAR_A}</span>
+                                                            <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                  data-kt-countup="true" data-kt-countup-value="36899"
+                                                                  data-kt-initialized="1">{DESEMPENO_A}</span>
+                                                            <div><span class="badge badge-light-info-2 fs-base"
+                                                                       style="    --bs-badge-font-weight: 400;">Promedio conductas clave: <span
+                                                                    class="badge-ligth-info-2-strong">{DESEMPENO_PROMEDIO_A}</span></span>
+                                                            </div>
+                                                        </div>
+                                                        <p style="    padding: 0px;margin: 0px !important;text-align: center;">
+                                                        </p>
+                                                        <div class="collapse" id="collapseExample">
+                                                            <div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary fs-base"> {DESEMPENO_CATEGORIA1_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <a class="text-gray-800 fw-bold text-hover-primary fs-6"
+                                                                           href="#">Actuo como Dueño</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA11_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Antepongo el éxito corporativo ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA12_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Co-elaboro con otros ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA13_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Construyo confianza ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary fs-base">{DESEMPENO_CATEGORIA2_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <a class="text-gray-800 fw-bold text-hover-primary fs-6"
+                                                                           href="#">Inspiro a las personas ...</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA21_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Celebro los logros ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA22_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Doy y busco feedback ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA23_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Facilito el desarrollo del talento ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA24_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Soy protagonista y empodero ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA25_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Valoro y promuevo ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary fs-base">{DESEMPENO_CATEGORIA3_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <a class="text-gray-800 fw-bold text-hover-primary fs-6"
+                                                                           href="#">Me apasiono por el cliente</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA31_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Genero experiencias sorprendentes ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA32_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Me conecto y empatizo ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA33_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Tomo decisiones con el cliente ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary fs-base">{DESEMPENO_CATEGORIA4_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <a class="text-gray-800 fw-bold text-hover-primary fs-6"
+                                                                           href="#">Logro objetivos ambiciosos</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA41_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Alcanzo objetivos ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA42_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Innovo y exploro ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA43_A}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Me atrevo a ser ágil ...</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                            <span class="fs-5 fw-semibold  text-gray-500 d-block">Desempeño {YEAR_B}</span>
+                                                            <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                  data-kt-countup="true" data-kt-countup-value="36899"
+                                                                  data-kt-initialized="1">{DESEMPENO_B}</span>
+                                                            <div><span class="badge badge-light-info-2 fs-base"
+                                                                       style="    --bs-badge-font-weight: 400;">Promedio conductas clave: <span
+                                                                    class="badge-ligth-info-2-strong">{DESEMPENO_PROMEDIO_B}</span></span>
+                                                            </div>
+                                                        </div>
+                                                        <p style="    padding: 0px;margin: 0px !important;text-align: center;">
+                                                            <a aria-controls="collapseExample"
+                                                               aria-expanded="false" class="btn btn-link ahref_btn_link"
+                                                               data-bs-toggle="collapse" href="#collapseExample"
+                                                               role="button">
+                                                                Ver Detalle
+                                                            </a>
+                                                        </p>
+                                                        <div class="collapse" id="collapseExample">
+                                                            <div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary fs-base"> {DESEMPENO_CATEGORIA1_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <a class="text-gray-800 fw-bold text-hover-primary fs-6"
+                                                                           href="#">Actuo como Dueño</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA11_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Antepongo el éxito corporativo ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA12_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Co-elaboro con otros ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA13_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Construyo confianza ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary fs-base">{DESEMPENO_CATEGORIA2_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <a class="text-gray-800 fw-bold text-hover-primary fs-6"
+                                                                           href="#">Inspiro a las personas ...</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA21_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Celebro los logros ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA22_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Doy y busco feedback ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA23_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Facilito el desarrollo del talento ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA24_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Soy protagonista y empodero ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA25_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Valoro y promuevo ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary fs-base">{DESEMPENO_CATEGORIA3_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <a class="text-gray-800 fw-bold text-hover-primary fs-6"
+                                                                           href="#">Me apasiono por el cliente</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA31_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Genero experiencias sorprendentes ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA32_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Me conecto y empatizo ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA33_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Tomo decisiones con el cliente ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary fs-base">{DESEMPENO_CATEGORIA4_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <a class="text-gray-800 fw-bold text-hover-primary fs-6"
+                                                                           href="#">Logro objetivos ambiciosos</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA41_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Alcanzo objetivos ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA42_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Innovo y exploro ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA43_B}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Me atrevo a ser ágil ...</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                            <span class="fs-5 fw-semibold  text-gray-500 d-block">Desempeño {YEAR_C}</span>
+                                                            <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                  data-kt-countup="true" data-kt-countup-value="36899"
+                                                                  data-kt-initialized="1">{DESEMPENO_C}</span>
+                                                            <div><span class="badge badge-light-info-2 fs-base"
+                                                                       style="    --bs-badge-font-weight: 400;">Promedio conductas clave: <span
+                                                                    class="badge-ligth-info-2-strong">{DESEMPENO_PROMEDIO_C}</span></span>
+                                                            </div>
+                                                        </div>
+                                                        <p style="    padding: 0px;margin: 0px !important;text-align: center;">
+                                                        </p>
+                                                        <div class="collapse" id="collapseExample">
+                                                            <div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary fs-base"> {DESEMPENO_CATEGORIA1_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <a class="text-gray-800 fw-bold text-hover-primary fs-6"
+                                                                           href="#">Actuo como Dueño</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA11_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Antepongo el éxito corporativo ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA12_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Co-elaboro con otros ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA13_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Construyo confianza ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary fs-base">{DESEMPENO_CATEGORIA2_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <a class="text-gray-800 fw-bold text-hover-primary fs-6"
+                                                                           href="#">Inspiro a las personas ...</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA21_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Celebro los logros ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA22_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Doy y busco feedback ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA23_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Facilito el desarrollo del talento ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA24_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Soy protagonista y empodero ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA25_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Valoro y promuevo ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary fs-base">{DESEMPENO_CATEGORIA3_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <a class="text-gray-800 fw-bold text-hover-primary fs-6"
+                                                                           href="#">Me apasiono por el cliente</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA31_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Genero experiencias sorprendentes ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA32_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Me conecto y empatizo ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA33_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Tomo decisiones con el cliente ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary fs-base">{DESEMPENO_CATEGORIA4_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <a class="text-gray-800 fw-bold text-hover-primary fs-6"
+                                                                           href="#">Logro objetivos ambiciosos</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA41_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Alcanzo objetivos ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA42_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Innovo y exploro ...</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-wrap flex-row-fluid d-grid gap-2"
+                                                                     style="padding-left: 30px;padding-right: 30px;">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="m-0">
+                                                                            <span class="badge badge-light-primary-sm fs-base">{DESEMPENO_SUBCATEGORIA43_C}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="me-5">
+                                                                        <span class="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Me atrevo a ser ágil ...</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fs-6 fw-semibold text-gray-400"
+                                                         style="    padding-left: 35px;">
+                                                        Metas
+                                                    </div>
+                                                    <div class="tab-pane fade active show"
+                                                         id="kt_security_summary_tab_pane_hours" role="tabpanel">
+                                                        <div class="row p-0 mb-5 px-9">
+                                                            <div class="col">
+                                                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                                    <span class="fs-5 fw-semibold  text-gray-500 d-block">Metas {YEAR_A}</span>
+                                                                    <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                          data-kt-countup="true"
+                                                                          data-kt-countup-value="36899"
+                                                                          data-kt-initialized="1">{METAS_A}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                                    <span class="fs-5 fw-semibold  text-gray-500 d-block">Metas {YEAR_B}</span>
+                                                                    <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                          data-kt-countup="true"
+                                                                          data-kt-countup-value="72"
+                                                                          data-kt-initialized="1">{METAS_B}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                                    <span class="fs-5 fw-semibold  text-gray-500 d-block">Metas {YEAR_C}</span>
+                                                                    <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                          data-kt-countup="true"
+                                                                          data-kt-countup-value="291"
+                                                                          data-kt-initialized="1">{METAS_C}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p style="    padding: 0px;margin: 0px !important;text-align: center;display:none!important">
+                                                        <a aria-controls="collapseExample4" aria-expanded="false"
+                                                           class="btn btn-link ahref_btn_link" data-bs-toggle="collapse"
+                                                           href="#collapseExample4"
+                                                           role="button">
+                                                            Ver Gr&aacute;fico
+                                                        </a>
+                                                    </p>
+                                                    <div class="collapse" id="collapseExample4">
+                                                        <div class="tab-pane fade active show"
+                                                             id="kt_security_summary_tab_pane_hours" role="tabpanel">
+                                                            <!--begin::Row-->
+                                                            <div class="row p-0 mb-5 justify-content-center">
+                                                                <!--begin::Col-->
+                                                                <div class="col text-center">
+                                                                    <canvas id="performanceChart"
+                                                                            style="max-height: 250px; max-width: 450px; width: 100%;     display: inline!important;"
+                                                                            width="400"></canvas>
+                                                                    <script>
+                                                                        // Data points for the years 2023, 2022, and 2021
+                                                                        const years = ['2021', '2022', '2023'];
+
+                                                                        // Performance and Goals data for the respective years
+                                                                        const performanceData = [70, 90, 98];
+                                                                        const goalsData = [110, 90, 100];
+
+                                                                        // Create a data object with the two datasets
+                                                                        const data = {
+                                                                            labels: years,
+                                                                            datasets: [
+                                                                                {
+                                                                                    label: 'Desempeño',
+                                                                                    data: performanceData,
+                                                                                    borderColor: 'rgba(0, 93, 255, 0.8)', // Color for Performance line
+                                                                                    borderWidth: 3, // Line width
+                                                                                    fill: false, // Don't fill area under the line
+                                                                                    tension: 0.4,
+                                                                                },
+                                                                                {
+                                                                                    label: 'Metas',
+                                                                                    data: goalsData,
+                                                                                    borderColor: 'rgba(55, 170, 0, 0.8)', // Color for Goals line
+                                                                                    borderWidth: 3,
+                                                                                    fill: false,
+                                                                                    tension: 0.4,
+                                                                                }
+                                                                            ],
+                                                                        };
+
+                                                                        // Chart configuration for the line chart
+                                                                        const config = {
+                                                                            type: 'line', // Line chart
+                                                                            data: data,
+                                                                            options: {
+                                                                                scales: {
+                                                                                    x: {
+                                                                                        beginAtZero: true,
+                                                                                    },
+                                                                                    y: {
+                                                                                        beginAtZero: false,
+                                                                                        min: 60,
+                                                                                        max: 120, // Set a maximum value for the y-axis
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        };
+
+                                                                        // Get the canvas element and create the line chart
+                                                                        const ctxPerformance = document.getElementById('performanceChart').getContext('2d');
+                                                                        new Chart(ctxPerformance, config);
+                                                                    </script>
+                                                                </div>
+                                                                <!--end::Col-->
+                                                            </div>
+                                                        </div>
+                                                        <!--begin::Container-->
+                                                    </div>
+                                                    <!--end::Tab panel-->
+                                                </div>
+                                                <!--end::Tab content-->
+                                            </div>
+                                            <BR>
+                                            <!--end::Body-->
+                                        </div>
+
+
+                                        <div class="card " style="{DISPLAY_POTENCIAL}">
+                                            <img src="https://cdn3.bci.cl/uploads/a2389696-6bd0-495a-8b50-cdc47afe57a7/original/formas.svg"
+                                                 style=" width: 64px;display: block;margin-left: 30px;margin-top: 30px;margin-bottom: 0px;">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h3>Gestión de Potencial</h3>
+                                                </div>
+                                            </div>
+                                            <div class="card-body p-0">
+                                                <br>
+                                                <div class="row p-0 mb-5 px-9">
+                                                    <div class="col-6">
+                                                        <span class="fs-5 fw-semibold  text-gray-500 d-block">Cuadrante Vigente</span>
+                                                        <div class="notice {CUADRANTE_VIGENTE_CLASE}  rounded border-success  border border-dashed  p-6">
+                                                            <div class=" flex-grow-1 flex-wrap flex-md-nowrap">
+                                                                <div class="mb-3 mb-md-0 fw-semibold">
+                                                                    <h1 class="text-gray-900 fw-bold text-white-bci">
+                                                                        {CUADRANTE_VIGENTE}</h1>
+                                                                    <div class="fs-7 text-gray-600 pe-7">Fecha:
+                                                                        {CUADRANTE_FECHA_VIGENTE}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6" style="{DISPLAY_POTENCIAL_ANTERIOR}">
+                                                        <span class="fs-5 fw-semibold  text-gray-500 d-block">Cuadrante Anterior</span>
+                                                        <div class="notice {CUADRANTE_ANTERIOR_CLASE}  rounded border-warning  border border-dashed p-6">
+                                                            <div class=" flex-grow-1 flex-wrap flex-md-nowrap">
+                                                                <div class="mb-3 mb-md-0 fw-semibold">
+                                                                    <h1 class="text-gray-900 fw-bold text-white-bci">
+                                                                        {CUADRANTE_ANTERIOR}</h1>
+                                                                    <div class="fs-7 text-gray-600 pe-7">Fecha:
+                                                                        {CUADRANTE_FECHA_ANTERIOR}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card " style="display:none!important">
+                                            <img src="https://cdn3.bci.cl/uploads/a2389696-6bd0-495a-8b50-cdc47afe57a7/original/formas.svg"
+                                                 style=" width: 64px;display: block;margin-left: 30px;margin-top: 30px;margin-bottom: 0px;">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h3>Gestión de Sucesión</h3>
+                                                </div>
+                                            </div>
+                                            <div class="card-body p-0">
+                                                <br>
+                                                <div class="row p-0 mb-5 px-9">
+                                                    <div class="col-lg-6">
+                                                        <div class="card card-flush h-lg-100">
+                                                            <div class="card-header mt-6">
+                                                                <div class="card-title flex-column">
+                                                                    <h3 class="fw-bold mb-1">¿De qué cargos es
+                                                                        sucesor?</h3>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body p-9 pt-3">
+                                                                <div class="d-flex flex-column mb-1">
+                                                                    <div class="d-flex align-items-center mb-5">
+                                                                        <div class="fw-semibold">
+                                                                            <i class="ki-outline ki-user fs-2 text-primary me-2"></i>
+                                                                            <span class="badge badge-light-primary fs-7 fw-bold">{READINESS}</span>
+                                                                            <a
+                                                                                    class="text-hover-primary text-gray-600"
+                                                                                    href="#">{NOMBRE_CARGO}</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="card card-flush h-lg-100">
+                                                            <div class="card-header mt-6">
+                                                                <div class="card-title flex-column">
+                                                                    <h3 class="fw-bold mb-1">Sucesores identificados
+                                                                        para este
+                                                                        cargo</h3>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body p-9 pt-3">
+                                                                <div class="d-flex flex-column mb-1">
+                                                                    <div class="d-flex align-items-center mb-5">
+                                                                        <div class="fw-semibold">
+                                                                            <i class="ki-outline ki-user fs-2 text-primary me-2"></i>
+                                                                            <span class="badge badge-light-primary fs-7 fw-bold">{READINESS}</span>
+                                                                            <a
+                                                                                    class="text-hover-primary text-gray-600"
+                                                                                    href="#">{NOMBRE_COLABORADOR}</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex flex-column mb-1">
+                                                                    <div class="d-flex align-items-center mb-5">
+                                                                        <div class="fw-semibold">
+                                                                            <i class="ki-outline ki-user fs-2 text-primary me-2"></i>
+                                                                            <span class="badge badge-light-primary fs-7 fw-bold">{READINESS}</span>
+                                                                            <a
+                                                                                    class="text-hover-primary text-gray-600"
+                                                                                    href="#">{NOMBRE_COLABORADOR}</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card card-xxl-stretch mb-5 mb-xl-10" style="{DISPLAY_ENGAGEMENT_CLIMA}">
+                                            <img src="https://cdn3.bci.cl/uploads/a2389696-6bd0-495a-8b50-cdc47afe57a7/original/formas.svg"
+                                                 style=" width: 64px;display: block;margin-left: 30px;margin-top: 30px;margin-bottom: 0px;">
+                                            <div class="card-header card-header-stretch">
+                                                <div class="card-title">
+                                                    <h3 class="m-0 text-gray-900"> Engagement y Clima</h3>
+                                                </div>
+                                            </div>
+                                            <div class="card-body pt-7 pb-0 px-0">
+                                                <div class="tab-content">
+                                                    <div class="fs-6 fw-semibold text-gray-400"
+                                                         style="    padding-left: 35px;">
+                                                        Engagement
+                                                    </div>
+                                                    <div class="tab-pane fade active show"
+                                                         id="kt_security_summary_tab_pane_hours" role="tabpanel">
+                                                        <div class="row p-0 mb-5 px-9">
+                                                            <div class="col">
+                                                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                                    <span class="fs-5 fw-semibold  text-gray-500 d-block">Engagement {YEAR_A}</span>
+                                                                    <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                          data-kt-countup="true"
+                                                                          data-kt-countup-value="36899"
+                                                                          data-kt-initialized="1">{ENGAGEMENT_A}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                                    <span class="fs-5 fw-semibold  text-gray-500 d-block">Engagement {YEAR_B}</span>
+                                                                    <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                          data-kt-countup="true"
+                                                                          data-kt-countup-value="72"
+                                                                          data-kt-initialized="1">{ENGAGEMENT_B}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                                    <span class="fs-5 fw-semibold  text-gray-500 d-block">Engagement {YEAR_C}</span>
+                                                                    <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                          data-kt-countup="true"
+                                                                          data-kt-countup-value="291"
+                                                                          data-kt-initialized="1">{ENGAGEMENT_C}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fs-6 fw-semibold text-gray-400"
+                                                         style="    padding-left: 35px;">
+                                                        Clima
+                                                    </div>
+                                                    <div class="tab-pane fade active show"
+                                                         id="kt_security_summary_tab_pane_hours" role="tabpanel">
+                                                        <div class="row p-0 mb-5 px-9">
+                                                            <div class="col">
+                                                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                                    <span class="fs-5 fw-semibold  text-gray-500 d-block">Clima {YEAR_A}</span>
+                                                                    <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                          data-kt-countup="true"
+                                                                          data-kt-countup-value="36899"
+                                                                          data-kt-initialized="1">{CLIMA_A}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                                    <span class="fs-5 fw-semibold  text-gray-500 d-block">Clima {YEAR_B}</span>
+                                                                    <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                          data-kt-countup="true"
+                                                                          data-kt-countup-value="72"
+                                                                          data-kt-initialized="1">{CLIMA_B}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                                    <span class="fs-5 fw-semibold  text-gray-500 d-block">Clima {YEAR_C}</span>
+                                                                    <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                          data-kt-countup="true"
+                                                                          data-kt-countup-value="291"
+                                                                          data-kt-initialized="1">{CLIMA_C}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p style="    padding: 0px;margin: 0px !important;text-align: center; display:none!important">
+                                                        <a aria-controls="collapseExample5" aria-expanded="false"
+                                                           class="btn btn-link ahref_btn_link" data-bs-toggle="collapse"
+                                                           href="#collapseExample5"
+                                                           role="button">
+                                                            Ver Gr&aacute;fico
+                                                        </a>
+                                                    </p>
+                                                    <div class="collapse" id="collapseExample5">
+                                                        <div class="tab-pane fade active show"
+                                                             id="kt_security_summary_tab_pane_hours" role="tabpanel">
+                                                            <!--begin::Row-->
+                                                            <div class="row p-0 mb-5 justify-content-center">
+                                                                <!--begin::Col-->
+                                                                <div class="col text-center">
+                                                                    <canvas id="engagementChart"
+                                                                            style="max-height: 250px; max-width: 450px; width: 100%; display: inline-block;"
+                                                                            width="400"></canvas>
+                                                                    <script>
+                                                                        // Data points for the years 2023, 2022, and 2021
+                                                                        const years2 = ['2021', '2022', '2023'];
+
+                                                                        // Performance and Goals data for the respective years
+                                                                        const climaData = [95, 80, 105];
+                                                                        const engagementData = [108, 104, 102];
+
+                                                                        // Create a data object with the two datasets
+                                                                        const data2 = {
+                                                                            labels: years2,
+                                                                            datasets: [
+                                                                                {
+                                                                                    label: 'Clima',
+                                                                                    data: climaData,
+                                                                                    borderColor: 'rgba(255, 175, 0, 0.8)', // Color for Clima line
+                                                                                    borderWidth: 3,
+                                                                                    fill: false,
+                                                                                    tension: 0.4,
+                                                                                },
+                                                                                {
+                                                                                    label: 'Engagement',
+                                                                                    data: engagementData,
+                                                                                    borderColor: 'rgba(255, 0, 39, 0.8)', // Color for Engagement line
+                                                                                    borderWidth: 3,
+                                                                                    fill: false,
+                                                                                    tension: 0.4,
+                                                                                },
+                                                                            ],
+                                                                        };
+
+                                                                        // Chart configuration for the line chart
+                                                                        const config2 = {
+                                                                            type: 'line', // Line chart
+                                                                            data: data2,
+                                                                            options: {
+                                                                                scales: {
+                                                                                    x: {
+                                                                                        beginAtZero: true,
+                                                                                    },
+                                                                                    y: {
+                                                                                        beginAtZero: false,
+                                                                                        min: 70,
+                                                                                        max: 110, // Set a maximum value for the y-axis
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        };
+                                                                        // Get the canvas element and create the line chart
+                                                                        const ctxEngagement = document.getElementById('engagementChart').getContext('2d');
+                                                                        new Chart(ctxEngagement, config2);
+                                                                    </script>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <BR>
+                                        </div>
+                                        <div class="card card-xxl-stretch mb-5 mb-xl-10" style="display:none!important;">
+                                            <img src="https://cdn3.bci.cl/uploads/a2389696-6bd0-495a-8b50-cdc47afe57a7/original/formas.svg"
+                                                 style=" width: 64px;display: block;margin-left: 30px;margin-top: 30px;margin-bottom: 0px;">
+                                            <div class="card-header card-header-stretch">
+                                                <!--begin::Title-->
+                                                <div class="card-title">
+                                                    <h3 class="m-0 text-gray-900"> Reconocimientos StarMeUp </h3>
+                                                </div>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Header-->
+                                            <!--begin::Body-->
+                                            <div class="card-body pt-7 pb-0 px-0">
+                                                <!-- Donut Chart -->
+                                                <div class="row p-0 mb-5 justify-content-center">
+                                                    <!--begin::Col-->
+                                                    <div class="col text-center">
+                                                        <canvas height="200" id="recognitionChart"
+                                                                style="max-height: 350px; max-width: 450px; width: 100%;     display: inline!important;"
+                                                                width="400"></canvas>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    // Data for the series
+                                                    const dataRecognition = [5, 10, 6, 9];
+
+                                                    // Create a data object with the dataset
+                                                    const recognitionData = {
+                                                        labels: [
+                                                            'Actúo como Dueño',
+                                                            'Inspiro a las personas a dar lo mejor',
+                                                            'Me apasiono por el cliente',
+                                                            'Logro objetivos ambiciosos',
+                                                        ],
+                                                        datasets: [{
+                                                            data: dataRecognition,
+                                                            backgroundColor: ['rgba(0, 123, 255, 0.8)', 'rgba(55, 170, 0, 0.8)', 'rgba(255, 175, 0, 0.8)', 'rgba(255, 0, 39, 0.8)'],
+                                                        }],
+                                                    };
+
+                                                    // Chart configuration for the donut chart with datalabels
+                                                    const configRecognition = {
+                                                        type: 'doughnut', // Use 'doughnut' type for a donut chart
+                                                        data: recognitionData,
+                                                        options: {
+                                                            plugins: {
+                                                                datalabels: {
+                                                                    color: '#fff', // Label text color
+                                                                    anchor: 'end', // Position of the label relative to the data point
+                                                                    align: 'start', // Alignment of the label relative to the data point
+                                                                    offset: 6, // Offset from the data point
+                                                                    font: {
+                                                                        weight: 'bold', // Font weight
+                                                                    },
+                                                                    formatter: (value, ctx) => {
+                                                                        // Display the value as the label
+                                                                        return value;
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    };
+
+                                                    // Get the canvas element and create the donut chart
+                                                    const ctxRecognition = document.getElementById('recognitionChart').getContext('2d');
+                                                    new Chart(ctxRecognition, configRecognition);
+                                                </script>
+                                                <div class="row p-0 mb-5 px-9">
+                                                    <div class="col">
+                                                        <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                            <span class="fs-5 fw-semibold  text-gray-500 d-block">Actúo como Dueño</span>
+                                                            <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                  data-kt-countup="true" data-kt-countup-value="72"
+                                                                  data-kt-initialized="1">5</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                            <span class="fs-5 fw-semibold  text-gray-500 d-block">Inspiro a las personas a dar lo mejor</span>
+                                                            <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                  data-kt-countup="true" data-kt-countup-value="72"
+                                                                  data-kt-initialized="1">10</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                            <span class="fs-5 fw-semibold  text-gray-500 d-block">Me apasiono por el cliente</span>
+                                                            <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                  data-kt-countup="true" data-kt-countup-value="72"
+                                                                  data-kt-initialized="1">6</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-4 pb-2 my-3">
+                                                            <span class="fs-5 fw-semibold  text-gray-500 d-block">Logro objetivos ambiciosos</span>
+                                                            <span class="fs-2 fw-bold text-gray-900 counted"
+                                                                  data-kt-countup="true" data-kt-countup-value="72"
+                                                                  data-kt-initialized="1">10</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6"  style="{DISPLAY_PREMIACIONES}">
+                                                <div class="card ">
+                                                    <img src="https://cdn3.bci.cl/uploads/a2389696-6bd0-495a-8b50-cdc47afe57a7/original/formas.svg"
+                                                         style=" width: 64px;display: block;margin-left: 30px;margin-top: 30px;margin-bottom: 0px;">
+                                                    <div class="card-header">
+                                                        <div class="card-title">
+                                                            <h3>Premiaciones</h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body p-0">
+                                                        <div class="table-responsive">
+                                                            <table class="table align-middle table-row-bordered table-row-solid gy-4"
+                                                                   id="kt_security_license_usage_table">
+                                                                <thead class="border-gray-200 fs-5 fw-semibold bg-lighten" style="{DISPLAY_NONE_PREMIACIONES_2023}">
+                                                                <tr>
+                                                                    <th class="w-150px ps-9">Tipo</th>
+                                                                    <th class="min-w-150px">Periodo</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody class="fw-6 fw-semibold text-gray-600">
+                                                                    {ROW_FICHA_COLABORADOR_PREMIACIONES_2023}
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6"  style="{DISPLAY_ACCIONES}">
+                                                <div class="card ">
+                                                    <img src="https://cdn3.bci.cl/uploads/a2389696-6bd0-495a-8b50-cdc47afe57a7/original/formas.svg"
+                                                         style=" width: 64px;display: block;margin-left: 30px;margin-top: 30px;margin-bottom: 0px;">
+                                                    <div class="card-header">
+                                                        <div class="card-title">
+                                                            <h3>Acciones de Desarrollo</h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body p-0">
+                                                        <div class="table-responsive">
+                                                            <table class="table align-middle table-row-bordered table-row-solid gy-4"
+                                                                   id="kt_security_license_usage_table">
+                                                                <thead class="border-gray-200 fs-5 fw-semibold bg-lighten" style="{DISPLAY_NONE_ACCIONES_DESARROLLO_2023}">
+                                                                <tr>
+                                                                    <th class="w-150px ps-9">Tipo</th>
+                                                                    <th class="min-w-150px">Periodo</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody class="fw-6 fw-semibold text-gray-600">
+                                                                <tbody class="fw-6 fw-semibold text-gray-600">
+                                                                    {ROW_FICHA_COLABORADOR_ACCIONES_DESARROLLO_2023}
+                                                                </tbody>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <br><br>
+                                                    </div>
+                                                    <br><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card " style="{DISPLAY_NONE_SKILL_CHALLENGE}">
+                                            <img src="https://cdn3.bci.cl/uploads/a2389696-6bd0-495a-8b50-cdc47afe57a7/original/formas.svg"
+                                                 style=" width: 64px;display: block;margin-left: 30px;margin-top: 30px;margin-bottom: 0px;">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h3>Skill Challenge: {CARGO_OFICIAL_SKILLCHALLENGE}</h3>
+                                                </div>
+                                            </div>
+                                            <div class="card-body p-0">
+                                                <div class="table-responsive">
+                                                    <table class="table align-middle table-row-bordered table-row-solid gy-4"
+                                                           id="kt_security_license_usage_table">
+                                                        <thead class="border-gray-200 fs-5 fw-semibold bg-lighten">
+                                                        <tr>
+                                                            <th class="w-150px ps-9">Skill</th>
+                                                            <th class="px-0 min-w-250px">Nivel</th>
+                                                            <th class="min-w-150px">Estado</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody class="fw-6 fw-semibold text-gray-600">
+                                                            {FICHA_COLABORADOR_ROW_SKILL_CHALLENGE}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <br><br>
+                                            </div>
+                                            <br><br>
+                                        </div>
+                                        <div class="card " style="display:none!important;">
+                                            <img src="https://cdn3.bci.cl/uploads/a2389696-6bd0-495a-8b50-cdc47afe57a7/original/formas.svg"
+                                                 style=" width: 64px;display: block;margin-left: 30px;margin-top: 30px;margin-bottom: 0px;">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h3>Perfil Profesional</h3>
+                                                </div>
+                                            </div>
+                                            <div class="card-body p-0">
+                                                <div class="table-responsive">
+                                                    <table class="table align-middle table-row-bordered table-row-solid gy-4"
+                                                           id="kt_security_license_usage_table">
+                                                        <thead class="border-gray-200 fs-5 fw-semibold bg-lighten">
+                                                        <tr>
+                                                            <th class="w-150px ps-9">Tipo</th>
+                                                            <th class="px-0 min-w-250px">Detalle</th>
+                                                            <th class="min-w-150px">Fecha</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody class="fw-6 fw-semibold text-gray-600">
+                                                        <tr>
+                                                            <td class="ps-9">
+                                                                <span class="badge badge-light-primary fs-7 fw-bold">Dato</span>
+                                                            </td>
+                                                            <td class="ps-0">
+                                                                <a class="text-hover-primary text-gray-600"
+                                                                   href="">Dato</a>
+                                                            </td>
+                                                            <td>Nov 2023</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="ps-9">
+                                                                <span class="badge badge-light-primary fs-7 fw-bold">Dato</span>
+                                                            </td>
+                                                            <td class="ps-0">
+                                                                <a class="text-hover-primary text-gray-600"
+                                                                   href="">Dato</a>
+                                                            </td>
+                                                            <td>Nov 2023</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="ps-9">
+                                                                <span class="badge badge-light-primary fs-7 fw-bold">Dato</span>
+                                                            </td>
+                                                            <td class="ps-0">
+                                                                <a class="text-hover-primary text-gray-600"
+                                                                   href="">Dato</a>
+                                                            </td>
+                                                            <td>Nov 2023</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <br><br>
+                                            </div>
+                                            <br><br>
+                                        </div>
+                                        <div class="card ">
+                                            <br><br><br><br>
+                                            <br><br><br><br>
+                                        </div>
+                                        <!--end::Col-->
+                                        <!--begin::Col-->
+                                        <!--end::Col-->
+                                    </div>
+                                    <!--end::Row-->
+                                </div>
+                                <!--end::Content container-->
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Footer-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>var hostUrl = "assets/";</script>
+
+</body>
+<!--end::Body-->
+</html>

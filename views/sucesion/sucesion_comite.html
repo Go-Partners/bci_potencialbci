@@ -1,0 +1,153 @@
+{HEAD_DINAMICO}
+<body class="app-default" data-kt-app-header-fixed="true" data-kt-app-header-fixed-mobile="true"
+      data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-push-footer="true"
+      data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-secondary-enabled="true"
+      data-kt-app-sidebar-stacked="true" id="kt_app_body">
+<script>var defaultThemeMode = "light";
+var themeMode;
+if (document.documentElement) {
+    if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+        themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
+    } else {
+        if (localStorage.getItem("data-bs-theme") !== null) {
+            themeMode = localStorage.getItem("data-bs-theme");
+        } else {
+            themeMode = defaultThemeMode;
+        }
+    }
+    if (themeMode === "system") {
+        themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-bs-theme", themeMode);
+}</script>
+<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+    <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+        <div class="flex-column flex-row-fluid" id="kt_app_wrapper">
+            <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                <div class="d-flex flex-column flex-column-fluid">
+                    <div class="app-content flex-column-fluid" id="kt_app_content">
+                        <div class="app-container container-fluid" id="kt_app_content_container">
+                            <div class="row gy-5 g-xl-10">
+                                <div class="col-12">
+                                    <img src="https://cdn3.bci.cl/uploads/e682d72b-13b1-49a3-93ce-20f6252e1d17/original/logo_bci_negro.svg?v3"
+                                         style="    width: 76px;">
+                                </div>
+                                <div class="card ">
+                                    <div class="card-body pt-5 pb-0" style="    padding: 10px;">
+                                        <div class="d-flex flex-wrap flex-sm-nowrap mb-3">
+                                            <div class="me-7 mb-4">
+                                                <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
+                                                    <img STYLE="width: 64px;height: 64px;" alt="image"
+                                                         src="{AVATAR_COLABORADOR}">
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                                                    <div class="d-flex flex-column">
+                                                        <div class="d-flex align-items-center">
+                                                            <a class="text-gray-900 text-hover-primary fs-2 fw-bold me-1"
+                                                               href="#">{NOMBRE_COLABORADOR}</a>
+                                                        </div>
+                                                        <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
+                                                            <a class="d-flex align-items-center text-gray-600 text-hover-primary me-5 mb-2"
+                                                               href="#">
+                                                                <i class="ki-outline ki-profile-circle fs-4 me-1"></i>
+                                                                {RUT_COMPLETO}
+                                                            </a>
+                                                            <a class="d-flex align-items-center text-gray-600 text-hover-primary mb-2"
+                                                               href="#">
+                                                                {PERFIL}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="    margin: 0px;">
+                                    <a class="btn btn-link" href="?sw=sucesion"
+                                       style="height: auto;margin-top: 0px;margin-bottom: 0px;"><i
+                                            class="bi bi-arrow-left-short"></i> Volver</a>
+                                </div>
+                                <div class="card card-xxl-stretch mb-5 mb-xl-10" style="margin-top: 5px;">
+                                    <img class="img-fluid  my-3 pdd"
+                                         src="https://cdn3.bci.cl/uploads/a2389696-6bd0-495a-8b50-cdc47afe57a7/original/formas.svg"
+                                         style="width: 64px;    margin-left: 30px;">
+                                    <div class="card-header">
+                                        <div class="text-start">
+                                            <h3 class="m-0 text-gray-900">{NOMBRE_COMITE}</h3>
+                                        </div>
+                                        <div class="text-end">
+                                            <i class="bi bi-clipboard-data"></i> ESTADO COMITE: {ESTADO_COMITE}
+                                            <i class="bi bi-calendar-week"></i> {FECHA}
+                                        </div>
+                                    </div>
+                                    <div class="card-body pt-7 pb-0 px-0 card-body-form">
+                                        <i class="bi bi-person"></i> <strong>L&iacute;der: {NOMBRE_LIDER}</strong>
+                                        <br>
+                                        <i class="bi bi-arrow-right-short"></i>Posición: {POSICION_LIDER} /
+                                        <i class="bi bi-arrow-right-short"></i>Cargo: {CARGO_LIDER}
+                                        <br>
+                                        <i class="bi bi-bookmark"></i>  Nivel R: {R_LIDER} / <i class="bi bi-journal-text"></i> SSNN: {SSNN_NEGOCIO}
+                                        <br><i class="bi bi-journal-text"></i> Elaborado por {LIDER_COMITE}
+
+                                        <br>
+                                        {COMITE_CERRADO}
+                                        <!--<br>
+                                        <strong>{PORCENTAJE_AREA_PONDERADO}</strong> | {CUADRANTE_23} | {CUADRANTE_6} |
+                                        {CUADRANTE_19487} | {FEMENINO_PONDERADO} | {MASCULINO_PONDERADO} |-->
+                                    </div>
+                                </div>
+                                <div class="card card-xxl-stretch mb-5 mb-xl-10">
+                                    <div class="card-header">
+                                        <div class="text-start">
+                                            <h3 class="m-0 text-gray-900"
+                                                style="    margin-top: 20px !important;margin-bottom: 10px !important;">
+                                                Cargos a suceder</h3>
+                                        </div>
+                                    </div>
+                                    {COLABORADORES_COMITE_POTENCIAL_TITULO} {MIS_COLABORADORES_COMITES_POTENCIAL}
+                                    <br>
+                                    {POTENCIAL_CIERRE_POTENCIAL_SN}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>var hostUrl = "assets/";</script>
+    <script>
+        $(document).ready(function () {
+            $('#miscomites').DataTable({
+                "pageLength": 100,
+                "order": [[2, "desc"]],  // Sort by the third column (Fecha Realización)
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+                },
+                "searching": true,  // Enable search box
+                "ordering": true,   // Enable column ordering
+                "lengthChange": false,  // Hide the length menu
+                "paging": false,       // Disable pagination
+                "info": false
+
+            });
+            $('#misucesion').DataTable({
+                "pageLength": 100,
+                "order": [[2, "desc"]],  // Sort by the third column (Fecha Realización)
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+                },
+                "searching": true,  // Enable search box
+                "ordering": true,   // Enable column ordering
+                "lengthChange": false,  // Hide the length menu
+                "paging": false,        // Disable pagination
+                "info": false
+            });
+        });
+    </script>
+</body>
+<!--end::Body-->
+</html>

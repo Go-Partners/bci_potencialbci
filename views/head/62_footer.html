@@ -1,77 +1,68 @@
-<style type="text/css" id="tribe_customizer_css">
+<style id="tribe_customizer_css" type="text/css">
+    .tribe-events-list .tribe-events-loop .tribe-event-featured, .tribe-events-list #tribe-events-day.tribe-events-loop .tribe-event-featured, .type-tribe_events.tribe-events-photo-event.tribe-event-featured .tribe-events-photo-event-wrap, .type-tribe_events.tribe-events-photo-event.tribe-event-featured .tribe-events-photo-event-wrap:hover {
 
-  .tribe-events-list .tribe-events-loop .tribe-event-featured, .tribe-events-list #tribe-events-day.tribe-events-loop .tribe-event-featured, .type-tribe_events.tribe-events-photo-event.tribe-event-featured .tribe-events-photo-event-wrap, .type-tribe_events.tribe-events-photo-event.tribe-event-featured .tribe-events-photo-event-wrap:hover {
+        background-color: #0ea0d7;
 
-    background-color: #0ea0d7;
+    }
 
-  }
+    #tribe-events-content table.tribe-events-calendar .type-tribe_events.tribe-event-featured {
 
-  #tribe-events-content table.tribe-events-calendar .type-tribe_events.tribe-event-featured {
+        background-color: #0ea0d7;
 
-    background-color: #0ea0d7;
+    }
 
-  }
+    .tribe-events-list-widget .tribe-event-featured, .tribe-events-venue-widget .tribe-event-featured, .tribe-mini-calendar-list-wrapper .tribe-event-featured, .tribe-events-adv-list-widget .tribe-event-featured .tribe-mini-calendar-event {
 
-  .tribe-events-list-widget .tribe-event-featured, .tribe-events-venue-widget .tribe-event-featured, .tribe-mini-calendar-list-wrapper .tribe-event-featured, .tribe-events-adv-list-widget .tribe-event-featured .tribe-mini-calendar-event {
+        background-color: #0ea0d7;
 
-    background-color: #0ea0d7;
+    }
 
-  }
+    .tribe-grid-body .tribe-event-featured.tribe-events-week-hourly-single {
 
-  .tribe-grid-body .tribe-event-featured.tribe-events-week-hourly-single {
+        background-color: rgba(14, 160, 215, .7);
 
-    background-color: rgba(14,160,215, .7 );
+        border-color: #0ea0d7;
 
-    border-color: #0ea0d7;
+    }
 
-  }
+    .tribe-grid-body .tribe-event-featured.tribe-events-week-hourly-single:hover {
 
-  .tribe-grid-body .tribe-event-featured.tribe-events-week-hourly-single:hover {
+        background-color: #0ea0d7;
 
-    background-color: #0ea0d7;
-
-  }
-
+    }
 </style>
-
 <script>
+    var owl = $('.owl-carousel');
 
-	var owl = $('.owl-carousel');
+    owl.owlCarousel({
 
-	owl.owlCarousel({
+        items: 1,
 
-		items : 1,
+        loop: true,
 
-		loop : true,
+        margin: 10,
 
-		margin : 10,
+        autoplay: true,
 
-		autoplay : true,
+        autoplayTimeout: 5000,
 
-		autoplayTimeout : 5000,
+        autoplayHoverPause: true
 
-		autoplayHoverPause : true
+    });
 
-	});
+    $('.play').on('click', function () {
 
-	$('.play').on('click', function() {
+        owl.trigger('play.owl.autoplay', [5000])
 
-		owl.trigger('play.owl.autoplay', [5000])
+    })
 
-	})
+    $('.stop').on('click', function () {
 
-	$('.stop').on('click', function() {
+        owl.trigger('stop.owl.autoplay')
 
-		owl.trigger('stop.owl.autoplay')
-
-	})
-
+    })
 </script>
-
-<script type="text/javascript" src="script/canvas/jquery.js"></script>
-
-<script type="text/javascript" src="script/canvas/plugins.js"></script>
-
-<script type="text/javascript" src="script/canvas/functions.js"></script>
-
+<script src="https://www.potencialbci.cl/front/script/canvas/jquery.js" type="text/javascript"></script>
+<script src="https://www.potencialbci.cl/front/script/canvas/plugins.js" type="text/javascript"></script>
+<script src="https://www.potencialbci.cl/front/script/canvas/functions.js" type="text/javascript"></script>
 </body> </html>
