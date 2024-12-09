@@ -107,23 +107,49 @@ else if ($seccion == "checkUserBci") {
 	$id_token = $_POST['id_token'];
 	$result = false;
 	$secret = getenv('SECRET_CAPTCHA');
-	$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response={$_POST['recaptcha_token']}");
-	$responseKeys = json_decode($response, true);
-	$responseKeys["success"]=true;
-	if($responseKeys["success"]){
-		$client = new Google_Client(['client_id' => getenv('SECRET_CAPTCHA_CLIENT_ID')]);
-		$result = $client->verifyIdToken($id_token);
-	}
-	if ($result) {
-		$email = $result['email'];
-		$nombre = $result['name'];
-		$nombre_completo = $result['name'];
-		$picture = $result['picture'];
-	}else {
-		echo json_encode(["success" => false, "message" => "Fallo en reCAPTCHA"]);
+	if (isset($_POST['recaptcha_token']) && preg_match('/^[A-Za-z0-9-_]+$/', $_POST['recaptcha_token'])) {
+		$token = $_POST['recaptcha_token'];
+		
+		// Configurar la URL de la API
+		$url = "https://www.google.com/recaptcha/api/siteverify";
+		
+		// Crear los datos de la solicitud
+		$data = [
+			'secret' => $secret,
+			'response' => $token,
+		];
+		
+		// Realizar la solicitud con cURL
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+		
+		$response = curl_exec($ch);
+		curl_close($ch);
+		
+		// Decodificar la respuesta JSON
+		$result = json_decode($response, true);
+		
+		// Validar la respuesta
+		if (isset($result['success']) && $result['success']) {
+			$client = new Google_Client(['client_id' => getenv('SECRET_CAPTCHA_CLIENT_ID')]);
+			$result = $client->verifyIdToken($id_token);
+			if ($result) {
+				$email = $result['email'];
+				$nombre = $result['name'];
+				$nombre_completo = $result['name'];
+				$picture = $result['picture'];
+			}else {
+				echo json_encode(["success" => false, "message" => "Fallo en reCAPTCHA"]);
+				exit;
+			}
+		}
+	} else {
+		echo json_encode(["success" => false, "message" => "Acceso Inválido"]);
 		exit;
 	}
-
 	$imagenUrl =$picture;
 
     $arreglo_email = $arreglo_archivo = explode("@", $email);
