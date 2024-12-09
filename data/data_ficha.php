@@ -95,7 +95,8 @@ function DatosAvatarTblUsuario2022($rut){
 
 
     $fecha      = date("Y-m-d");
-    $sql        = "select h.avatar from tbl_usuario h where h.rut='$rut'";
+    $sql        = "select h.avatar from tbl_avatar h where h.rut='$rut'";
+    //echo $sql;
     $connexion->query($sql);
 
     $cod        = $connexion->resultset();
@@ -539,10 +540,11 @@ function Ficha_Desempeno_promedio_ficha($periodo, $rut){
 function DatosUsuario_($rut, $id_empresa)
 {
     $connexion = new DatabasePDO();
-    $sql = "select h.*
-    from tbl_usuario h
-    where rut='$rut' and id_empresa='$id_empresa'
+    $sql = "select h.*, a.avatar as avatar_usuario
+    from tbl_usuario h left join tbl_avatar a on a.rut=h.rut
+    where h.rut='$rut' and h.id_empresa='$id_empresa'
     ";
+   //echo $sql;
     $connexion->query($sql);
     $cod = $connexion->resultset();
     return ($cod);

@@ -118,7 +118,7 @@ function Ficha_colaborador_Sucesion_fn($PRINCIPAL, $rut, $perfil, $filtro, $id_e
     $Data=DatosDataBci2021($rut);
     $Perfil=Perfil_Acceso_SN_data($_SESSION["user_"]);
     //echo "<h1>perfil $Perfil</h1>";
-    $avatar=$Usu[0]->avatar;
+    $avatar=$Usu[0]->avatar_usuario;
     $avatar = str_replace("s96-c",      "s180-c",           $avatar);
     //echo "avatar $avatar";
     if($avatar==""){$avatar="https://www.potencialbci.cl/front/img/sinfoto.png";}
@@ -473,6 +473,7 @@ Function VerificaFotoPersonal($rut)
 {
     $imagen = "img/sinfoto.png";
     $avatar=DatosAvatarTblUsuario2022($rut);
+    //echo "rut $rut, avatar $avatar";
     if($avatar<>""){
         $imagen=$avatar;
     }
@@ -512,8 +513,8 @@ function Encodear3($valor)
 function my_simple_crypt_encodear($string)
 {
     // you may change these values to your own
-    $secret_key     = 'JVvlenf593ld0fgptu58gjd03';
-    $secret_iv      = 'gp2017gp!encriptacion______!iwuio';
+    $secret_key     = getenv('SECRET_KEY1');
+    $secret_iv      = getenv('SECRET_IV1');
     $output         = false;
     $encrypt_method = "AES-256-CBC";
     $key            = hash('sha256', $secret_key);
@@ -524,8 +525,8 @@ function my_simple_crypt_encodear($string)
 function my_simple_crypt_decodear($string)
 {
     // you may change these values to your own
-    $secret_key     = 'JVvlenf593ld0fgptu58gjd03';
-    $secret_iv      = 'gp2017gp!encriptacion______!iwuio';
+    $secret_key     = getenv('SECRET_KEY1');
+    $secret_iv      = getenv('SECRET_IV1');
     $output         = false;
     $encrypt_method = "AES-256-CBC";
     $key            = hash('sha256', $secret_key);
@@ -1600,7 +1601,7 @@ function Ficha_colaborador_fn($PRINCIPAL, $rut, $perfil, $filtro, $id_empresa){
     $Data=DatosDataBci2021($rut);
     $Perfil=Perfil_Acceso_SN_data($_SESSION["user_"]);
     //echo "<h1>perfil $Perfil</h1>";
-    $avatar=$Usu[0]->avatar;
+    $avatar=$Usu[0]->avatar_usuario;
     $avatar = str_replace("s96-c",      "s180-c",           $avatar);
     //echo "avatar $avatar";
     if($avatar==""){$avatar="https://www.potencialbci.cl/front/img/sinfoto.png";}

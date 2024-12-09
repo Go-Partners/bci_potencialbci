@@ -45,3 +45,4 @@ $texto4="potencialbci.cl";
 $periodo_A="2021";
 $periodo_B="2022";
 $periodo_C="2023";
+?>

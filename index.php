@@ -16,9 +16,9 @@ if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === 'off') {
     exit();
 }
 header('Strict-Transport-Security: max-age=31536000; includeSubDomains; preload'); // Enforce HTTPS with HSTS
-/*ini_set('display_errors', 1);
+ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ERROR); // Report only fatal errors
+//error_reporting(E_ERROR); // Report only fatal errors
 //error_reporting(E_ALL); // Report all errors*/
 // Disable error display completely
 ini_set('display_errors', 0); // Do not display errors
@@ -27,6 +27,8 @@ ini_set('display_startup_errors', 0); // Do not display startup errors
 error_reporting(0); // No error reporting at all
 // Disable error logging
 ini_set('log_errors', 0); // Do not log errors
+//ini_set('display_errors', 1);ini_set('display_startup_errors', 1);error_reporting(E_ALL); // Report all errors*/
+
 session_start();
 $varieb = "Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYySkVUbGhoTVVwVVZqQmFTMlJIVmtkWGJGcHBWa1phZVZadGVGWmxSbGw1Vkd0c2FsSnRhRzlVVjNOM1pVWmFkR05GWkZSTmJFcEpWbTEwVjFWdFNsWlhiR2hYWWxob2VsUlVSbUZqVmtaMFVteFNUbUpGY0VwV2JURXdZVEZrU0ZOclpHcFNWR3hoVm1wT1UxSXhjRlpYYlVaclVqQTFSMVV5TVRSVk1rcElaSHBHVjFaRmIzZFdha1poVjBaT2NtRkhhRk5sYlhoWFZtMXdUMVF3TUhoalJscFlZbFZhY2xWcVFURlNNV1J5VjI1a1YwMUVSa1pWYkZKSFZqRmFSbUl6WkZkaGExcG9WakJhVDJOdFJraGhSazVzWWxob1dGWnRNWGRVTVZGM1RVaG9hbEpzY0ZsWmJHaFRWMFpTVjJGRlRsTmlSbkJaV2xWb2ExWXdNVVZTYTFwV1lrWktSRlpxU2tkamJVVjZZVVphYUdFeGNHOVdha0poVkRKT2RGSnJaRmhpVjJoeldXeG9iMkl4V1hoYVJGSnBUV3RzTkZaSGRHdFdiVXBIVjJ4U1dtSkdXbWhaTW5oWFkxWkdWVkpzVGs1WFJVcElWbXBLTkZReFdsaFRhMlJxVW14d1dGbHNhRk5OTVZweFUydDBWMVpyY0ZwWGExcHJZVWRGZUdOR2JGaGhNVnBvVmtSS1RtVkdjRWxVYldoVFRXNW9WVlpHWTNoaU1XUnpWMWhvWVZKR1NuQlVWM1J6VGxaYWRFNVZPVmRpVlhCSVZqSjRVMWR0U2tkWGJXaGFUVlp3YUZwRlpGTlRSa3B5VGxaT2FWSnRPVE5XTW5oWFlqSkZlRmRZWkU1V1ZscFVXV3RrVTFsV1VsWlhiVVpPVFZad2VGVXlkREJXTVZweVkwWndXR0V4Y0ROWmEyUkdaV3hHY21KR2FGaFRSVXBKVm10U1MxVXhXWGhYYmxaVllrZG9jRlpxU205bGJHUllaVWM1YVUxcmJEUldNalZUVkd4a1NGVnNXbFZXTTFKNlZHeGFWMlJIVWtoa1IyaHBVbGhCZDFac1pEUmpNV1IwVTJ0b2FGSnNTbGhVVlZwM1ZrWmFjVk5yWkZOaVJrcDZWa2N4YzFVeVNuSlRiVVpYVFc1b1dGbHFTa1psUm1SWldrVTFWMVpzY0ZWWFZsSkhaREZaZUdKSVNsaGhNMUpVVlcxNGQyVkdWWGxrUjBacFVteHdlbFV5ZUhkWGJGcFhZMGhLVjFaRldreFdNVnBIWTIxS1IxcEhiRmhTVlhCS1ZtMTBVMU14VlhoWFdHaFhZbXhhVmxsc1pHOVdSbEpZVGxjNVYxWnNjRWhYVkU1dllWVXhjbUpFVWxkTlYyaDJWakJrUzFKck5WZFdiRlpYVFRGS05sWkhkR0ZXYlZaWVZXdG9hMUp0YUZSVVZXaERVMnhhYzFwRVVtcE5WMUl3VlRKMGIyRkdTbk5UYkdoVlZsWndNMVpyV21GalZrNXlXa1pPYVZKcmNEWldhMk40WXpGVmVWTnVTbFJpVlZwWVdWUkdkMkZHV2xWU2ExcHNVbTFTZWxsVldsTmhSVEZaVVc1b1YxWXphSEpaYWtaclVqRldjMkZGT1ZkV1ZGWmFWbGN4TkdReVZrZFdibEpyVWtWS2IxbFljRWRsVmxKelZtMDVXR0pHY0ZoWk1HaExWMnhhV0ZWclpHRldNMmhJV1RJeFMxSXhjRWRhUms1WFYwVktNbFp0Y0VkWlYwVjRWbGhvV0ZkSGFGWlpiWGhoVm14c2NsZHJkR3BTYkZwNFZXMTBNRll4V25OalJXaFhWak5TVEZsVVFYaFNWa3B6Vkd4YVUySkZXWHBXVlZwR1QxWkNVbEJVTUQwPQ";
 require_once("includes/include.php");
@@ -104,12 +106,12 @@ else if ($seccion == "checkUserBci") {
 	$_SESSION["id_empresa"] = 62;
 	$id_token = $_POST['id_token'];
 	$result = false;
-	$secret = '6LequgweAAAAACTt8tG9GgHw3kaKY1vSJg5NtTGo';
+	$secret = getenv('SECRET_CAPTCHA');
 	$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response={$_POST['recaptcha_token']}");
 	$responseKeys = json_decode($response, true);
 	$responseKeys["success"]=true;
 	if($responseKeys["success"]){
-		$client = new Google_Client(['client_id' => '247446893105-bjdtpkf3lhsahinus4qi2v8tsercg3m2.apps.googleusercontent.com']);
+		$client = new Google_Client(['client_id' => getenv('SECRET_CAPTCHA_CLIENT_ID')]);
 		$result = $client->verifyIdToken($id_token);
 	}
 	if ($result) {
@@ -121,61 +123,9 @@ else if ($seccion == "checkUserBci") {
 		echo json_encode(["success" => false, "message" => "Fallo en reCAPTCHA"]);
 		exit;
 	}
-	
-    //echo "A";
-    //$nombre_completo = $_GET["fullName"];
-    //$nombre = $_GET["GivenName"];
-    //$//apellido = $_GET["FamilyName"];
-    //$imagenUrl = $_GET["imageUrl"];
+
 	$imagenUrl =$picture;
-    //sso google
-    //$user_content_key = $_GET["user_content_key"];
-    //captcha v3
-    /*$rgv3 = $_GET["rgv3"];
-    if ($rgv3 == "") {
-        exit();
-    }
-    if ($user_content_key == "") {
-        exit();
-    }*/
-    //echo "<br>user_content_key $user_content_key<br> rgv3 $rgv3";
 
-
-    //CHECK CAPTCHA
-  /*  if ($rgv3 <> "") {
-        //echo "<br> estoy dentro de rgv3"			;
-        $url = "https://www.google.com/recaptcha/api/siteverify";
-        $data = [
-            'secret' => "6LequgweAAAAACTt8tG9GgHw3kaKY1vSJg5NtTGo",
-            'response' => $rgv3,
-            // 'remoteip' => $_SERVER['REMOTE_ADDR']
-        ];
-        $options = array(
-            'http' => array(
-                'header' => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method' => 'POST',
-                'content' => http_build_query($data)
-            )
-        );
-        $context = stream_context_create($options);
-        $response = file_get_contents($url, false, $context);
-        $res = json_decode($response, true);
-        if ($res['success'] == true) {
-
-        } else {
-            echo "<script>location.href='?sw=logout&v=22';</script>";
-            exit;
-        }
-
-    }
-*/
-
-    //$response = file_get_contents('https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=' . $user_content_key);
-    //$response = json_decode($response);
-     /*   //    print_r($response);
-    $email = ($response->email);
-
-*/
     $arreglo_email = $arreglo_archivo = explode("@", $email);
     $cuenta = count($arreglo_email);
     //echo "<br>cuenta $cuenta";
@@ -207,7 +157,7 @@ else if ($seccion == "checkUserBci") {
         exit;
     } else {
 	    echo json_encode(["success" => false, "message" => "Estimado(a), el email con que accediste, ".$email.", no tiene acceso a la plataforma.
-									Favor ingresa nuevamente a https://potencialbci.cl/ con tus credenciales. #2230"]);
+									Favor ingresa nuevamente a https://www.potencialbci.cl/ con tus credenciales. #2230"]);
         exit;
     }
 }
@@ -354,6 +304,7 @@ else if ($seccion == "ficha_landing_personas_ajax_vigentes") {
 
 else if ($seccion == "sucesion") {
     $rut = $_SESSION["user_"];
+    //$_SESSION["user_"]="17697878";
     $id_empresa = $_SESSION["id_empresa"];
     $id_inst = ($_GET["id_inst"]);
     $profile = ($_GET["profile"]);
@@ -584,7 +535,7 @@ else if ($seccion == "sucesion") {
     $PRINCIPAL = Potencial_Sucesion_Mis_Comites_estado_activo_2024($PRINCIPAL, $rut, $perfil, $id_empresa, "activo");
     $PRINCIPAL = Potencial_Sucesion_Mi_Sucesion_estado_activo_2024($PRINCIPAL, $rut, $perfil, $id_empresa, "activo");
     $Usu = DatosUsuario_($rut, $id_empresa);
-    $avatar = $Usu[0]->avatar;
+    $avatar = $Usu[0]->avatar_usuario;
     //$avatar = str_replace("s96-c",      "s180-c",           $avatar);
     //echo "avatar $avatar";
     if ($avatar == "") {
@@ -814,7 +765,7 @@ else if ($seccion == "sucesion_comite") {
     $boxfiltro = ($_GET["boxfiltro"]);
     $Usu = DatosUsuario_($rut, $id_empresa);
 
-    $avatar = $Usu[0]->avatar;
+    $avatar = $Usu[0]->avatar_usuario;
     //$avatar = str_replace("s96-c",      "s180-c",           $avatar);
     //echo "avatar $avatar";
     if ($avatar == "") {
@@ -1071,7 +1022,7 @@ else if ($seccion == "sucesion_ficha_sucesion") {
 
     $PRINCIPAL = str_replace("{NOMBRE_LIDER_SUCESION}", $LiderSuc[0]->d7 . " " . $LiderSuc[0]->d8 . " " . $LiderSuc[0]->d9, $PRINCIPAL);
     $Usu = DatosUsuario_($rut, $id_empresa);
-    $avatar = $Usu[0]->avatar;
+    $avatar = $Usu[0]->avatar_usuario;
     //$avatar = str_replace("s96-c",      "s180-c",           $avatar);
     //echo "avatar $avatar";
     if ($avatar == "") {
@@ -1224,3 +1175,4 @@ else {
     $_SESSION["token"] = $token_fecha_hora;
     echo $PRINCIPAL;
 }
+?>
