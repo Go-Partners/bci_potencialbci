@@ -154,8 +154,6 @@ else if ($seccion == "checkUserBci") {
 
     $arreglo_email = $arreglo_archivo = explode("@", $email);
     $cuenta = count($arreglo_email);
-    //echo "<br>cuenta $cuenta";
-            //echo "173 email $email";exit();
     if ($cuenta <> 2) {
 	    echo json_encode(["success" => false, "message" => "Usuario no encontrado"]);
         exit;
@@ -166,8 +164,7 @@ else if ($seccion == "checkUserBci") {
         $_SESSION["id_empresa"] = "62";
         $id_empresa = "62";
         $key = LMS_ConsultaRutSegunEmail($email, $id_empresa);
-
-            //echo "key $key";exit();
+		
         if ($key <> "") {
             $_SESSION["user_"] = $key;
             $_SESSION["id_empresa"] = "62";
@@ -195,8 +192,6 @@ else if($seccion=="logext"){
 	$token = Decodear3($_REQUEST["rut_enc"]);
 	
 	
-	
-	//echo "<h2>logext token ".$token."</h2>";
 	
 	
 	//session_start();
@@ -265,23 +260,18 @@ else if ($seccion == "home_bci_new") {
 }
 
 else if ($seccion == "potencial_landing") {
-    //echo "a";
     $rut = $_SESSION["user_"];
     Ficha_Acceso_SN_data($rut);
-    //echo "b";
+    
     $id_empresa = $_SESSION["id_empresa"];
-    //echo "c";
+    
     $rut_col = $_GET["rut_col"];
-    //echo "d";
-    //if($rut_col==""){exit("c");}
-    //echo "e";
-    //echo "A";
+
     ControlDotacionInsertaAccesoLogin($_SESSION["user_"], $email, $response, $response->email, "Potencial Landing", $_SESSION, $_POST["idt"]);
     $PRINCIPAL = FuncionesTransversales(file_get_contents("views/ficha_colaborador/landing.html"));
-    //echo "A";
-    // echo "f";
+
     $PRINCIPAL = ColocaDatosPerfil($PRINCIPAL, $rut);
-    //echo "g";
+
     echo $PRINCIPAL;
 }
 else if ($seccion == "ficha_landing") {
@@ -305,9 +295,9 @@ else if ($seccion == "ficha_landing_personas_ajax_vigentes") {
     $id_empresa = $_SESSION["id_empresa"];
     Ficha_Acceso_SN_data($rut);
 
-    //echo "A";
+    
     $personas = Fichas_Personas_Vigentes($_POST["text"]);
-    //echo "B";print_r($personas);echo count($personas);echo "<h1>FIN</h1>";exit();
+    
 
     if (count($personas) > 0) {
         foreach ($personas as $em) {
@@ -341,11 +331,10 @@ else if ($seccion == "sucesion") {
 
     if ($perfil == "") {
 
-
-        // echo "    <script>   alert('No tienes perfil de Socio ni Lider. Por favor, envianos un email a soporte@gop.cl');      location.href='?sw=com_mp_home';     </script>"; exit;
+		
     }
     if (Decodear3($_GET["id_del"]) <> "") {
-        //echo "<br>-> del ".Decodear3($_GET["id_del"]);exit();
+        
         Potencial_EliminaComite_Sucesion_2024(Decodear3($_GET["id_del"]));
     }
     $PRINCIPAL = (FuncionesTransversales(file_get_contents("views/sucesion/index.html")));
@@ -369,7 +358,7 @@ else if ($seccion == "sucesion") {
 
         $UsuaLider = DatosUsuario_($rut_lider, $id_empresa);
         $gerenciaR1 = $rut_lider;
-        //echo "<br>-> ".$UsuaLider[0]->nombre_completo." ".$nombre_comite." ".$fecha_comite;
+        
         $PRINCIPAL = str_replace("{NOMBRE_LIDER}", $UsuaLider[0]->nombre_completo, $PRINCIPAL);
         $PRINCIPAL = str_replace("{RUT_SAVE}", $rut_lider, $PRINCIPAL);
         $PRINCIPAL = str_replace("{NOMBRE_COMITE}", $nombre_comite, $PRINCIPAL);
@@ -378,7 +367,7 @@ else if ($seccion == "sucesion") {
         $array_g2 = PotencialSucesion_BuscaR2_2024($rut_lider, $id_empresa);
         //print_r($array_g2);
         foreach ($array_g2 as $cg) {
-            //echo "<br>-> ".$cg->rut." ".$cg->d5." ".$cg->nombre_completo."";
+            
             $row_comite_cargos_posicion .= "<input type='checkbox' name='col_" . $cg->rut . "' value='" . $cg->rut . "'> " . $cg->d6 . " / <strong>" . $cg->nombre_completo . "</strong><br>";
         }
     }
@@ -402,7 +391,7 @@ else if ($seccion == "sucesion") {
             }
             $Posicion = DatosDataBci2021($value);
             $Usuario = DatosUsuario_($value, $id_empresa);
-            // echo "<br>CCC<br>";
+            
             if ($value_col == "1") {
                 //print_r($filtered_col_keys);
                 Potencial_Sucesion_Select_Insert_comites_colaboradores_CheckSave_2024($value, $Posicion[0]->d6, $new_comite, $Usuario[0]->nombre_completo, $id_empresa);
@@ -423,10 +412,7 @@ else if ($seccion == "sucesion") {
         $key = $datos_usuario[0]->rut;
         $to = $datos_usuario[0]->email;
         $nombreto = ($datos_usuario[0]->nombre_completo);
-        // exit();
-        //SendGrid_Email($to, $nombreto, $from, $nombrefrom, $tipo, $subject, $titulo1, $subtitulo1, $texto1, $url, $texto_url, $texto2, $texto3, $texto4, $logo, $id_empresa, $url, $tipomensaje, $rut, $key,$template_correo);
-
-        //echo "<script>alert('Has creado el comité de forma exitosa');</script>";
+        
     }
 
     if ($perfil == "SOCIO DE NEGOCIO" or $perfil == "SUPER USER") {
@@ -472,7 +458,7 @@ else if ($seccion == "sucesion") {
     $PRINCIPAL = str_replace("{DISPLAY_PREVISUALIZAR}", $DISPLAY_NONE_PREVISUALIZAR, $PRINCIPAL);
     $PRINCIPAL = str_replace("{DISPLAY_CREAR_COMITE}", $DISPLAY_NONE_CREAR_COMITE, $PRINCIPAL);
     $texto_intro = "";
-    //echo "PERFIL $perfil";
+    
     $PRINCIPAL = str_replace("{BOTON_CREAR_COMITE_POTENCIAL_SUCESION}", $boton_crear_comite_SUCESION, $PRINCIPAL);
     $PRINCIPAL = str_replace("{TEXTO_INTRODUCTORIO_SEGUN_PERFIL}", $texto_intro, $PRINCIPAL);
     $PRINCIPAL = str_replace("{PERFIL}", $perfil, $PRINCIPAL);
@@ -542,7 +528,7 @@ else if ($seccion == "sucesion") {
     } else {
         $reporteria_SN_csv = "";
     }
-    //echo "<br>l 2106";
+    
     $PRINCIPAL = str_replace("{DESCARGA_REPORTERIA_SN_CSV}", $reporteria_SN_csv, $PRINCIPAL);
     $EsSN_descarga = Potencial_Es_SuperUsers($rut);
     if ($EsSN_descarga > 0) {
@@ -562,8 +548,7 @@ else if ($seccion == "sucesion") {
     $PRINCIPAL = Potencial_Sucesion_Mi_Sucesion_estado_activo_2024($PRINCIPAL, $rut, $perfil, $id_empresa, "activo");
     $Usu = DatosUsuario_($rut, $id_empresa);
     $avatar = $Usu[0]->avatar_usuario;
-    //$avatar = str_replace("s96-c",      "s180-c",           $avatar);
-    //echo "avatar $avatar";
+    
     if ($avatar == "") {
         $avatar = "https://www.potencialbci.cl/front/img/sinfoto.png";
     }
@@ -606,7 +591,7 @@ else if ($seccion == "sucesion_comite") {
 
     $perfil = "USUARIO";
     $perfil = Potencial_Perfil_Sucesion_Usuarios($rut, $id_empresa);
-    //echo "perfil $perfil";
+    
     $saveform = ($_GET["saveform"]);
 
     if ($saveform == "sf") {
@@ -750,7 +735,7 @@ else if ($seccion == "sucesion_comite") {
     $PRINCIPAL = str_replace("{POSICION_LIDER}", ($array_comite[0]->posicion_lider), $PRINCIPAL);
     $PRINCIPAL = str_replace("{R_LIDER}", ($array_comite[0]->r_lider), $PRINCIPAL);
     $rut_ssnn = LimpiaRutFront($array_comite[0]->d11);
-    //echo "<br>-> $rut_ssnn";
+    
     $UsuaSSNN = DatosUsuario_($rut_ssnn, $id_empresa);
     $PRINCIPAL = str_replace("{SSNN_NEGOCIO}", ($UsuaSSNN[0]->nombre_completo), $PRINCIPAL);
     $fechas_comite = DDYYMMM($array_comite[0]->fecha) . " - " . DDYYMMM($array_comite[0]->fecha_comite);
@@ -785,15 +770,14 @@ else if ($seccion == "sucesion_comite") {
     } else {
         $alert_comite_cerrado = "";
     }
-    //echo "perfil $perfil";
+    
     $PRINCIPAL = str_replace("{COMITE_CERRADO}", $alert_comite_cerrado, $PRINCIPAL);
     $PRINCIPAL = Potencial_Sucesion_Colaboradores_Comites_2024($PRINCIPAL, $id_comite, $rut, $perfil, $id_empresa);
     $boxfiltro = ($_GET["boxfiltro"]);
     $Usu = DatosUsuario_($rut, $id_empresa);
 
     $avatar = $Usu[0]->avatar_usuario;
-    //$avatar = str_replace("s96-c",      "s180-c",           $avatar);
-    //echo "avatar $avatar";
+    
     if ($avatar == "") {
         $avatar = "https://www.potencialbci.cl/front/img/sinfoto.png";
     }
@@ -865,12 +849,12 @@ else if ($seccion == "sucesion_ficha_sucesion") {
         $externo = 0;
         if ($_POST["nombre_externo_1"] <> "" or $_POST["nombre_externo_2"] <> "" or $_POST["nombre_externo_3"] <> "") {
             $rut_ficticio_usuario = DatosUsuarioMax();
-            //echo "externo $rut_ficticio_usuario"; exit();
+            
             PotencialInsertUsuario($rut_ficticio_usuario, $nombre_externo, $cargo_externo, $id_empresa);
-            //echo "<br>-> $rut_colaborador";
+            
             $rut_colaborador = $rut_ficticio_usuario;
             $externo = 1;
-            //echo "<br>rut_colaborador $rut_colaborador";
+            
         }
         $id_posicion_save = Decodear3($_GET["id_posicion_enc"]);
         $id_comite_save = Decodear3($_GET["id_comite"]);
@@ -890,7 +874,7 @@ else if ($seccion == "sucesion_ficha_sucesion") {
         if ($rut_ficticio_usuario > 0) {
             $rut_colaborador = $rut_ficticio_usuario;
         }
-        //echo "<br>2 rut_colaborador $rut_colaborador";
+        
         $rut_colaborador = LimpiaRutFront($rut_colaborador);
 
         if ($externo == 1) {
@@ -902,13 +886,13 @@ else if ($seccion == "sucesion_ficha_sucesion") {
             Potencial_Insert_Col_Sucesion_CheckSave_2024($id_comite_save, $rut_colaborador, $tipo_temporalidad, $id_posicion_save, $id_empresa, $fundamento);
             Potencial_Insert_Col_Bitacora_Sucesion_CheckSave_2024($id_comite, $rut_colaborador, $fundamento, "agregado", $id_empresa);
         }
-        //echo "<br>3 rut_colaborador $rut_colaborador";
+        
     }
     //$perfil =Potencial_Perfil_Usuarios($rut, $id_empresa);
     $saveform = ($_GET["saveform"]);
     $editBit = Decodear3($_POST["editBit"]);
     $delBit = Decodear3($_GET["delBit"]);
-    //echo "editbit $editBit delbit $delBit";
+    
     if ($editBit > 0) {
         Potencial_EliminaBitacora($editBit);
     }
@@ -1009,8 +993,8 @@ else if ($seccion == "sucesion_ficha_sucesion") {
         }
     }
     $Ficha = Potencial_Colaboradores_Matriz_tbl_data_bci_data($id_empresa, $rut_col);
-    //echo "Ficha[0]->d128 ".$Ficha[0]->d128;
-    //echo "rut $rut_col";
+    
+    
     $es_posicion_clave = Pot_CheckPosicion_Clave($rut_col);
     if ($es_posicion_clave > 0) {
         $posicion_clave = " 
@@ -1028,7 +1012,7 @@ else if ($seccion == "sucesion_ficha_sucesion") {
         $posicion_clave = "";
     }
     $Pot_NombreLider = "Lider: " . Potencial_Busca_Nombre_Lider($rut_col, $id_comite_enc);
-    //echo "rut lider $RutLider";
+    
     $PRINCIPAL = (FuncionesTransversales(file_get_contents("views/sucesion/ficha_sucesion.html")));
     //$perfil 			="USUARIO";
     // $perfil 			=	Potencial_Perfil_Usuarios($rut, $id_empresa);
@@ -1049,8 +1033,7 @@ else if ($seccion == "sucesion_ficha_sucesion") {
     $PRINCIPAL = str_replace("{NOMBRE_LIDER_SUCESION}", $LiderSuc[0]->d7 . " " . $LiderSuc[0]->d8 . " " . $LiderSuc[0]->d9, $PRINCIPAL);
     $Usu = DatosUsuario_($rut, $id_empresa);
     $avatar = $Usu[0]->avatar_usuario;
-    //$avatar = str_replace("s96-c",      "s180-c",           $avatar);
-    //echo "avatar $avatar";
+    
     if ($avatar == "") {
         $avatar = "https://www.potencialbci.cl/front/img/sinfoto.png";
     }
@@ -1066,7 +1049,7 @@ else if ($seccion == "sucesion_ficha_sucesion") {
     $PRINCIPAL = str_replace("{PERFIL}", $perfil, $PRINCIPAL);
     $PRINCIPAL = str_replace("{ID_COMITE_ENC}", $id_comite_enc, $PRINCIPAL);
     $comite_cerrado = $array_comite[0]->comite_cerrado;
-    //echo "<br>comite_cerrado $comite_cerrado";
+    
     if ($comite_cerrado == "SI") {
         $display_none_edit = " display:none;";
         $boton_ver_editar_box = "";
@@ -1099,7 +1082,7 @@ else if ($seccion == "sucesion_ficha_sucesion") {
     $PRINCIPAL = str_replace("{APROBAR_CARGO_LIDER}", $aprobar_cargo_lider, $PRINCIPAL);
 
     $num_comentarios = count($lista);
-    //echo "<br>num_comites $num_comites<br>";
+    
     if ($num_comentarios > 0) {
         $potencial_bitacora_titulo = "
     
@@ -1115,8 +1098,7 @@ else if ($seccion == "sucesion_ficha_sucesion") {
     $PRINCIPAL = str_replace("{TITULO_BITACORA}", $potencial_bitacora_titulo, $PRINCIPAL);
     $PRINCIPAL = str_replace("{MI_BITACORA}", $row_lsita, $PRINCIPAL);
     $perfil = Potencial_Perfil_Sucesion_Usuarios($rut, $id_empresa);
-    //echo "<br>perfil $perfil";
-    //SIEMPRE SE VerificaFotoPersonal
+    
     $display_none_edit = "";
     if ($perfil == "SUPER USER") {
         $display_none_edit = "";
