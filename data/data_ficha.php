@@ -39,7 +39,7 @@ function Potencial_Es_Socio($rut) {
 function UsuarioEnBasePersonas($rut, $rut_contodo)
 {
     $connexion = new DatabasePDO();
-        //echo "<br>-> Data UsuarioEnBasePersonas $rut, $rut_contodo";
+    
     $sql = "select * from tbl_usuario where rut='" . $rut . "'   and '" . $rut . "'<>'' and vigencia='0'";
     $connexion->query($sql);
     $cod    = $connexion->resultset();
@@ -96,7 +96,7 @@ function DatosAvatarTblUsuario2022($rut){
 
     $fecha      = date("Y-m-d");
     $sql        = "select h.avatar from tbl_avatar h where h.rut='$rut'";
-    //echo $sql;
+    
     $connexion->query($sql);
 
     $cod        = $connexion->resultset();
@@ -117,8 +117,7 @@ function LMS_ConsultaRutSegunEmail_data($email, $id_empresa)
 {
     $connexion = new DatabasePDO();
     $sql = "select h.* from tbl_usuario h where h.email='$email' and h.id_empresa='$id_empresa' and h.vigencia='0' and h.rut<>''";
-    //echo "<br>$c_host, $c_user, $c_pass, $c_db";
-    //echo "<br>$sql";
+    
     $connexion->query($sql);
     $cod = $connexion->resultset();
     return $cod;
@@ -128,7 +127,7 @@ function Fichas_Personas_Sucesion_Vigentes($search){
     //print_r($_SESSION);
     $soySSNN=0;
     $soySSNN=SoySocioSSNN_2023($_SESSION["user_"]);
-    //echo "<br>-->soySSNN $soySSNN";
+    
     $Perfil=Perfil_Acceso_SN_data($_SESSION["user_"]);
     //print_r($Perfil);
     if(($soySSNN>0 or $Perfil=="LIDER") and $Perfil<>"SUPERUSUARIO"){
@@ -187,7 +186,7 @@ function Ficha_Calculo_Promedio_Competencias_2023_data($rut, $periodo){
     WHERE
         rut = '$rut'
         AND periodo = '$periodo';";
-    //echo $sql;
+    
     $connexion->query($sql);
     
     $cod = $connexion->resultset();
@@ -199,7 +198,7 @@ function Perfil_Acceso_SN_data($rut){
     
     
     $sql="select perfil from tbl_ficha_accesos  where rut='$rut' limit 1";
-    //echo "<br>sql1 $sql";
+    
     $connexion->query($sql);
     
     $cod = $connexion->resultset();
@@ -213,7 +212,7 @@ function Ficha_Acceso_SN_data($rut){
     $acceso=0;
     // ACCESO ADMIN //
     $sql="select id from tbl_ficha_accesos  where rut='$rut' limit 1";
-        //echo "<br>sql1 $sql";
+    
     $connexion->query($sql);
     
     $cod = $connexion->resultset();
@@ -221,12 +220,12 @@ function Ficha_Acceso_SN_data($rut){
         $acceso=1;
     } else {
         $sql2="select rut_completo from tbl_usuario  where rut='$rut' and vigencia='0'";
-        //echo "<br>sql2 $sql2";
+        
         $connexion->query($sql2);
         $cod2 = $connexion->resultset();
         // ACCESSO SSNN //
         $sql3="select id from tbl_usuario  where operador='".$cod2[0]->rut_completo."' limit 1";
-        //echo "<br>sql3 $sql3";
+        
         $connexion->query($sql3);
         $cod3 = $connexion->resultset();
 
@@ -235,7 +234,7 @@ function Ficha_Acceso_SN_data($rut){
         }  else {
             //ACCESO LIDER SUCESION
             $Check_Sucesion=Sucesion_CheckUserLiderPosiciones_data($rut);
-                    //echo $Check_Sucesion; exit();
+            
             if($Check_Sucesion>0){
                 echo "    <script>         location.href='?sw=sucesion';     </script>"; exit;
             }
@@ -255,7 +254,7 @@ function Ficha_Acceso_SN_Sucesion_data($rut){
     $acceso=0;
     // ACCESO ADMIN //
     $sql="select id from tbl_ficha_accesos  where rut='$rut' limit 1";
-    //echo "<br>sql1 $sql";
+    
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
@@ -263,12 +262,11 @@ function Ficha_Acceso_SN_Sucesion_data($rut){
         $acceso=1;
     } else {
         $sql2="select rut_completo from tbl_usuario  where rut='$rut'";
-       // echo "<br>sql2 $sql2"; exit();
-        //$connexion->query($sql2);
+       
         $cod2 = $connexion->resultset();
         // ACCESSO SSNN //
         $sql3="select id from tbl_usuario  where operador='".$cod2[0]->rut_completo."' and operador<>'' limit 1";
-        //echo "<br>sql3 $sql3";
+        
         $connexion->query($sql3);
 
         $cod3 = $connexion->resultset();
@@ -278,14 +276,14 @@ function Ficha_Acceso_SN_Sucesion_data($rut){
         }  else {
             //ACCESO LIDER SUCESION
             $Check_Sucesion=Sucesion_CheckUserLiderPosiciones_data($rut);
-            //echo $Check_Sucesion; exit();
+            
             if($Check_Sucesion>0){
                 $acceso=1;
             }
             // exit("lider sucesion");
         }
     }
-    //echo "acceso $acceso";
+    
     if($acceso>0){
 
     } else {
@@ -299,19 +297,19 @@ function Ficha_Acceso_SN_Sucesion_CheckCrear_data($rut){
     $acceso=0;
     // ACCESO ADMIN //
     $sql="select id from tbl_ficha_accesos  where rut='$rut' limit 1";
-    //echo "<br>sql1 $sql";
+    
     $connexion->query($sql);
     $cod = $connexion->resultset();
     if($cod[0]->id>0){
         $acceso=1;
     } else {
         $sql2="select rut_completo from tbl_usuario  where rut='$rut'";
-        //echo "<br>sql2 $sql2";
+        
         $connexion->query($sql2);
         $cod2 = $connexion->resultset();
         // ACCESSO SSNN //
         $sql3="select id from tbl_usuario  where operador='".$cod2[0]->rut_completo."' limit 1";
-        //echo "<br>sql3 $sql3";
+        
         $connexion->query($sql3);
         $cod3 = $connexion->resultset();
         if( $cod3[0]->id>0){
@@ -333,13 +331,13 @@ function SoySocioSSNN_2023($rut){
     
     $soySSNN=0;
     $sql2="select rut_completo from tbl_usuario  where rut='$rut'";
-    //echo "<br>sql2 $sql2";
+    
     $connexion->query($sql2);
     
     $cod2 = $connexion->resultset();
 
     $sql3="select id from tbl_usuario  where operador='".$cod2[0]->rut_completo."' limit 1";
-    //echo "<br>sql3 $sql3";
+    
     $connexion->query($sql3);
     
     $cod3 = $connexion->resultset();
@@ -355,7 +353,7 @@ function Ficha_Premiaciones_2023_data($rut){
     
     
     $sql=" select * from tbl_ficha_premiaciones where rut='$rut' order by periodo DESC, tipo ASC";
-    //echo $sql;
+
     $connexion->query($sql);
     
     $cod = $connexion->resultset();
@@ -366,7 +364,7 @@ function Fichas_Personas_Vigentes($search){
     //print_r($_SESSION);
     $soySSNN=0;
     $soySSNN=SoySocioSSNN_2023($_SESSION["user_"]);
-    //echo "<br>-->soySSNN $soySSNN";
+    
     $Perfil=Perfil_Acceso_SN_data($_SESSION["user_"]);
     //print_r($Perfil);
 
@@ -406,7 +404,7 @@ ORDER BY
                     vigente DESC,
                     relevance DESC";
     }
-    //echo $sql;
+    
     $connexion->query($sql);
     $cod = $connexion->resultset();
     return $cod;
@@ -414,7 +412,7 @@ ORDER BY
 function Ficha_AccionesDesarrollo_2023_data($rut){
     /*$connexion = new DatabasePDO();
     $sql=" select * from tbl_ficha_acciones_desarrollo  where rut='$rut' order by periodo DESC, tipo ASC";
-    //echo $sql;
+    
     $connexion->query($sql);
     $cod = $connexion->resultset();
     return $cod;*/
@@ -435,7 +433,7 @@ function Ficha_SkillChallenge_2023_data($rut){
                             h.estado_skill_cursos='Skill Obtenida'
                             ) group by h.id_skill order by h.skill
                                                 ";
-    //echo $sql;
+    
     $connexion->query($sql);
     
     $cod = $connexion->resultset();
@@ -444,7 +442,7 @@ function Ficha_SkillChallenge_2023_data($rut){
 function Ficha_Cuadrantes_2023_data($rut, $tipo){
     /*$connexion = new DatabasePDO();
     $sql=" select cuadrante, fecha, clase from tbl_ficha_cuadrantes where rut='$rut' and tipo='$tipo' ";
-    //echo "<br>".$sql;
+    
     $connexion->query($sql);
     $cod = $connexion->resultset();*/
     return $cod;
@@ -452,7 +450,7 @@ function Ficha_Cuadrantes_2023_data($rut, $tipo){
 function Ficha_Engagement_2023_data($rut, $periodo){
     $connexion = new DatabasePDO();
     $sql=" select engagement from tbl_ficha_potencial_eng where rut='$rut' and periodo='$periodo' ";
-    //echo $sql;
+    
     $connexion->query($sql);
     $cod = $connexion->resultset();
     return $cod[0]->engagement;
@@ -462,7 +460,7 @@ function Ficha_Clima_2023_data($rut, $periodo){
     
     
     $sql=" select clima from tbl_ficha_potencial_clima where rut='$rut' and periodo='$periodo' ";
-    //echo $sql;
+    
     $connexion->query($sql);
     
     $cod = $connexion->resultset();
@@ -506,7 +504,7 @@ function Ficha_Potencial_Fecha_Posicion_data($rut){
     
     
     $sql="select fecha_posicion from tbl_potencial_usuario_posicion  where rut='$rut'";
-    //echo $sql;
+    
     $connexion->query($sql);
     
     $cod = $connexion->resultset();
@@ -517,7 +515,7 @@ function Ficha_Desempeno_ficha($periodo, $rut){
     
     
     $sql="select * from tbl_potencial_ficha_desempeno where rut ='$rut' and periodo='$periodo';";
-    //echo $sql;
+    
     $connexion->query($sql);
     
     $cod = $connexion->resultset();
@@ -529,7 +527,7 @@ function Ficha_Desempeno_promedio_ficha($periodo, $rut){
     
     
     $sql="select * from tbl_potencial_ficha_desempeno_promedios where rut ='$rut' and periodo='$periodo';";
-    //echo $sql;
+    
     $connexion->query($sql);
     
     $cod = $connexion->resultset();
@@ -544,7 +542,7 @@ function DatosUsuario_($rut, $id_empresa)
     from tbl_usuario h left join tbl_avatar a on a.rut=h.rut
     where h.rut='$rut' and h.id_empresa='$id_empresa'
     ";
-   //echo $sql;
+   
     $connexion->query($sql);
     $cod = $connexion->resultset();
     return ($cod);
@@ -552,7 +550,7 @@ function DatosUsuario_($rut, $id_empresa)
 function DatosDataBci2021($rut){
     $connexion = new DatabasePDO();
     $sql="select * from tbl_data_bci_2021  where rut='$rut'";
-    //echo $sql;
+    
     $connexion->query($sql);
     $cod = $connexion->resultset();
     return $cod;
@@ -565,7 +563,7 @@ function UsuaData2021_mini($rut){
 
     /*$sql=" 	select h.d153 as rx from tbl_data_bci_2021 h where rut='$rut'";*/
     $sql=" 	select h.d5, h.d6, h.d16  from tbl_data_bci_2021 h where rut='$rut'";
-    //echo $sql;
+    
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
@@ -576,12 +574,12 @@ function Sucesion_CheckUserLiderPosiciones_data($rut){
     $connexion = new DatabasePDO();
 
     $sql1=" select h.id from tbl_potencial_sucesion_comites_colaboradores_2024 h where h.rut='$rut' and h.id_empresa='62' limit 1 ";
-    //echo $sql1;
+    
     $connexion->query($sql1);
     $cod1 = $connexion->resultset();
 
     $sql2=" select h.id from tbl_potencial_comites_sucesion_2024 h where h.rut_lider='$rut' and h.id_empresa='62' limit 1; ";
-    //echo $sql2;
+    
     $connexion->query($sql2);
     $cod2 = $connexion->resultset();
     $acceso=0;
@@ -598,7 +596,7 @@ function Sucesion_CheckUserLiderPosiciones_data($rut){
 function SucesionBitacora_2024($rut, $id_comite){
     $connexion = new DatabasePDO();
     $sql=" select * from tbl_potencial_bitacora_sucesion_2024 where rut_colaborador='$rut' and id_comite='$id_comite' ";
-    //echo "<br>".$sql;
+    
     $connexion->query($sql);
     $cod = $connexion->resultset();
     return $cod;
@@ -616,7 +614,7 @@ function Sucesion_Check_Comparte_Jefe_data_2024($rut, $jefe)
     $connexion = new DatabasePDO();
     $sql = "select rut 
             from tbl_data_bci_2021 where d12='$jefe' and rut='$rut'";
-    //echo $sql;
+    
     $connexion->query($sql);
     $cod = $connexion->resultset();
     return $cod[0]->rut;
@@ -630,7 +628,7 @@ j.d16 as nivelR
 from tbl_potencial_sucesion_comites_colaboradores_2024 h
 left join tbl_data_bci_2021 j on h.rut=j.rut
 where h.id_comite='$id_comite' and h.posicion='$posicion' ";
-    //echo $sql;exit();
+    
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
@@ -641,7 +639,7 @@ function Potencial_Sucesion_Num_Sucesores_2024($rut){
 
 
     $sql=" 	select count(id) as cuenta from tbl_potencial_sucesion_colaboradores_propuestos_2024 where rut_col='$rut' and estado='Es Sucesor' ";
-    //echo $sql;
+    
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
@@ -665,7 +663,7 @@ function Potencial_Del_tbl_potencial_sucesion_colaboradores_propuestos_r2_2024($
     tbl_potencial_sucesion_colaboradores_propuestos_2024 
     set estado='No es sucesor', rutlider='".$rut_lider."', fechalider='$fecha'
     where id='$del'";
-    //echo $sql;  exit();
+    
     $connexion->query($sql);
     $connexion->execute();
     $datos = $connexion->resultset();
@@ -676,7 +674,7 @@ function Potencial_Del_tbl_potencial_sucesion_colaboradores_propuestos_r2_2024($
 function Potencial_trae_rut_col_fromId_Sucesion_2024($id_sucesor){
     $connexion = new DatabasePDO();
     $sql   = "select rut_col from tbl_potencial_sucesion_colaboradores_propuestos_2024 where id='$id_sucesor' ";
-    //echo $sql; exit();
+    
     $connexion->query($sql);
     $cod = $connexion->resultset();
 
@@ -692,7 +690,7 @@ function Potencial_Actualiza_tbl_potencial_sucesion_colaboradores_propuestos_r2_
 
     $hoy   = date('Y-m-d');
     $sql="update tbl_potencial_sucesion_colaboradores_propuestos_2024 set tipo_sucesion='$tipo_sucesion_ficha' where id='$id_sucesor' ";
-    //echo $sql;exit;
+    
     $connexion->query($sql);
     $connexion->execute();
     $cod = $connexion->resultset();
@@ -705,7 +703,7 @@ function Sucesion_EstadoComite_Cuenta_colaboradores_propuestos($id_comite){
 	      				from tbl_potencial_sucesion_colaboradores_propuestos_2024  
 	      				where id_comite='$id_comite' and id_empresa='62'";
 
-    //echo $sql;
+    
 
     $connexion->query($sql);
     $cod = $connexion->resultset();
@@ -735,7 +733,7 @@ function Potencial_Insert_Col_Sucesion_CheckSave_2024($id_comite,$rut_col,$tipo,
         $connexion->query($sql);
         $connexion->execute();
     }
-    //echo $sql; exit();
+    
 }
 function Potencial_Insert_Col_Bitacora_Sucesion_CheckSave_2024($id_comite,$rut_col,$fundamento,$accion,$id_empresa){
     $connexion = new DatabasePDO();
@@ -762,14 +760,14 @@ function Sucesion_Dueno_O_Posicion_2024($id_comite, $rut){
     $owner_comite="";
     $sql="select id from tbl_potencial_comites_sucesion_2024 where  id_comite='$id_comite' and (rut='$rut' or gerenciaR1='$rut')";
 
-    //echo "<br>onwer 1 $sql";
+    
     $connexion->query($sql);
     $cod = $connexion->resultset();
     if($cod[0]->id>0){
         $owner_comite="owner";
     } else {
         $sql="select id from tbl_potencial_sucesion_comites_colaboradores_2024 where id_comite='$id_comite' and rut='$rut'";
-        //echo "<br>onwer 2 $sql";
+        
         $connexion->query($sql);
         $cod = $connexion->resultset();
         if($cod[0]->id>0){
@@ -789,7 +787,7 @@ function PotencialSucesion_Vista_Colaboradores_Posicion_2024($id_comite, $rut, $
 	      				where posicion='$posicion' and id_comite='$id_comite' 
 	      				  and id_empresa='$id_empresa' and tipo_sucesion='$tipo'
 	      				  and estado='Es Sucesor'";
-    // echo "<br><br>".$sql."<br><br>";
+    
     $connexion->query($sql);
     $cod = $connexion->resultset();
     return ($cod);
@@ -804,7 +802,7 @@ function PotencialSucesion_Vista_Colaboradores_Tarea_Posicion_2024($id_comite, $
 	      				where posicion='$posicion' and id_comite='$id_comite' 
 	      				  and id_empresa='62' and tipo_sucesion='$tipo'
 	      				  and estado='Es Sucesor'";
-    //echo "<br><br>".$sql."<br><br>";
+    
     $connexion->query($sql);
     $cod = $connexion->resultset();
     return ($cod[0]->cuenta);
@@ -814,10 +812,10 @@ function Potencial_Sucesion_Colaboradores_Comites_2024_data($id_comite, $rut, $p
     $connexion = new DatabasePDO();
     $fecha = date("Y-m-d");
     $query="";
-    //echo "<br>perfil $perfil";
+    
     if($perfil=="SOCIO DE NEGOCIO" OR $perfil=="SUPER USER")    {
 
-        //echo "A";
+        
         $sql   = "
 
                 SELECT
@@ -835,7 +833,7 @@ function Potencial_Sucesion_Colaboradores_Comites_2024_data($id_comite, $rut, $p
                 
       ";
     } else {
-        //echo "B";
+        
 
         $owner=Sucesion_Dueno_O_Posicion_2024($id_comite, $rut);
         if($owner<>""){
@@ -848,7 +846,7 @@ function Potencial_Sucesion_Colaboradores_Comites_2024_data($id_comite, $rut, $p
                     c.d5 as cargo,c.d6 as posicion,
                     c.d16 as r
                 FROM
-                    tbl_potencial_comites_sucesion_2024 h 
+                    tbl_potencial_comites_sucesion_2024 h
                     left join tbl_potencial_sucesion_comites_colaboradores_2024 n on h.id_comite=n.id_comite
                     left join tbl_data_bci_2021 c on c.rut=n.rut
                 WHERE
@@ -897,7 +895,7 @@ function Potencial_Sucesion_Comites_2024_data($id_comite,$id_empresa){
          where h.id_comite='$id_comite' and h.id_empresa='$id_empresa'
          order by (select nombre_completo    from tbl_usuario   where rut=h.rut) ASC
      ";
-    //echo "sql $sql"; exit();
+    
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
@@ -906,7 +904,7 @@ function Potencial_Sucesion_Comites_2024_data($id_comite,$id_empresa){
 }
 function Potencial_Mis_Comites_insert_Nuevo_Comite_Sucesion_data_2024($nombre, $rut_g1, $rut, $fecha_comite, $id_empresa, $id_comite_edit)
 {
-    //echo "<br>Vars $nombre, $rut_g1, $rut, $fecha_comite, $id_empresa, $id_comite_edit";
+    
     $connexion = new DatabasePDO();
     $fecha = date("Y-m-d");
     $hora  = date("H:i:s");
@@ -937,7 +935,7 @@ function Potencial_Mis_Comites_insert_Nuevo_Comite_Sucesion_data_2024($nombre, $
 
     $connexion->query($sql);
     $connexion->execute();
-    // echo "<br>".$sql."<br>";    exit("327");
+    
 
     return $id_comite;
 }
@@ -986,13 +984,9 @@ HAVING
         $aux[$key] = $row->fecha_comite;
     }
 
-    //echo $sql;
-    //echo "<br>AUX<br>";
-    //print_r($aux);
-    //echo "<br>FIn AUX<br>";
     array_multisort($aux, SORT_DESC, $cod);
 
-    //echo "<h3>Potencial Sucesion <br>".$sql."</h3>";
+    
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
@@ -1011,9 +1005,9 @@ function Potencial_Sucesion_Mis_Comites_data_2024($id_empresa, $rut, $perfil){
     $cod_jefe = $connexion->resultset();
 
     $rut_jefe=LimpiaRutFront($cod_jefe[0]->d12);
-    //echo "<br>--> Mi Jefe $rut_jefe";
+    
     if($perfil=="SUPER USER"){
-        //echo "A";
+        
 
         $sql=" SELECT 
     h.*, 
@@ -1041,7 +1035,7 @@ GROUP BY
     h.id;      ";
 
     } else {
-        //echo "B";
+        
 
 
         $sql=" SELECT 
@@ -1086,16 +1080,14 @@ HAVING COUNT(m.rut) > 0
            ";
     }
 
-     //echo $sql; exit();
+    
     foreach ($cod as $key => $row) {
         $aux[$key] = $row->fecha_comite;
     }
-    //echo "<br>AUX<br>";
-    //print_r($aux);
-    //echo "<br>FIn AUX<br>";
+
     array_multisort($aux, SORT_DESC, $cod);
 
-    //echo "<h3>Potencial Sucesion <br>".$sql."</h3>";
+    
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
@@ -1120,8 +1112,7 @@ function PotencialSucesion_BuscaR2_2024($rut_R1, $id_empresa){
      		
      		";
 
-    //echo "<br>PotencialSucesion_BuscaR2_2024<br>".$sql;
-    //exit();
+    
     $connexion->query($sql);
     $cod = $connexion->resultset();
     return $cod;
@@ -1145,7 +1136,7 @@ function Sucesion_Check_Posicion_validada($id_posicion){
 
     $SQL_SU="select count(id) as cuenta from tbl_potencial_sucesion_colaboradores_propuestos_r2
 				where posicion='$id_posicion' and validado_lider='SI'";
-    //echo $SQL_SU;
+    
     $connexion->query($SQL_SU);
 
     $COD_SU = $connexion->resultset();
@@ -1161,7 +1152,7 @@ function Sucesion_Rut_Nombre_lider_posicion($id_posicion){
 
     //$SQL_SU="select rut, d7, d8, d9 from tbl_data_bci_2021 where d6='$id_posicion'";
     $SQL_SU="select rut, d7, d8, d9 from tbl_data_bci_2021 where d6='$id_posicion'";
-    //echo $SQL_SU;
+    
     $connexion->query($SQL_SU);
 
     $COD_SU = $connexion->resultset();
@@ -1179,7 +1170,7 @@ function Potencial_Colaboradores_Matriz_tbl_data_bci_data($id_empresa, $rut){
      				select h.* from tbl_data_bci_2021 h where h.rut='$rut' 
 
      ";
-    //echo "sql $sql";
+    
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
@@ -1194,7 +1185,7 @@ function MiRx($rut){
 
     /*$sql=" 	select h.d153 as rx from tbl_data_bci_2021 h where rut='$rut'";*/
     $sql=" 	select h.d16 as rx from tbl_data_bci_2021 h where rut='$rut'";
-    //echo $sql;
+    
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
@@ -1252,7 +1243,7 @@ function Potencial_Busca_Nombre_Lider($rut_col,$id_comite_enc){
 
     $fecha = date("Y-m-d");
     $id_comite=Decodear3($id_comite_enc);
-    //echo "<br>Potencial_Busca_Nombre_Lider<br>$rut_col,$id_comite";
+    
     $sql="
 
         select h.rut_lider, (select d7 from tbl_data_bci_2021 where rut=h.rut_lider) as nombre, (select d8 from tbl_data_bci where rut=h.rut_lider) as apellido
@@ -1301,7 +1292,7 @@ function Potencial_Comites_Suc_data($id_comite,$id_empresa){
      order by (select nombre_completo    from tbl_usuario   where rut=h.rut) ASC
 
      ";
-    //echo "sql $sql";
+    
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
@@ -1325,7 +1316,7 @@ function Potencial_Comites_Suc_data_2024($id_comite,$id_empresa){
      order by (select nombre_completo    from tbl_usuario   where rut=h.rut) ASC
 
      ";
-    //echo "sql $sql";
+    
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
@@ -1339,7 +1330,7 @@ function Potencial_Busca_Cantidad_Colaboradores_socio_2024($rut, $id_comite, $id
     $sql   = "
            select count(h.id) as cuenta from tbl_potencial_sucesion_comites_colaboradores_2024 h where h.id_empresa='$id_empresa' and id_comite='$id_comite'
      ";
-    //echo "<br>sqlPotencial_Busca_Cantidad_Colaboradores_socio_2024 <br> $sql<br>";
+    
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
@@ -1393,7 +1384,7 @@ function Potencial_EliminaComite_Sucesion_2024($id_comite) {
     $connexion = new DatabasePDO();
 
     $sql="update tbl_potencial_comites_sucesion_2024 set id_empresa='99' where id_comite='$id_comite' ";
-    //echo $sql;exit;
+    
     $connexion->query($sql);
     $connexion->execute();
     $cod = $connexion->resultset();
@@ -1402,19 +1393,18 @@ function Potencial_EliminaComite_Sucesion_2024($id_comite) {
 }
 function Potencial_Sucesion_Select_Insert_comites_colaboradores_CheckSave_2024($rut,$posicion,$id_comite,$nombre_completo,$id_empresa)
 {
-    //echo "<br> Potencial_Sucesion_Select_Insert_comites_colaboradores_CheckSave_2024 -> $rut,$posicion,$id_comite,$nombre_completo,$id_empresa <br>";   //exit();
+    
     $connexion = new DatabasePDO();
     $sql_check="select id from tbl_potencial_sucesion_comites_colaboradores_2024 where id_comite='$id_comite' and rut='$rut' and posicion ='$posicion'";
     $connexion->query($sql_check);
-    // echo "<br>-> $sql_check";
+    
     $cod = $connexion->resultset();
     if($cod[0]->id>0){
 
     } else{
         if($posicion<>""){
             $sql   = "insert into tbl_potencial_sucesion_comites_colaboradores_2024 (id_comite, posicion, rut, nombre_completo, id_empresa) VALUES ('$id_comite','$posicion', '$rut', '$nombre_completo','$id_empresa');";
-            //echo $sql;
-            //exit();
+
             $connexion->query($sql);
             $connexion->execute();
         }
@@ -1428,7 +1418,7 @@ function Potencial_Es_SuperUsers($rut){
     $sql=" 	select id from tbl_potencial_perfil_super where rut='$rut' and rut<>'17810781' ";
 
 
-    //echo "<br>sql<br>".$sql."<br>";
+    
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
@@ -1440,13 +1430,13 @@ function Potencial_Perfil_Sucesion_Usuarios($rut, $id_empresa){
     $fecha = date("Y-m-d");
 
     $sql   = " select h.id from tbl_potencial_perfil h where h.rut='$rut' and h.id_empresa='$id_empresa'  limit 1";
-    //echo "<br>sql $sql";
+    
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
 
     $sql1   = " select h.id from tbl_potencial_sucesion_comites_colaboradores h where h.rut='$rut' and h.id_empresa='$id_empresa'  limit 1";
-    //echo "<br>sql1 $sql1";
+    
     $connexion->query($sql1);
 
     $cod1 = $connexion->resultset();
@@ -1455,13 +1445,13 @@ function Potencial_Perfil_Sucesion_Usuarios($rut, $id_empresa){
     $sql2   = " select h.id from tbl_potencial_sucesion_comites_colaboradores h where 
      		(h.rut_jefe_socio='$rut' or h.rut_jefe_jefe_socio='$rut' or h.rut_jefe_lider='$rut' or h.rut_jefe_jefe_lider='$rut')
      		 and h.id_empresa='$id_empresa'  limit 1";
-    //echo $sql2;
+    
     //exit();
     $connexion->query($sql2);
 
     $cod2 = $connexion->resultset();
 
-    //echo "<br>cod1[0]->id>0 lider ".$cod1[0]->id." and cod[0]->id>0 ".$cod[0]->id."";
+    
 
     if($cod2[0]->id>0){
         $perfil="VISUALIZADOR";
@@ -1486,7 +1476,7 @@ function Potencial_Perfil_Sucesion_Usuarios($rut, $id_empresa){
     //if($perfil==""){
     //check
     $sqlSU   = " select h.id from tbl_potencial_perfil_super h where h.rut='$rut' and h.id_empresa='$id_empresa'  limit 1";
-    //echo "<br>sql tbl_potencial_perfil_super <br> $sql <br>";
+    
     $connexion->query($sqlSU);
 
     $codSU = $connexion->resultset();
@@ -1496,14 +1486,14 @@ function Potencial_Perfil_Sucesion_Usuarios($rut, $id_empresa){
 
     //}
 
-    //echo "perfil $perfil"; exit();
+    
 
     //vista socio 2 y 3
     if($perfil==""){
 
         $sqlSOc_2_3   = " select h.id from tbl_potencial_comites_sucesion h where (h.rut='$rut' or h.gerenciaR1='$rut' or h.rut_socio_2='$rut' or h.rut_socio_3='$rut' or h.rut_socio_4='$rut') 
         and h.id_empresa='$id_empresa'  limit 1";
-        //echo "<br>sql $sql";
+        
         $connexion->query($sqlSOc_2_3);
 
         $codSOc_2_3 = $connexion->resultset();
