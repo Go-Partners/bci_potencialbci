@@ -413,7 +413,7 @@ function FuncionesTransversales($html)
     $html = str_replace("{HEAD_DINAMICO}",     file_get_contents("views/head/" . $id_empresa . "_head.html"), $html);
     $html = str_replace("{MENU_DINAMICO}",     file_get_contents("views/menu/" . $id_empresa . "_menu_principal.html"), $html);
     $html = str_replace("{FOOTER_DINAMICO}",file_get_contents("views/head/" . $id_empresa . "_footer.html"), $html);
-    $html   = str_replace("{LOGO_EMPRESA}", ($datos_empresa[0]->archivo), $html);
+    $html   = str_replace("{LOGO_EMPRESA}", '', $html);
     return ($html);
 }
 function ValidarSesion($ambiente, $id_empresas, $url_front)
@@ -669,6 +669,7 @@ function Potencial_Sucesion_Mis_Comites_estado_activo_2024($PRINCIPAL, $rut, $pe
     if($num_comites>0){$potencial_titulo="";}   else   {
         $potencial_titulo="<div class='row'><div class='col-sm-12 txt_title_pot'><br><br><center>[ No hay comit&eacute;s de sucesi�n creados ]</center></div></div>";
     }
+	$pot_sucesion_badge_ok_cerrado="";
     foreach($lista as $unico) {
         $cuenta_lista++;
         $num_colaboradores=0;
@@ -678,6 +679,7 @@ function Potencial_Sucesion_Mis_Comites_estado_activo_2024($PRINCIPAL, $rut, $pe
         $g2="";
         $array_g2=Potencial_Busca_Colaboradores_Comite_2024($unico->id_comite, $id_empresa);
         foreach ($array_g2 as $unlid){
+	        $estado_tarea_comite="";
             $g2.="<i class='bi bi-arrow-right-short'></i><strong>".$unlid->posicion."</strong>".$pot_sucesion_badge_ok_cerrado."
                         <br><br><i class='bi bi-person'></i> ".$unlid->nombre_completo."
                         <br><i class='bi bi-arrow-right-short'></i>Cargo: ".$unlid->d5." 
@@ -812,9 +814,10 @@ function Potencial_Sucesion_Colaboradores_Comites_Ficha_2024($PRINCIPAL, $id_com
     $display_acciones_desarrollo = "  ";
     $row_inmediato="";
     $row_lista1="";
-    $Inmediato=PotencialSucesion_Vista_Colaboradores_Posicion_2024($id_comite, $unico->rut, $id_empresa, "1", $posicion);
+    $Inmediato=PotencialSucesion_Vista_Colaboradores_Posicion_2024($id_comite,$rut, $id_empresa, "1", $posicion);
     
     foreach ($Inmediato as $uni1){
+	    $filtro="";
         if($comite_cerrado_esta=="SI" and $uni1->estado=="No es sucesor"){
             // continue;
         }
@@ -840,6 +843,7 @@ function Potencial_Sucesion_Colaboradores_Comites_Ficha_2024($PRINCIPAL, $id_com
         }
         $row_lista1 = str_replace("{POSICION_CLAVE}", 			$posicion_clave, $row_lista1);
         $Num_Sucesion=Potencial_Sucesion_Num_Sucesores_2024($uni1->rut_col);
+	    $Cuad_2020="";
         if($Cuad_2020<>""){
             if($Cuad_2020=="10"){$Cuad_2020="5+";}
             $cuadrante_2020="Cuadrante Actual: $Cuad_2020";
@@ -958,7 +962,7 @@ function Potencial_Sucesion_Colaboradores_Comites_Ficha_2024($PRINCIPAL, $id_com
 
     $row_mediano="";
     $row_lista2="";
-    $Mediano=PotencialSucesion_Vista_Colaboradores_Posicion_2024($id_comite, $unico->rut, $id_empresa, "2", $posicion);
+    $Mediano=PotencialSucesion_Vista_Colaboradores_Posicion_2024($id_comite, $uni1->rut_col, $id_empresa, "2", $posicion);
     
     foreach ($Mediano as $uni2){
         if($comite_cerrado_esta=="SI" and $uni2->estado=="No es sucesor"){
@@ -1040,7 +1044,7 @@ function Potencial_Sucesion_Colaboradores_Comites_Ficha_2024($PRINCIPAL, $id_com
                 $estado_badge_avatar2="<span class='badge badge-info' style='color:#fff'>Es Sucesor</span>  <span style='font-size: 12px; display:none;'>Sugerido por L&iacute;der</span>";
             }
         }
-        if($comite_cerrado_esta=="SI" and $uni3->estado=="Es Sucesor"){
+        if($comite_cerrado_esta=="SI" and $uni2->estado=="Es Sucesor"){
             $estado_badge_avatar2="";
         }
         $row_lista2 = str_replace("{NO_ES_SUCESOR_ESTADO_BADGE}",     		$estado_badge_avatar2, $row_lista2);
@@ -1100,7 +1104,7 @@ function Potencial_Sucesion_Colaboradores_Comites_Ficha_2024($PRINCIPAL, $id_com
 
     $row_largo="";
     $row_lista3="";
-    $Largo=PotencialSucesion_Vista_Colaboradores_Posicion_2024($id_comite, $unico->rut, $id_empresa, "3", $posicion);
+    $Largo=PotencialSucesion_Vista_Colaboradores_Posicion_2024($id_comite, $uni2->rut_col, $id_empresa, "3", $posicion);
     
     foreach ($Largo as $uni3){
         if($comite_cerrado_esta=="SI" and $uni3->estado=="No es sucesor"){
@@ -1156,10 +1160,10 @@ function Potencial_Sucesion_Colaboradores_Comites_Ficha_2024($PRINCIPAL, $id_com
         } else {
             $num_sucesion_2020="1 vez como sucesor";
         }
-        //$Usua=DatosUsuario_($uni3->rut_col, $id_empresa);
+        /*$Usua=DatosUsuario_($uni3->rut_col, $id_empresa);
         if($Usua[0]->gerencia=="GERENCIA CORPORATIVA GESTION PERSONAS"){
             $cuadrante_2020="";
-        }
+        }*/
         if($visualiza3=="NO"){$num_sucesion_2020="";}
         if($visualiza3=="NO"){$cuadrante_2020="";}
         $row_lista3 = str_replace("{CARGO_CUDRANTE_SUCESORES}",   $cuadrante_2020, $row_lista3);
@@ -1238,6 +1242,8 @@ function Potencial_Sucesion_Colaboradores_Comites_Ficha_2024($PRINCIPAL, $id_com
             $row_lista3 = str_replace("{BITACORA_DE_DESARROLLO}", "", $row_lista3);
         }*/
     }
+	$row_lista="";
+	$potencial_titulo="";
     $PRINCIPAL = str_replace("{INMEDIATO}", ($row_lista1), $PRINCIPAL);
     $PRINCIPAL = str_replace("{MEDIANO}",   ($row_lista2), $PRINCIPAL);
     $PRINCIPAL = str_replace("{LARGO}",   	($row_lista3), $PRINCIPAL);
@@ -1357,8 +1363,8 @@ function Potencial_Sucesion_Colaboradores_Comites_2024($PRINCIPAL, $id_comite, $
             if($uni2->estado=="No es sucesor"){continue;}
 
             $row_lista2.= file_get_contents("views/sucesion/row_colaboradores_comites_sucesion.html");
-            $row_lista2 = str_replace("{RUT}",           ($uni3->rut_col), $row_lista2);
-            $row_lista2 = str_replace("{COLABORADOR}",   	($uni3->nombre_completo), $row_lista2);
+            $row_lista2 = str_replace("{RUT}",           ($uni2->rut_col), $row_lista2);
+            $row_lista2 = str_replace("{COLABORADOR}",   	($uni2->nombre_completo), $row_lista2);
 
             $row_lista2 = str_replace("{CARGO_COL}",   		($uni2->cargo_col), $row_lista2);
             $row_lista2 = str_replace("{TEMPORALIDAD}",           	"Mediano / 1 a 2 a&ntilde;os", $row_lista2);
@@ -1457,7 +1463,9 @@ function Potencial_Sucesion_Colaboradores_Comites_2024($PRINCIPAL, $id_comite, $
         //if($cuenta_mediano>0){ $titulo_inmediato="<div class='txt_title_pot'>Inmediato</div>"; } else { $titulo_inmediato=""; }
         //if($cuenta_mediano>0){ $titulo_mediano="<div class='txt_title_pot'>Mediano</div>"; } else { $titulo_mediano=""; }
         //if($cuenta_mediano>0){ $titulo_largo="<div class='txt_title_pot'>Largo</div>"; } else { $titulo_largo=""; }
-
+	    $titulo_inmediato="";
+	    $titulo_mediano="";
+	    $titulo_largo="";
 
         $row_lista = str_replace("{LARGO}",   	($row_lista3), $row_lista);
 
@@ -1627,6 +1635,7 @@ function Ficha_colaborador_fn($PRINCIPAL, $rut, $perfil, $filtro, $id_empresa){
 
     //$NivelHay=Ficha_NivelHay_data($rut);
     //$nivel_HAY_txt="Nivel HAY: ".$NivelHay;
+	$nivel_HAY_txt="";
     $PRINCIPAL = str_replace("{GERENCIA}",              $Data[0]->d7,          $PRINCIPAL);
     $PRINCIPAL = str_replace("{FONDO}",                 $Data[0]->d8,          $PRINCIPAL);
     $PRINCIPAL = str_replace("{DEPENDENCIA}",           $Data[0]->d9,          $PRINCIPAL);

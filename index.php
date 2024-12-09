@@ -1183,4 +1183,3 @@ else {
     $_SESSION["token"] = $token_fecha_hora;
     echo $PRINCIPAL;
 }
-?>

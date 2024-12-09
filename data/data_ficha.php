@@ -1277,7 +1277,7 @@ function Pot_CheckPosicion_Clave($rut) {
 }
 function Potencial_Comites_Suc_data($id_comite,$id_empresa){
 
-  /*  $connexion = new DatabasePDO();
+    $connexion = new DatabasePDO();
 
     $fecha = date("Y-m-d");
 
@@ -1296,7 +1296,7 @@ function Potencial_Comites_Suc_data($id_comite,$id_empresa){
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
-    return ($cod);*/
+    return ($cod);
 
 }
 function Potencial_Comites_Suc_data_2024($id_comite,$id_empresa){
