@@ -481,8 +481,8 @@ else if ($seccion == "sucesion") {
         $DataBci_Gerencia = Potencial_Data_Bci_2021_groupby("d7");
         $DataBci_Fondo = Potencial_Data_Bci_2021_groupby("d8");
         $DataBci_Dependencia = Potencial_Data_Bci_2021_groupby("d9");
-        $Options_Fondo .= "<option value=''></option>";
-        $Options_Dependencia .= "<option value=''></option>";
+        $Options_Fondo = "<option value=''></option>";
+        $Options_Dependencia = "<option value=''></option>";
         foreach ($DataBci_Gerencia as $UGer) {
             $Options_Gerencia .= "<option value='" . $UGer->dato . "'>" . $UGer->dato . "</option>";
         }
@@ -586,10 +586,7 @@ else if ($seccion == "sucesion_comite") {
     }
 
     $array_comite = Potencial_Sucesion_Comites_2024_data($id_comite, $id_empresa);
-    //    print_r($array_comite);        //exit();
-    //Potencial_Sucesion_Actualiza_GerentesR2($array_comite[0]->gerenciaR1,$id_empresa, $id_comite);
 
-    $perfil = "USUARIO";
     $perfil = Potencial_Perfil_Sucesion_Usuarios($rut, $id_empresa);
     
     $saveform = ($_GET["saveform"]);

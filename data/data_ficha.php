@@ -19,12 +19,11 @@ function Potencial_SoySuper($rut){
 
 }
 function Potencial_Data_Bci_2021_groupby($field){
-    /* $connexion = new DatabasePDO();
+	$connexion = new DatabasePDO();
      $sql=" 	select $field as dato from tbl_data_bci_2021 group by $field order by $field ";
      $connexion->query($sql);
-     echo $sql;exit();
      $cod = $connexion->resultset();
-     return ($cod);*/
+     return ($cod);
 }
 function Potencial_Es_Socio($rut) {
     $connexion = new DatabasePDO();
@@ -1129,7 +1128,7 @@ function Potencial_Check_Mapeado($rut){
     return $cod[0]->cuadrante_2020;*/
 }
 function Sucesion_Check_Posicion_validada($id_posicion){
-/*
+
     $connexion = new DatabasePDO();
 
 
@@ -1141,7 +1140,7 @@ function Sucesion_Check_Posicion_validada($id_posicion){
 
     $COD_SU = $connexion->resultset();
 
-    return $COD_SU[0]->cuenta;*/
+    return $COD_SU[0]->cuenta;
 
 }
 function Sucesion_Rut_Nombre_lider_posicion($id_posicion){
@@ -1193,7 +1192,7 @@ function MiRx($rut){
 
 }
 function Potencial_Bitacora_Comites_FullRut_data($rut_col,  $id_empresa){
-   /* $connexion = new DatabasePDO();
+    $connexion = new DatabasePDO();
 
     $fecha = date("Y-m-d");
 
@@ -1233,12 +1232,11 @@ function Potencial_Bitacora_Comites_FullRut_data($rut_col,  $id_empresa){
      ";
 
     $connexion->query($sql);
-
-    $cod = $connexion->resultset();
-    return ($cod);*/
+	
+	return $connexion->resultset();
 }
 function Potencial_Busca_Nombre_Lider($rut_col,$id_comite_enc){
-/*
+
     $connexion = new DatabasePDO();
 
     $fecha = date("Y-m-d");
@@ -1255,31 +1253,24 @@ function Potencial_Busca_Nombre_Lider($rut_col,$id_comite_enc){
     $connexion->query($sql);
 
     $cod = $connexion->resultset();
-    $nombre=$cod[0]->nombre." ".$cod[0]->apellido;
-    return ($nombre);
-*/
+	return $cod[0]->nombre." ".$cod[0]->apellido;
+
 }
 function Pot_CheckPosicion_Clave($rut) {
-/*
+
     $connexion = new DatabasePDO();
 
-    $fecha = date("Y-m-d");
-
-    $sql=" select h.id, h.posicion_clave, (select d6 from tbl_data_bci_2021 where rut='$rut') from tbl_potencial_posicion_clave h   where
-            (select d6 from tbl_data_bci_2021 where rut='$rut') = h.posicion_clave ";
     $sql=" select h.id, h.posicion_clave, (select d6 from tbl_data_bci_2021 where rut='$rut') from tbl_potencial_posicion_clave h where
 				(select d6 from tbl_data_bci_2021 where rut='$rut') = h.posicion_clave ";
 
     $connexion->query($sql);
     $cod = $connexion->resultset();
     return ($cod[0]->id);
-*/
+
 }
 function Potencial_Comites_Suc_data($id_comite,$id_empresa){
 
     $connexion = new DatabasePDO();
-
-    $fecha = date("Y-m-d");
 
     $sql   = "
 
@@ -1294,9 +1285,8 @@ function Potencial_Comites_Suc_data($id_comite,$id_empresa){
      ";
     
     $connexion->query($sql);
-
-    $cod = $connexion->resultset();
-    return ($cod);
+	
+	return $connexion->resultset();
 
 }
 function Potencial_Comites_Suc_data_2024($id_comite,$id_empresa){
@@ -1425,9 +1415,8 @@ function Potencial_Es_SuperUsers($rut){
     return ($cod[0]->id);
 }
 function Potencial_Perfil_Sucesion_Usuarios($rut, $id_empresa){
-  /*  $connexion = new DatabasePDO();
+    $connexion = new DatabasePDO();
 
-    $fecha = date("Y-m-d");
 
     $sql   = " select h.id from tbl_potencial_perfil h where h.rut='$rut' and h.id_empresa='$id_empresa'  limit 1";
     
@@ -1446,7 +1435,7 @@ function Potencial_Perfil_Sucesion_Usuarios($rut, $id_empresa){
      		(h.rut_jefe_socio='$rut' or h.rut_jefe_jefe_socio='$rut' or h.rut_jefe_lider='$rut' or h.rut_jefe_jefe_lider='$rut')
      		 and h.id_empresa='$id_empresa'  limit 1";
     
-    //exit();
+
     $connexion->query($sql2);
 
     $cod2 = $connexion->resultset();
@@ -1504,5 +1493,5 @@ function Potencial_Perfil_Sucesion_Usuarios($rut, $id_empresa){
 
     }
 
-    return $perfil;*/
+    return $perfil;
 }

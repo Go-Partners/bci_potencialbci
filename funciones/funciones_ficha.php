@@ -814,9 +814,9 @@ function Potencial_Sucesion_Colaboradores_Comites_Ficha_2024($PRINCIPAL, $id_com
     $display_acciones_desarrollo = "  ";
     $row_inmediato="";
     $row_lista1="";
-    $Inmediato=PotencialSucesion_Vista_Colaboradores_Posicion_2024($id_comite,$rut, $id_empresa, "1", $posicion);
+    $inmediato=PotencialSucesion_Vista_Colaboradores_Posicion_2024($id_comite,$rut, $id_empresa, "1", $posicion);
     
-    foreach ($Inmediato as $uni1){
+    foreach ($inmediato as $uni1){
 	    $filtro="";
         if($comite_cerrado_esta=="SI" and $uni1->estado=="No es sucesor"){
             // continue;
